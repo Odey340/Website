@@ -1,0 +1,31 @@
+name: Latency Benchmark
+
+on: [push, pull_request]
+
+jobs:
+  benchmark:
+    runs-on: self-hosted-high-perf-linux
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Compile Optimized
+        run: |
+          g++ -O3 -march=native -funroll-loops -DNDEBUG src/main.cpp -o lumina_engine -lpthread
+
+      - name: Run Latency Test
+        run: |
+          # Isolating cores 2,3 for this test
+          taskset -c 2,3 ./lumina_engine --benchmark-mode > result.log
+
+      - name: Check P99 Regression
+        run: |
+          # Parse the output for P99
+          P99=$(grep "P99" result.log | awk '{print $2}')
+          BASELINE=900 # nanoseconds
+          
+          echo "Measured P99: ${P99}ns"
+          
+          if [ "$P99" -gt "$((BASELINE + 50))" ]; then
+            echo "::error::Latency Regression Detected! P99 increased by > 50ns"
+            exit 1
+          fi
