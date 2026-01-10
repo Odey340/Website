@@ -1,0 +1,49 @@
+import { CodeBlock } from "@/components/CodeBlock";
+
+export const metadata = {
+  title: 'Project Artemis | Odey Jeffs',
+  description: 'Benchmarking Engine deep dive.',
+}
+
+# Project Artemis: Benchmarking Engine
+
+**Status**: COMPLETED | **Stack**: Rust, PostgreSQL, RDTSC
+
+Artemis is a benchmarking engine built to isolate "system noise" from true performance metrics. It uses CPU time-stamp counters (RDTSC) for high-precision timing.
+
+## Core Objective
+
+Demonstrate the ability to isolate system noise from true performance. Financial research requires determinism; Artemis ensures that latency spikes are attributed correctly to either network jitter or code inefficiency.
+
+## Key Features
+
+- **RDTSC Profiling**: Nanosecond-level precision.
+- **Kernel Bypass**: Uses DPDK to bypass OS network stack overhead for measurement.
+- **Temporal Schemas**: PostgreSQL extension for time-series anomaly detection.
+
+## Implementation Details
+
+<CodeBlock
+  title="PROFILER.RS"
+  highLevel={`
+fn profile_function() {
+    let start = SystemTime::now();
+    execute_algo();
+    let duration = start.elapsed();
+    println!("Duration: {:?}", duration);
+}
+  `}
+  lowLevel={`
+use std::arch::x86_64::_rdtsc;
+
+fn profile_critical_path() -> u64 {
+    unsafe {
+        let start = _rdtsc();
+        // Critical path execution
+        execute_algo_optimized(); 
+        let end = _rdtsc();
+        return end - start; // CPU cycles
+    }
+}
+  `}
+/>

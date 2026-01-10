@@ -1,0 +1,149 @@
+import { MermaidDiagram } from "@/components/MermaidDiagram";
+import { BacktestChart } from "@/components/BacktestChart";
+import { CodeBlock } from "@/components/CodeBlock";
+import { Activity, Server, Shield, Zap } from "lucide-react";
+
+export const metadata = {
+  title: 'Project Lumina | Odey Jeffs',
+  description: 'Real-Time Operational Monitor deep dive.',
+}
+
+<div className="space-y-8">
+
+  {/* Hero Section */}
+  <div className="space-y-4">
+    <div className="flex items-center space-x-2 text-primary">
+        <Activity className="w-6 h-6" />
+        <span className="text-sm font-mono tracking-wider uppercase">Operational Monitor</span>
+    </div>
+    <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Project Lumina</h1>
+    <p className="text-xl text-muted-foreground max-w-2xl">
+      A high-availability operational monitoring system designed to process massive telemetry streams in real-time. (Working on Mobile App).
+    </p>
+    <div className="flex gap-2 pt-2">
+        <Badge variant="secondary" className="px-3">C++20</Badge>
+        <Badge variant="secondary" className="px-3">React Native</Badge>
+        <Badge variant="secondary" className="px-3">AWS</Badge>
+        <Badge variant="outline" className="px-3">Active</Badge>
+    </div>
+  </div>
+
+  {/* Key Metrics Grid */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <Card className="bg-card/50">
+        <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Zap className="w-4 h-4" /> Latency
+            </CardTitle>
+        </CardHeader>
+        <CardContent>
+            <div className="text-2xl font-bold">&lt; 10ms</div>
+            <p className="text-xs text-muted-foreground">End-to-End Delivery</p>
+        </CardContent>
+    </Card>
+    <Card className="bg-card/50">
+        <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Server className="w-4 h-4" /> Throughput
+            </CardTitle>
+        </CardHeader>
+        <CardContent>
+            <div className="text-2xl font-bold">1M+</div>
+            <p className="text-xs text-muted-foreground">Events Per Second</p>
+        </CardContent>
+    </Card>
+    <Card className="bg-card/50">
+        <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <Shield className="w-4 h-4" /> Uptime
+            </CardTitle>
+        </CardHeader>
+        <CardContent>
+            <div className="text-2xl font-bold">99.99%</div>
+            <p className="text-xs text-muted-foreground">High Availability</p>
+        </CardContent>
+    </Card>
+  </div>
+
+  {/* Main Content Grid */}
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    {/* Left Column: Charts & Diagrams */}
+    <div className="lg:col-span-2 space-y-8">
+        <Card className="overflow-hidden border-none bg-transparent shadow-none">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                Live Metrics Dashboard
+            </h2>
+            <BacktestChart />
+            <p className="mt-4 text-muted-foreground">
+                The chart above demonstrates the system's ability to maintain high operational efficiency (Alpha) even during bursts of high data throughput.
+            </p>
+        </Card>
+
+        <Card className="overflow-hidden border-none bg-transparent shadow-none">
+             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+                System Architecture
+            </h2>
+            <MermaidDiagram chart={`
+            graph TD
+                A[Telemetry Ingest] -->|Zero-Copy| B(Lock-Free Buffer)
+                B --> C{State Engine}
+                C -->|Alert| D[Mobile App]
+                C -->|Log| E[AWS S3]
+                style A fill:#0a0,stroke:#333
+                style B fill:#0a0,stroke:#333
+                style C fill:#0f0,stroke:#333,stroke-width:2px
+                style D fill:#0a0,stroke:#333
+            `} />
+        </Card>
+    </div>
+
+    {/* Right Column: Code & Details */}
+    <div className="space-y-6">
+        <Card>
+            <CardHeader>
+                <CardTitle>Technical Deep Dive</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <div className="space-y-2">
+                    <h3 className="font-semibold text-foreground">Zero-Copy Ingest</h3>
+                    <p className="text-sm text-muted-foreground">
+                        We utilize a ring-buffer architecture to ensure data flows from the sensor ingest layer to the operational dashboard without expensive memory copying.
+                    </p>
+                </div>
+                <div className="space-y-2">
+                    <h3 className="font-semibold text-foreground">Cache Alignment</h3>
+                    <p className="text-sm text-muted-foreground">
+                        Critical operational data packets are 64-byte aligned to prevent false sharing in the CPU cache, ensuring deterministic processing times.
+                    </p>
+                </div>
+            </CardContent>
+        </Card>
+
+         <CodeBlock
+          title="TELEMETRY_PACKET.RS"
+          highLevel={`
+struct Telemetry {
+    sensor_id: u64,
+    value: u32,
+    timestamp: u64,
+}
+// Standard layout
+          `}
+          lowLevel={`
+#[repr(C, align(64))]
+struct Packet {
+    id: u64,
+    val: u32,
+    flags: u32,
+    ts: u64,
+    crc: u64,
+    pad: [u8; 32],
+}
+// Cache-aligned
+          `}
+        />
+    </div>
+
+  </div>
+</div>
