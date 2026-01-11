@@ -89,16 +89,16 @@ function CurrentPortfolio() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
           <div className="text-sm text-zinc-400 font-mono mb-2">Your Portfolio</div>
-          <div className={`text-3xl font-bold ${parseFloat(latestPortfolio.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-            {parseFloat(latestPortfolio.percentChange) >= 0 ? '+' : ''}{latestPortfolio.percentChange}%
+          <div className={`text-3xl font-bold ${latestPortfolio && parseFloat(latestPortfolio.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+            {latestPortfolio ? (parseFloat(latestPortfolio.percentChange) >= 0 ? '+' : '') : ''}{latestPortfolio?.percentChange || '0'}%
           </div>
           <div className="text-xs text-zinc-500 mt-1">Since Jan 1, 2026</div>
         </div>
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
           <div className="text-sm text-zinc-400 font-mono mb-2">SPY (S&P 500)</div>
-          <div className={`text-3xl font-bold ${parseFloat(latestSpy.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-            {parseFloat(latestSpy.percentChange) >= 0 ? '+' : ''}{latestSpy.percentChange}%
+          <div className={`text-3xl font-bold ${latestSpy && parseFloat(latestSpy.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+            {latestSpy ? (parseFloat(latestSpy.percentChange) >= 0 ? '+' : '') : ''}{latestSpy?.percentChange || '0'}%
           </div>
           <div className="text-xs text-zinc-500 mt-1">Since Jan 1, 2026</div>
         </div>
