@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
-import { Mail, Linkedin, Phone, Github, Send, Terminal, MessageSquare, ExternalLink } from "lucide-react"
+import { Mail, Linkedin, Phone, Github, Send, Terminal, MessageSquare, ExternalLink, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
@@ -68,14 +68,14 @@ export default function ContactPage() {
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
                         <CardHeader className="p-12 pb-6">
                             <CardTitle className="text-4xl font-bold tracking-tight mb-2">Initialize Contact</CardTitle>
-                            <p className="text-zinc-500">I typically respond within 120 minutes for high-priority inquiries.</p>
+                            <p className="text-zinc-500">I respond quickly</p>
                         </CardHeader>
                         <CardContent className="p-12 pt-6 flex flex-col gap-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-4 p-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all duration-500">
                                     <MessageSquare className="w-8 h-8 text-primary" />
                                     <h3 className="font-bold text-xl">General Inquiry</h3>
-                                    <p className="text-sm text-zinc-500 leading-relaxed">Let's discuss new projects, systems architecture, or engineering challenges.</p>
+                                    <p className="text-sm text-zinc-500 leading-relaxed">Hire me!!</p>
                                     <a href="mailto:odeyjeffs7@gmail.com">
                                         <Button variant="link" className="px-0 h-auto text-primary font-bold">SEND EMAIL &rarr;</Button>
                                     </a>
@@ -92,7 +92,7 @@ export default function ContactPage() {
 
                             <a href="mailto:odeyjeffs7@gmail.com" className="w-full">
                                 <Button className="w-full h-16 rounded-none bg-white text-black font-black hover:bg-zinc-200 transition-all">
-                                    SEND DISPATCH_MESSAGE <Send className="ml-2 w-5 h-5 fill-current" />
+                                    SEND MAIL <Send className="ml-2 w-5 h-5 fill-current" />
                                 </Button>
                             </a>
                         </CardContent>
@@ -104,22 +104,4 @@ export default function ContactPage() {
     )
 }
 
-function ArrowRight(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-        </svg>
-    )
-}
+
