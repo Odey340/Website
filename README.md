@@ -1,5 +1,7 @@
 # Portfolio Tracker
 
+> **Repository**: [Odey340/Lumina](https://github.com/Odey340/Lumina) | **Status**: Active
+
 A real-time portfolio tracking website that compares your custom investment portfolio against SPY (S&P 500 ETF).
 
 ## Portfolio Composition
