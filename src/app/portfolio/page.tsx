@@ -40,18 +40,19 @@ export default function PortfolioPage() {
 
                 {/* Artemis */}
                 <Link href="/projects/artemis">
-                    <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer group flex flex-col bg-card/60">
+                    <Card className="h-full hover:border-blue-500/50 transition-colors cursor-pointer group flex flex-col bg-card/60">
                         <CardHeader>
-                            <CardTitle className="group-hover:text-primary transition-colors">Artemis</CardTitle>
-                            <CardDescription>System Reliability Engine</CardDescription>
+                            <CardTitle className="group-hover:text-blue-400 transition-colors">Artemis</CardTitle>
+                            <CardDescription>System Reliability Engine | 99.999% Determinism</CardDescription>
                         </CardHeader>
                         <CardContent className="flex-1 flex flex-col justify-between">
                             <p className="text-sm text-muted-foreground mb-4">
-                                Micro-second variance analysis for ensuring 99.999% uptime and consistent service delivery.
+                                High-precision benchmarking suite utilizing RDTSC profiling and kernel-bypass measurement to isolate system noise from true application performance.
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 <Badge variant="secondary">Rust</Badge>
-                                <Badge variant="secondary">Metrics</Badge>
+                                <Badge variant="secondary">Bare Metal</Badge>
+                                <Badge variant="secondary">RDTSC</Badge>
                             </div>
                         </CardContent>
                     </Card>

@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { SystemLog } from "@/components/SystemLog";
 import { BacktestChart } from "@/components/BacktestChart";
+import { ArtemisChart } from "@/components/ArtemisChart";
 import { CodeBlock } from "@/components/CodeBlock";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         ...components,
         SystemLog,
         BacktestChart,
+        ArtemisChart,
         CodeBlock,
         MermaidDiagram,
         Button,
