@@ -23,16 +23,16 @@ export default function PortfolioPage() {
                     <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer group flex flex-col bg-card/60">
                         <CardHeader>
                             <CardTitle className="group-hover:text-primary transition-colors">Lumina</CardTitle>
-                            <CardDescription>Lumina Quant Fund</CardDescription>
+                            <CardDescription>Lumina Quant Fund | +38.07% YTD</CardDescription>
                         </CardHeader>
                         <CardContent className="flex-1 flex flex-col justify-between">
                             <p className="text-sm text-muted-foreground mb-4">
-                                High-frequency quantitative trading engine utilizing mean reversion strategies paired with earnings report volatility to consistently outperform the market.
+                                Proprietary trading engine utilizing mean reversion statistics timed with earnings call volatility to generate superior risk-adjusted returns.
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 <Badge variant="secondary">C++20</Badge>
-                                <Badge variant="secondary">Quant</Badge>
-                                <Badge variant="secondary">Vercel</Badge>
+                                <Badge variant="secondary">Statistical Arbitrage</Badge>
+                                <Badge variant="secondary">HFT</Badge>
                             </div>
                         </CardContent>
                     </Card>
