@@ -153,8 +153,15 @@ function CurrentPortfolio() {
           </p>
         </div>
         <div className="mt-4 p-4 bg-zinc-900/50 border border-zinc-800 rounded-lg">
-          <p className="text-sm text-zinc-400 italic">
-            Investment portfolio relying on quantitative analysis methods and quantitative research.
+          <h3 className="text-sm font-semibold text-zinc-100 mb-2">Our Strategy: Mean Reversion</h3>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Mean reversion, once the most popular quantitative strategy on Wall Street, remains highly profitable today.
+            Our approach capitalizes on the statistical tendency of asset prices to revert to their historical averages.
+            When securities deviate significantly from their mean values, we identify these mispricings as opportunities.
+            By systematically buying undervalued assets and selling overvalued ones, we exploit market inefficiencies that
+            persist despite the evolution of modern markets. This time-tested methodology, combined with rigorous quantitative
+            research and disciplined risk management, continues to generate consistent alpha in today's dynamic trading environment.
+            we time this up with earnings reports to develop a stategy that consistently outperforms the market.
           </p>
         </div>
       </div>
@@ -198,7 +205,7 @@ function LuminaPortfolio() {
             <YAxis
               stroke="#71717a"
               style={{ fontSize: '12px' }}
-              tickFormatter={(value) => `${value}%`}
+              tickFormatter={(value: number | undefined) => value !== undefined ? `${value}%` : '0%'}
             />
             <Tooltip
               contentStyle={{
@@ -206,7 +213,7 @@ function LuminaPortfolio() {
                 border: '1px solid #27272a',
                 borderRadius: '8px'
               }}
-              formatter={(value: number) => `${value.toFixed(1)}%`}
+              formatter={(value: number | undefined) => value !== undefined ? `${value.toFixed(1)}%` : 'N/A'}
             />
             <Line
               type="monotone"
