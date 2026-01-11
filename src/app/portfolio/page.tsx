@@ -23,16 +23,16 @@ export default function PortfolioPage() {
                     <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer group flex flex-col bg-card/60">
                         <CardHeader>
                             <CardTitle className="group-hover:text-primary transition-colors">Lumina</CardTitle>
-                            <CardDescription>Real-Time Operational Monitor</CardDescription>
+                            <CardDescription>Lumina Quant Fund</CardDescription>
                         </CardHeader>
                         <CardContent className="flex-1 flex flex-col justify-between">
                             <p className="text-sm text-muted-foreground mb-4">
-                                High-throughput telemetry processing backend with a React mobile dashboard for real-time system monitoring.
+                                High-frequency quantitative trading engine utilizing mean reversion strategies paired with earnings report volatility to consistently outperform the market.
                             </p>
                             <div className="flex flex-wrap gap-2">
-                                <Badge variant="secondary">C++</Badge>
-                                <Badge variant="secondary">React</Badge>
-                                <Badge variant="secondary">Real-Time</Badge>
+                                <Badge variant="secondary">C++20</Badge>
+                                <Badge variant="secondary">Quant</Badge>
+                                <Badge variant="secondary">Vercel</Badge>
                             </div>
                         </CardContent>
                     </Card>
