@@ -34,7 +34,7 @@ export default function PortfolioPage() {
                                 <Badge variant="secondary">Statistical Arbitrage</Badge>
                                 <Badge variant="secondary">HFT</Badge>
                                 <a
-                                    href="https://github.com/Odey340/Lumina"
+                                    href="https://github.com/Odey340/luminafund"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-xs font-mono text-primary hover:underline flex items-center gap-1"
