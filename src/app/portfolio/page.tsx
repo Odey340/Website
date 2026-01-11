@@ -33,6 +33,14 @@ export default function PortfolioPage() {
                                 <Badge variant="secondary">C++20</Badge>
                                 <Badge variant="secondary">Statistical Arbitrage</Badge>
                                 <Badge variant="secondary">HFT</Badge>
+                                <a
+                                    href="https://github.com/Odey340/Lumina"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs font-mono text-primary hover:underline flex items-center gap-1"
+                                >
+                                    GitHub Source &rarr;
+                                </a>
                             </div>
                         </CardContent>
                     </Card>
