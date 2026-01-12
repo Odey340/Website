@@ -1,5 +1,4 @@
 import { MermaidDiagram } from "@/components/MermaidDiagram";
-import { BacktestChart } from "@/components/BacktestChart";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -115,16 +114,6 @@ export const metadata = {
     </div>
   </div>
 
-  {/* Performance Chart Section */}
-  <div className="space-y-6">
-    <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <h2 className="text-3xl font-bold tracking-tight">Performance Deep-Dive</h2>
-        <p className="text-zinc-400 text-sm max-w-sm">
-            Cumulative fund returns against the S&P 500. Noticed outsized gains during Q2 and Q4 earnings spikes.
-        </p>
-    </div>
-    <BacktestChart />
-  </div>
 
   {/* Technical Architecture */}
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
