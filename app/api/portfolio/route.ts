@@ -40,6 +40,16 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
 
     // Adjust final value to exactly match target
     const finalDate = today.toISOString().split('T')[0];
+    const prevDate = new Date(today);
+    prevDate.setDate(prevDate.getDate() - 1);
+    const prevDateStr = prevDate.toISOString().split('T')[0];
+
+    // Ensure there is a dip: set previous day slightly higher than target
+    if (data[prevDateStr]) {
+        data[prevDateStr].value = targetMultiplier * 1.0011; // 0.11% higher than target
+        data[prevDateStr].percentChange = (targetReturn + 0.11).toFixed(2);
+    }
+
     data[finalDate].value = targetMultiplier;
     data[finalDate].percentChange = targetReturn.toFixed(2);
 
@@ -77,8 +87,8 @@ export async function GET() {
     try {
         const startDate = '2026-01-01';
 
-        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 9.02% YTD
-        const portfolioPerformance = generateMockDataWithTarget(startDate, 9.02, 42);
+        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.91% YTD (Down 0.11% today)
+        const portfolioPerformance = generateMockDataWithTarget(startDate, 8.91, 42);
 
         // SPY: standard growth
         const spyPerformance = generateMockData(startDate, 0.015, 0.0006, 99);
@@ -87,6 +97,7 @@ export async function GET() {
             portfolio: portfolioPerformance,
             spy: spyPerformance,
             startDate,
+            dailyChange: -0.11,
             composition: { MU: 0.50, VXUS: 0.20, ASTS: 0.20, TQQQ: 0.10 },
             note: 'Portfolio: 50% MU, 20% VXUS, 20% ASTS, 10% TQQQ'
         });

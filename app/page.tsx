@@ -15,6 +15,7 @@ interface ApiResponse {
   portfolio: PerformanceData[];
   spy: PerformanceData[];
   startDate: string;
+  dailyChange: number;
 }
 
 // Lumina historical data for 2025
@@ -89,8 +90,15 @@ function CurrentPortfolio() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
           <div className="text-sm text-zinc-400 font-mono mb-2">Your Portfolio</div>
-          <div className={`text-3xl font-bold ${latestPortfolio && parseFloat(latestPortfolio.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-            {latestPortfolio ? (parseFloat(latestPortfolio.percentChange) >= 0 ? '+' : '') : ''}{latestPortfolio?.percentChange || '0'}%
+          <div className="flex items-baseline gap-2">
+            <div className={`text-3xl font-bold ${latestPortfolio && parseFloat(latestPortfolio.percentChange) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+              {latestPortfolio ? (parseFloat(latestPortfolio.percentChange) >= 0 ? '+' : '') : ''}{latestPortfolio?.percentChange || '0'}%
+            </div>
+            {data.dailyChange !== undefined && (
+              <div className={`text-sm font-mono ${data.dailyChange >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                ({data.dailyChange >= 0 ? '+' : ''}{data.dailyChange.toFixed(2)}% today)
+              </div>
+            )}
           </div>
           <div className="text-xs text-zinc-500 mt-1">Since Jan 1, 2026</div>
         </div>
