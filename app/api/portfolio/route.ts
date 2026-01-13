@@ -40,14 +40,25 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
 
     // Adjust final value to exactly match target
     const finalDate = today.toISOString().split('T')[0];
-    const prevDate = new Date(today);
-    prevDate.setDate(prevDate.getDate() - 1);
-    const prevDateStr = prevDate.toISOString().split('T')[0];
 
-    // Ensure there is a dip: set previous day slightly higher than target
-    if (data[prevDateStr]) {
-        data[prevDateStr].value = targetMultiplier * 1.0011; // 0.11% higher than target
-        data[prevDateStr].percentChange = (targetReturn + 0.11).toFixed(2);
+    // Day before (t-1): 8.91%
+    const prevDate1 = new Date(today);
+    prevDate1.setDate(prevDate1.getDate() - 1);
+    const prevDate1Str = prevDate1.toISOString().split('T')[0];
+
+    // Day before t-1 (t-2): 9.02%
+    const prevDate2 = new Date(today);
+    prevDate2.setDate(prevDate2.getDate() - 2);
+    const prevDate2Str = prevDate2.toISOString().split('T')[0];
+
+    if (data[prevDate1Str]) {
+        data[prevDate1Str].value = 1.0891;
+        data[prevDate1Str].percentChange = "8.91";
+    }
+
+    if (data[prevDate2Str]) {
+        data[prevDate2Str].value = 1.0902;
+        data[prevDate2Str].percentChange = "9.02";
     }
 
     data[finalDate].value = targetMultiplier;
@@ -87,8 +98,8 @@ export async function GET() {
     try {
         const startDate = '2026-01-01';
 
-        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.91% YTD (Down 0.11% today)
-        const portfolioPerformance = generateMockDataWithTarget(startDate, 8.91, 42);
+        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.40% YTD (Down 0.51% today)
+        const portfolioPerformance = generateMockDataWithTarget(startDate, 8.40, 42);
 
         // SPY: standard growth
         const spyPerformance = generateMockData(startDate, 0.015, 0.0006, 99);
@@ -97,7 +108,11 @@ export async function GET() {
             portfolio: portfolioPerformance,
             spy: spyPerformance,
             startDate,
-            dailyChange: -0.11,
+            dailyChange: -0.51,
+            lastUpdated: "2026-01-13T15:41:19",
+            fundInfo: {
+                majorityStake: "Netflix"
+            },
             composition: { MU: 0.50, VXUS: 0.20, ASTS: 0.20, TQQQ: 0.10 },
             note: 'Portfolio: 50% MU, 20% VXUS, 20% ASTS, 10% TQQQ'
         });

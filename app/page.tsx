@@ -16,6 +16,10 @@ interface ApiResponse {
   spy: PerformanceData[];
   startDate: string;
   dailyChange: number;
+  lastUpdated: string;
+  fundInfo: {
+    majorityStake: string;
+  };
 }
 
 // Lumina historical data for 2025
@@ -182,6 +186,22 @@ function CurrentPortfolio() {
         >
           Refresh Data
         </button>
+      </div>
+
+      {/* Footer Info Box */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-zinc-900">
+        <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-lg p-4 flex items-center justify-between">
+          <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider">Last Updated</div>
+          <div className="text-sm text-zinc-300 font-mono">
+            {format(new Date(data.lastUpdated), 'MMMM dd, yyyy HH:mm:ss')}
+          </div>
+        </div>
+        <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-lg p-4 flex items-center justify-between">
+          <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider">Fund Focus</div>
+          <div className="text-sm text-zinc-300 font-mono">
+            <span className="text-red-500 font-bold">{data.fundInfo.majorityStake}</span> majority stake
+          </div>
+        </div>
       </div>
     </div>
   );
