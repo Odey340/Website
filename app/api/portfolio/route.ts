@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { getSpyPerformance } from '@/lib/marketData';
 
 // Seeded random number generator for consistent results
 function seededRandom(seed: number) {
@@ -101,8 +102,11 @@ export async function GET() {
         // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.40% YTD (Down 0.51% today)
         const portfolioPerformance = generateMockDataWithTarget(startDate, 8.40, 42);
 
-        // SPY: standard growth
-        const spyPerformance = generateMockData(startDate, 0.015, 0.0006, 99);
+        // SPY: Live data if possible, fallback to mock 1.94%
+        let spyPerformance = await getSpyPerformance(startDate);
+        if (!spyPerformance) {
+            spyPerformance = generateMockDataWithTarget(startDate, 1.94, 99);
+        }
 
         return NextResponse.json({
             portfolio: portfolioPerformance,
