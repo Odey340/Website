@@ -41,27 +41,6 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
 
     // Adjust final value to exactly match target
     const finalDate = today.toISOString().split('T')[0];
-
-    // Day before (t-1): 8.91%
-    const prevDate1 = new Date(today);
-    prevDate1.setDate(prevDate1.getDate() - 1);
-    const prevDate1Str = prevDate1.toISOString().split('T')[0];
-
-    // Day before t-1 (t-2): 9.02%
-    const prevDate2 = new Date(today);
-    prevDate2.setDate(prevDate2.getDate() - 2);
-    const prevDate2Str = prevDate2.toISOString().split('T')[0];
-
-    if (data[prevDate1Str]) {
-        data[prevDate1Str].value = 1.0891;
-        data[prevDate1Str].percentChange = "8.91";
-    }
-
-    if (data[prevDate2Str]) {
-        data[prevDate2Str].value = 1.0902;
-        data[prevDate2Str].percentChange = "9.02";
-    }
-
     data[finalDate].value = targetMultiplier;
     data[finalDate].percentChange = targetReturn.toFixed(2);
 
@@ -101,6 +80,18 @@ export async function GET() {
 
         // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.40% YTD (Down 0.51% today)
         const portfolioPerformance = generateMockDataWithTarget(startDate, 8.40, 42);
+
+        // Manual override for portfolio dips (Jan 10-12 sequence)
+        const todayStr = new Date().toISOString().split('T')[0];
+        const prev1 = new Date(); prev1.setDate(prev1.getDate() - 1);
+        const prev1Str = prev1.toISOString().split('T')[0];
+        const prev2 = new Date(); prev2.setDate(prev2.getDate() - 2);
+        const prev2Str = prev2.toISOString().split('T')[0];
+
+        portfolioPerformance.forEach(p => {
+            if (p.date === prev1Str) { p.value = 1.0891; p.percentChange = "8.91"; }
+            if (p.date === prev2Str) { p.value = 1.0902; p.percentChange = "9.02"; }
+        });
 
         // SPY: Live data if possible, fallback to mock 1.94%
         let spyPerformance = await getSpyPerformance(startDate);
