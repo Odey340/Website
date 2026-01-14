@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
-import { Badge } from "@/components/ui/Badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { MapPin, User, Briefcase, GraduationCap, Cpu, Layers, Code2, ShieldAlert, Rocket, Terminal } from "lucide-react"
 
 export const metadata = {

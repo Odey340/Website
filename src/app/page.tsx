@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button"
-import { Badge } from "@/components/ui/Badge"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Terminal, MapPin, Zap, Shield, Activity, Code2 } from "lucide-react"

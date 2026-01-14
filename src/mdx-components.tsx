@@ -5,8 +5,8 @@ import { ArtemisChart } from "@/components/ArtemisChart";
 import { CodeBlock } from "@/components/CodeBlock";
 import { MermaidDiagram } from "@/components/MermaidDiagram";
 import { Button } from "@/components/ui/Button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
