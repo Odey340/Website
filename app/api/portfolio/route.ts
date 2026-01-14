@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { getSpyPerformance } from '@/lib/marketData';
 
 // Seeded random number generator for consistent results
 function seededRandom(seed: number) {
@@ -41,6 +40,16 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
 
     // Adjust final value to exactly match target
     const finalDate = today.toISOString().split('T')[0];
+    const prevDate = new Date(today);
+    prevDate.setDate(prevDate.getDate() - 1);
+    const prevDateStr = prevDate.toISOString().split('T')[0];
+
+    // Ensure there is a dip: set previous day slightly higher than target
+    if (data[prevDateStr]) {
+        data[prevDateStr].value = targetMultiplier * 1.0011; // 0.11% higher than target
+        data[prevDateStr].percentChange = (targetReturn + 0.11).toFixed(2);
+    }
+
     data[finalDate].value = targetMultiplier;
     data[finalDate].percentChange = targetReturn.toFixed(2);
 
@@ -78,36 +87,17 @@ export async function GET() {
     try {
         const startDate = '2026-01-01';
 
-        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.40% YTD (Down 0.51% today)
-        const portfolioPerformance = generateMockDataWithTarget(startDate, 8.40, 42);
+        // Portfolio (50% MU, 20% VXUS, 20% ASTS, 10% TQQQ): 8.36% YTD (Down 0.55% today)
+        const portfolioPerformance = generateMockDataWithTarget(startDate, 8.36, 42);
 
-        // Manual override for portfolio dips (Jan 10-12 sequence)
-        const todayStr = new Date().toISOString().split('T')[0];
-        const prev1 = new Date(); prev1.setDate(prev1.getDate() - 1);
-        const prev1Str = prev1.toISOString().split('T')[0];
-        const prev2 = new Date(); prev2.setDate(prev2.getDate() - 2);
-        const prev2Str = prev2.toISOString().split('T')[0];
-
-        portfolioPerformance.forEach(p => {
-            if (p.date === prev1Str) { p.value = 1.0891; p.percentChange = "8.91"; }
-            if (p.date === prev2Str) { p.value = 1.0902; p.percentChange = "9.02"; }
-        });
-
-        // SPY: Live data if possible, fallback to mock 1.94%
-        let spyPerformance = await getSpyPerformance(startDate);
-        if (!spyPerformance) {
-            spyPerformance = generateMockDataWithTarget(startDate, 1.94, 99);
-        }
+        // SPY: standard growth
+        const spyPerformance = generateMockData(startDate, 0.015, 0.0006, 99);
 
         return NextResponse.json({
             portfolio: portfolioPerformance,
             spy: spyPerformance,
             startDate,
-            dailyChange: -0.51,
-            lastUpdated: "2026-01-13T15:41:19",
-            fundInfo: {
-                majorityStake: "Netflix"
-            },
+            dailyChange: -0.55,
             composition: { MU: 0.50, VXUS: 0.20, ASTS: 0.20, TQQQ: 0.10 },
             note: 'Portfolio: 50% MU, 20% VXUS, 20% ASTS, 10% TQQQ'
         });

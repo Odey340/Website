@@ -16,10 +16,6 @@ interface ApiResponse {
   spy: PerformanceData[];
   startDate: string;
   dailyChange: number;
-  lastUpdated: string;
-  fundInfo: {
-    majorityStake: string;
-  };
 }
 
 // Lumina historical data for 2025
@@ -188,19 +184,17 @@ function CurrentPortfolio() {
         </button>
       </div>
 
-      {/* Footer Info Box */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-zinc-900">
-        <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-lg p-4 flex items-center justify-between">
-          <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider">Last Updated</div>
-          <div className="text-sm text-zinc-300 font-mono">
-            {format(new Date(data.lastUpdated), 'MMMM dd, yyyy HH:mm:ss')}
-          </div>
-        </div>
-        <div className="bg-zinc-900/30 border border-zinc-800/50 rounded-lg p-4 flex items-center justify-between">
-          <div className="text-xs text-zinc-500 font-mono uppercase tracking-wider">Fund Focus</div>
-          <div className="text-sm text-zinc-300 font-mono">
-            <span className="text-red-500 font-bold">{data.fundInfo.majorityStake}</span> majority stake
-          </div>
+      {/* Biggest Stake Box */}
+      <div className="bg-gradient-to-br from-amber-900/20 to-amber-950 border border-amber-700 rounded-lg p-6">
+        <div className="text-sm text-amber-400 font-mono mb-2">Our Biggest Stake</div>
+        <div className="text-3xl font-bold text-amber-300">NFLX</div>
+        <div className="text-xs text-amber-600 mt-1">Netflix - Largest Position</div>
+      </div>
+
+      {/* Footer with Date */}
+      <div className="text-center pt-8 border-t border-zinc-800">
+        <div className="text-xs text-zinc-500 font-mono">
+          Last updated: {format(new Date(), 'MMMM dd, yyyy')}
         </div>
       </div>
     </div>
