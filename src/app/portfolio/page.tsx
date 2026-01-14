@@ -41,7 +41,7 @@ export default function PortfolioPage() {
                                         <Badge variant="secondary">HFT</Badge>
                                     </div>
                                     <a
-                                        href="https://github.com/Odey340/luminafund"
+                                        href="https://financiallumina.vercel.app/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-primary/5"
