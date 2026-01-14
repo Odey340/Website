@@ -1,0 +1,169 @@
+import { MermaidDiagram } from "@/components/MermaidDiagram";
+import { CodeBlock } from "@/components/CodeBlock";
+import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
+import { TrendingUp, Target, Clock, Zap, Globe, Shield, Activity, BarChart3, Database } from "lucide-react";
+
+export const metadata = {
+  title: 'Project Lumina | Lumina Quant Fund',
+  description: 'Mean reversion strategy timed with earnings reports. Up 38.07% in 2025.',
+}
+
+<div className="space-y-12 pb-24">
+
+  {/* Hero / Premium Header */}
+  <div className="relative pt-8 pb-12 border-b border-zinc-900 overflow-hidden">
+    <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+    <div className="relative z-10 space-y-6">
+        <div className="flex items-center space-x-3 text-primary animate-pulse">
+            <TrendingUp className="w-6 h-6" />
+            <span className="text-sm font-mono tracking-[0.2em] uppercase">Private Beta // Algorithmic Fund</span>
+        </div>
+        <div className="space-y-2">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent italic">
+                Project Lumina
+            </h1>
+            <p className="text-2xl font-light text-zinc-400 max-w-2xl leading-relaxed">
+                A quantitative edge built on the intersection of <span className="text-white">mean reversion statistics</span> and <span className="text-white">earnings volatility catalysts</span>.
+            </p>
+        </div>
+        
+        <div className="flex flex-wrap gap-3">
+            <Badge variant="terminal" className="bg-primary/10 text-primary border-primary/20 py-1.5 px-4 text-xs">
+                38.07% YTD (2025)
+            </Badge>
+            <Badge variant="outline" className="border-zinc-800 text-zinc-500 py-1.5 px-4 text-xs font-mono">
+                C++20 EXECUTION
+            </Badge>
+            <Badge variant="secondary" className="bg-zinc-900 text-zinc-400 py-1.5 px-4 text-xs">
+                ACTIVE ALPHA
+            </Badge>
+        </div>
+
+        <div className="pt-4">
+            <a href="https://luminafund.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-primary text-black hover:bg-primary/90 font-bold px-8 h-12 rounded-none group transition-all">
+                    VIEW LIVE FUND TRACKER
+                    <Zap className="ml-2 w-4 h-4 group-hover:fill-current transition-all" />
+                </Button>
+            </a>
+        </div>
+    </div>
+  </div>
+
+  {/* Strategy Overview - The Core Change */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div className="space-y-6">
+        <h2 className="text-3xl font-bold tracking-tight">The Core Strategy</h2>
+        <div className="space-y-8">
+            <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 border border-zinc-800">
+                    <Target className="w-6 h-6 text-primary" />
+                </div>
+                <div className="space-y-1">
+                    <h3 className="font-bold text-lg">Statistical Mean Reversion</h3>
+                    <p className="text-zinc-400 leading-relaxed">
+                        We identify extreme price deviations from historical means. The fund exploits the inevitable "snap-back" as asset prices revert to their true underlying value.
+                    </p>
+                </div>
+            </div>
+            <div className="flex gap-4">
+                <div className="w-12 h-12 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0 border border-zinc-800">
+                    <Clock className="w-6 h-6 text-primary" />
+                </div>
+                <div className="space-y-1">
+                    <h3 className="font-bold text-lg">Earnings Convergence</h3>
+                    <p className="text-zinc-400 leading-relaxed">
+                        Strategy performance is amplified by <span className="text-white font-semibold">timing entries with earnings calls</span>. We leverage the liquid volume and volatility of reporting periods to compress the reversion window.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div className="relative rounded-2xl border border-zinc-800 bg-zinc-900/30 p-8 backdrop-blur-xl">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+        <div className="space-y-4">
+            <div className="flex justify-between items-center text-sm font-mono text-zinc-500 uppercase tracking-widest">
+                <span>Execution Metrics</span>
+                <span className="text-primary tracking-normal">0.02ms latency</span>
+            </div>
+            <div className="space-y-2">
+                <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-full w-[85%] bg-primary shadow-[0_0_10px_#00ff9d]" />
+                </div>
+                <div className="flex justify-between text-[10px] font-mono text-zinc-500 uppercase">
+                    <span>Backtest Accuracy</span>
+                    <span>85.4%</span>
+                </div>
+            </div>
+            <div className="space-y-2">
+                <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-full w-[92%] bg-blue-500 shadow-[0_0_10px_#3b82f6]" />
+                </div>
+                <div className="flex justify-between text-[10px] font-mono text-zinc-500 uppercase">
+                    <span>Alpha Persistence</span>
+                    <span>92.1%</span>
+                </div>
+            </div>
+        </div>
+        <div className="mt-8 pt-8 border-t border-zinc-800 text-center">
+             <div className="text-4xl font-bold text-white tabular-nums">38.07%</div>
+             <p className="text-xs text-zinc-500 uppercase tracking-tighter mt-1">Net Gain Since Jan 1, 2025</p>
+        </div>
+    </div>
+  </div>
+
+
+  {/* Technical Architecture */}
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+     <div className="lg:col-span-2 space-y-6">
+        <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Activity className="w-5 h-5 text-primary" /> System Architecture
+        </h2>
+        <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/20">
+            <MermaidDiagram chart={`
+            graph LR
+                A[Market Data API] --> B{Quant Logic}
+                B -->|Mean Reversion| C[Portfolio Optimizer]
+                B -->|Earnings Calendar| C
+                C --> D[Execution API]
+                D --> E[Live Trading]
+                
+                style A fill:#09090b,stroke:#27272a,color:#fff
+                style B fill:#00ff9d,stroke:#00ff9d,color:#000
+                style C fill:#09090b,stroke:#27272a,color:#fff
+                style D fill:#09090b,stroke:#27272a,color:#fff
+                style E fill:#00ff9d,stroke:#00ff9d,color:#000
+            `} />
+        </div>
+     </div>
+     <div className="space-y-6">
+        <h2 className="text-2xl font-bold flex items-center gap-2">
+            <Database className="w-5 h-5 text-primary" /> Low Latency
+        </h2>
+        <CodeBlock
+          title="CORE_ENGINE.CPP"
+          highLevel={`
+// Portfolio optimization
+void optimize() {
+    auto target = calculateMean();
+    if (abs(current - target) > threshold) {
+        executeTrade(target);
+    }
+}
+          `}
+          lowLevel={`
+// Cache-aligned lock-free execution
+struct alignas(64) OrderPacket {
+    uint64_t timestamp;
+    double target_price;
+    char ticker[8];
+    // Optimized for L3 cache
+};
+          `}
+        />
+     </div>
+  </div>
+
+</div>
