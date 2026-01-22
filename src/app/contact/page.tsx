@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
-import { Mail, Linkedin, Phone, Github, Send, Terminal, MessageSquare, ExternalLink, ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { Linkedin, Github, Send, Terminal, MessageSquare, ExternalLink, ArrowRight } from "lucide-react"
+
 
 export const metadata = {
     title: 'Contact | Odey Jeffs',

@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
-import { MapPin, User, Briefcase, GraduationCap, Cpu, Layers, Code2, ShieldAlert, Rocket, Terminal } from "lucide-react"
+import { MapPin, User, Briefcase, GraduationCap, Cpu, Layers, Rocket, Terminal } from "lucide-react"
 
 export const metadata = {
     title: 'About | Odey Jeffs',
@@ -123,7 +123,7 @@ export default function AboutPage() {
             <div className="pt-12 border-t border-zinc-900 text-center">
                 <p className="text-zinc-500 text-sm mb-6 uppercase tracking-widest font-mono">Found interesting?</p>
                 <div className="flex justify-center gap-4">
-                    <a href="/contact" className="text-white hover:text-primary transition-colors font-bold text-lg underline decoration-zinc-800 underline-offset-8">Let's discuss systems &rarr;</a>
+                    <a href="/contact" className="text-white hover:text-primary transition-colors font-bold text-lg underline decoration-zinc-800 underline-offset-8">Let&apos;s discuss systems &rarr;</a>
                 </div>
             </div>
         </main>

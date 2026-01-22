@@ -12,7 +12,7 @@ export default function PortfolioPage() {
             <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight">Portfolio</h1>
                 <p className="text-xl text-muted-foreground font-mono">
-          // Selected works in Systems Engineering & Quantitative Analysis.
+                    {`// Selected works in Systems Engineering & Quantitative Analysis.`}
                 </p>
             </div>
 

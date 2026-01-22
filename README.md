@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Tracker
 
-## Getting Started
+> **Repository**: [Odey340/luminafund](https://github.com/Odey340/luminafund) | **Status**: Active
 
-First, run the development server:
+A real-time portfolio tracking website that compares your custom investment portfolio against SPY (S&P 500 ETF).
+
+## Portfolio Composition
+
+This tracker monitors a 23-asset portfolio with the following allocations:
+- 5% each: Bitcoin, MU, AMC, ASTS, TQQQ, BTE, PLTR, VXUS, QQQM, VTI, STRF, TTWO, BORR, EVEX, BB, CLVT
+- 10% TV (Grupo Televisa)
+- 3% each: NXDR, UA
+- 1% each: UWMC, RIG, AAPL, TSLA
+
+## Features
+
+- 📈 Real-time performance comparison vs SPY
+- 📊 Interactive line chart visualization
+- 🎯 Percentage gain/loss since January 1, 2026
+- 🔄 Manual refresh capability
+- 🌙 Dark mode UI
+
+## Setup
+
+### 1. Get an API Key
+
+This app uses Alpha Vantage for stock data. Get your free API key:
+1. Visit https://www.alphavantage.co/support/#api-key
+2. Enter your email and get instant access
+3. Free tier includes 25 API calls/day
+
+### 2. Configure Environment
+
+Create a `.env.local` file in the root directory:
+
+```bash
+NEXT_PUBLIC_ALPHA_VANTAGE_KEY=your_api_key_here
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Vercel (Recommended)
 
-## Learn More
+1. Push this repository to GitHub
+2. Import to Vercel
+3. Add environment variable: `NEXT_PUBLIC_ALPHA_VANTAGE_KEY`
+4. Deploy!
 
-To learn more about Next.js, take a look at the following resources:
+### Other Platforms
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Works on any platform that supports Next.js (Netlify, Railway, etc.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS
+- **Charts**: Recharts
+- **API**: Alpha Vantage
+- **Language**: TypeScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Data updates when you click "Refresh Data"
+- Free API tier has rate limits (25 calls/day)
+- Historical data starts from January 1, 2026
+- Bitcoin is tracked as BTC-USD
+
+## Link from Main Portfolio
+
+To link this from your main portfolio website, update the Lumina card in `src/app/portfolio/page.tsx`:
+
+```tsx
+<Link href="https://your-portfolio-tracker.vercel.app" target="_blank">
+  {/* Lumina card content */}
+</Link>
+```

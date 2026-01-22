@@ -1,0 +1,38 @@
+﻿
+> portfolio-tracker@0.1.0 lint
+> eslint
+
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\app\page.tsx
+  171:102  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\app\about\page.tsx
+    3:63   warning  'Code2' is defined but never used                                @typescript-eslint/no-unused-vars
+    3:70   warning  'ShieldAlert' is defined but never used                          @typescript-eslint/no-unused-vars
+  126:170  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\app\contact\page.tsx
+  3:10  warning  'Mail' is defined but never used   @typescript-eslint/no-unused-vars
+  3:26  warning  'Phone' is defined but never used  @typescript-eslint/no-unused-vars
+  4:8   warning  'Link' is defined but never used   @typescript-eslint/no-unused-vars
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\app\interests\page.tsx
+  15:72  error  Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\app\page.tsx
+  2:10  warning  'Badge' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\app\portfolio\page.tsx
+   6:10  warning  'Button' is defined but never used                                      @typescript-eslint/no-unused-vars
+   7:26  warning  'ExternalLink' is defined but never used                                @typescript-eslint/no-unused-vars
+   7:40  warning  'ArrowRight' is defined but never used                                  @typescript-eslint/no-unused-vars
+  14:72  error    Comments inside children section of tag should be placed inside braces  react/jsx-no-comment-textnodes
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\components\ArtemisChart.tsx
+  3:16  warning  'LineChart' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\odeyj\OneDrive\Desktop\Website\cpp\Odey_Jeffs_Website\src\components\BacktestChart.tsx
+  3:16  warning  'LineChart' is defined but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 15 problems (4 errors, 11 warnings)
+

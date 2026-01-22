@@ -1,0 +1,103 @@
+﻿
+> portfolio-tracker@0.1.0 build
+> next build
+
+node.exe : ΓÜá 
+Warning: Next.js 
+inferred your 
+workspace root, but 
+it may not be 
+correct.
+At C:\Program Files\n
+odejs\npm.ps1:29 
+char:3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (ΓÜá War   
+ ning: Ne...not b    
+e correct.:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+ We detected 
+multiple lockfiles 
+and selected the 
+directory of C:\Users
+\odeyj\OneDrive\Deskt
+op\Website\cpp\packag
+e-lock.json as the 
+root directory.
+ To silence this 
+warning, set 
+`turbopack.root` in 
+your Next.js config, 
+or consider removing 
+one of the lockfiles 
+if it's not needed.
+   See https://nextjs
+.org/docs/app/api-ref
+erence/config/next-co
+nfig-js/turbopack#roo
+t-directory for more 
+information.
+ Detected additional 
+lockfiles: 
+   * C:\Users\odeyj\O
+neDrive\Desktop\Websi
+te\cpp\Odey_Jeffs_Web
+site\package-lock.jso
+n
+
+Γû▓ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 5.4s
+  Running TypeScript ...
+Failed to compile.
+
+./src/components/Merm
+aidDiagram.tsx:2:21
+Type error: Cannot 
+find module 
+'mermaid' or its 
+corresponding type 
+declarations.
+
+[0m [90m 1 |[39m 
+[32m"use 
+client"[39m
+[31m[1m>[22m[39m
+[90m 2 |[39m 
+[36mimport[39m 
+mermaid 
+[36mfrom[39m 
+[32m"mermaid"[39m
+ [90m   |[39m      
+               
+[31m[1m^[22m[39m
+ [90m 3 |[39m 
+[36mimport[39m { 
+useEffect[33m,[39m 
+useRef[33m,[39m 
+useState } 
+[36mfrom[39m 
+[32m"react"[39m
+ [90m 4 |[39m
+ [90m 5 |[39m 
+[36mexport[39m 
+[36mfunction[39m [
+33mMermaidDiagram[39
+m({ chart 
+}[33m:[39m { 
+chart[33m:[39m 
+string }) {[0m
+Next.js build worker 
+exited with code: 1 
+and signal: null

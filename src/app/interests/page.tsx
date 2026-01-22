@@ -13,7 +13,7 @@ export default function InterestsPage() {
             <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tight">Personal Interests</h1>
                 <p className="text-xl text-muted-foreground font-mono">
-          // Beyond the code: Activities and passions.
+                    {`// Beyond the code: Activities and passions.`}
                 </p>
             </div>
 

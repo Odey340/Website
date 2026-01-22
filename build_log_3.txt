@@ -1,0 +1,160 @@
+﻿
+> portfolio-tracker@0.1.0 build
+> next build
+
+node.exe : ΓÜá 
+Warning: Next.js 
+inferred your 
+workspace root, but 
+it may not be 
+correct.
+At C:\Program Files\n
+odejs\npm.ps1:29 
+char:3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (ΓÜá War   
+ ning: Ne...not b    
+e correct.:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+ We detected 
+multiple lockfiles 
+and selected the 
+directory of C:\Users
+\odeyj\OneDrive\Deskt
+op\Website\cpp\packag
+e-lock.json as the 
+root directory.
+ To silence this 
+warning, set 
+`turbopack.root` in 
+your Next.js config, 
+or consider removing 
+one of the lockfiles 
+if it's not needed.
+   See https://nextjs
+.org/docs/app/api-ref
+erence/config/next-co
+nfig-js/turbopack#roo
+t-directory for more 
+information.
+ Detected additional 
+lockfiles: 
+   * C:\Users\odeyj\O
+neDrive\Desktop\Websi
+te\cpp\Odey_Jeffs_Web
+site\package-lock.jso
+n
+
+Γû▓ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error 
+occurred
+Error: Turbopack 
+build failed with 1 
+errors:
+./Odey_Jeffs_Website/
+src/components/System
+Log.tsx:4:1
+Module not found: 
+Can't resolve 
+'framer-motion'
+[0m [90m 2 |[39m
+ [90m 3 |[39m 
+[36mimport[39m { 
+useEffect[33m,[39m 
+useState[33m,[39m 
+useRef } 
+[36mfrom[39m 
+[32m"react"[39m
+[31m[1m>[22m[39m
+[90m 4 |[39m 
+[36mimport[39m { 
+motion } 
+[36mfrom[39m [32m"
+framer-motion"[39m
+ [90m   |[39m [31m
+[1m^[22m[39m[31m
+[1m^[22m[39m[31m[
+1m^[22m[39m[31m[1
+m^[22m[39m[31m[1m
+^[22m[39m[31m[1m^
+[22m[39m[31m[1m^
+[22m[39m[31m[1m^[
+22m[39m[31m[1m^[2
+2m[39m[31m[1m^[22
+m[39m[31m[1m^[22m
+[39m[31m[1m^[22m
+[39m[31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+[31m[1m^[22m[39m
+[31m[1m^[22m[39m[
+31m[1m^[22m[39m[3
+1m[1m^[22m[39m[31
+m[1m^[22m[39m[31m
+[1m^[22m[39m[31m
+[1m^[22m[39m[31m[
+1m^[22m[39m[31m[1
+m^[22m[39m[31m[1m
+^[22m[39m[31m[1m^
+[22m[39m[31m[1m^
+[22m[39m[31m[1m^[
+22m[39m[31m[1m^[2
+2m[39m[31m[1m^[22
+m[39m[31m[1m^[22m
+[39m[31m[1m^[22m
+[39m[31m[1m^[22m[
+39m[31m[1m^[22m[3
+9m[31m[1m^[22m[39
+m[31m[1m^[22m[39m
+[31m[1m^[22m[39m
+ [90m 5 |[39m
+ [90m 6 |[39m 
+[36mconst[39m 
+logLines [33m=[39m 
+[
+ [90m 7 |[39m     
+[32m"Initialize 
+KERNEL... [OK]"[39m
+[33m,[39m[0m
+
+
+
+Import trace:
+  Server Component:
+    ./Odey_Jeffs_Webs
+ite/src/components/Sy
+stemLog.tsx
+    ./Odey_Jeffs_Webs
+ite/src/mdx-component
+s.tsx
+    ./Odey_Jeffs_Webs
+ite/src/app/projects/
+artemis/page.mdx.tsx
+
+https://nextjs.org/do
+cs/messages/module-no
+t-found
+
+
+    at <unknown> (./O
+dey_Jeffs_Website/src
+/components/SystemLog
+.tsx:4:1)
+    at <unknown> (htt
+ps://nextjs.org/docs/
+messages/module-not-f
+ound)
