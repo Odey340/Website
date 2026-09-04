@@ -22,7 +22,7 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
     let currentValue = 1.0;
     let seedCounter = seed;
 
-    for (let d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
+    for (let d = new Date(start); d <= today; d.setUTCDate(d.getUTCDate() + 1)) {
         const dateStr = d.toISOString().split('T')[0];
 
         // Add some realistic volatility around the trend
@@ -38,20 +38,22 @@ function generateMockDataWithTarget(startDate: string, targetReturn: number, see
         };
     }
 
-    // Adjust final value to exactly match target
-    const finalDate = today.toISOString().split('T')[0];
-    const prevDate = new Date(today);
-    prevDate.setDate(prevDate.getDate() - 1);
-    const prevDateStr = prevDate.toISOString().split('T')[0];
+    // Adjust final value to exactly match target. Derive the boundary dates from
+    // the keys we actually generated so timezone / time-of-day can't desync them.
+    const keys = Object.keys(data);
+    const finalDate = keys[keys.length - 1];
+    const prevDateStr = keys[keys.length - 2];
 
     // Ensure there is a dip: set previous day slightly higher than target
-    if (data[prevDateStr]) {
+    if (prevDateStr && data[prevDateStr]) {
         data[prevDateStr].value = targetMultiplier * 1.0011; // 0.11% higher than target
         data[prevDateStr].percentChange = (targetReturn + 0.11).toFixed(2);
     }
 
-    data[finalDate].value = targetMultiplier;
-    data[finalDate].percentChange = targetReturn.toFixed(2);
+    if (finalDate && data[finalDate]) {
+        data[finalDate].value = targetMultiplier;
+        data[finalDate].percentChange = targetReturn.toFixed(2);
+    }
 
     return Object.values(data);
 }
@@ -65,7 +67,7 @@ function generateMockData(startDate: string, volatility: number = 0.02, trend: n
     let currentValue = 1.0;
     let seedCounter = seed;
 
-    for (let d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
+    for (let d = new Date(start); d <= today; d.setUTCDate(d.getUTCDate() + 1)) {
         const dateStr = d.toISOString().split('T')[0];
 
         const randomChange = (seededRandom(seedCounter++) - 0.5) * volatility;

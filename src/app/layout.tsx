@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Odey Jeffs | Systems Engineer",
-  description: "High-Performance Systems & Quantitative Research Portfolio",
+  title: "Odey Jeffs | HFT & Quant",
+  description: "Low-level C++ programmer interested in HFT, with a background in quantitative data analysis.",
 };
 
 export default function RootLayout({
