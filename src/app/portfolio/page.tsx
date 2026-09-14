@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
-import { Folder, Github, ExternalLink, ArrowRight } from "lucide-react"
+import { Folder, Github, ExternalLink, ArrowRight, Trophy } from "lucide-react"
 
 export default function PortfolioPage() {
     return (
@@ -41,7 +42,7 @@ export default function PortfolioPage() {
                                         <Badge variant="secondary">HFT</Badge>
                                     </div>
                                     <a
-                                        href="https://financiallumina.vercel.app/"
+                                        href="https://github.com/Odey340/Lumina"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-primary/5"
@@ -93,6 +94,73 @@ export default function PortfolioPage() {
                             </CardContent>
                         </Card>
                     </Link>
+                </div>
+
+                {/* Scallion */}
+                <div className="group relative">
+                    <Card
+                        onClick={() => window.open("https://scallion.us/", "_blank", "noopener,noreferrer")}
+                        className="h-full hover:border-amber-500/50 transition-colors cursor-pointer flex flex-col bg-card/60"
+                    >
+                        <CardHeader>
+                            <div className="flex items-center justify-between mb-2">
+                                <Folder className="w-5 h-5 text-amber-400" />
+                                <Badge variant="outline" className="text-[10px] py-0 border-amber-500/50 text-amber-400">
+                                    HACKATHON
+                                </Badge>
+                            </div>
+                            <CardTitle className="group-hover:text-amber-400 transition-colors flex items-center gap-2">
+                                Scallion
+                            </CardTitle>
+                            <CardDescription>Biological Age Platform | HackRice 16</CardDescription>
+                            <div className="flex items-center gap-3 pt-1">
+                                <div className="relative h-5 w-12 opacity-80">
+                                    <Image src="/badges/rice.png" alt="Rice University" fill className="object-contain object-left" />
+                                </div>
+                                <div className="relative h-5 w-12 opacity-80">
+                                    <Image src="/badges/mathworks.png" alt="MathWorks" fill className="object-contain object-left" />
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-amber-400 pt-1">
+                                <Trophy className="w-3 h-3" />
+                                MathWorks &amp; Backboard Track Winner
+                            </div>
+                        </CardHeader>
+                        <CardContent className="flex-1 flex flex-col justify-between">
+                            <p className="text-sm text-muted-foreground mb-6">
+                                Uncovers biological age from blood-panel PDFs, webcam pulse capture, and encrypted lifestyle
+                                signals — unified into one healthspan score with a single actionable step.
+                            </p>
+                            <div className="flex items-center justify-between">
+                                <div className="flex flex-wrap gap-2">
+                                    <Badge variant="secondary">MATLAB</Badge>
+                                    <Badge variant="secondary">Backboard</Badge>
+                                </div>
+                                <div className="flex items-center">
+                                    <a
+                                        href="https://devpost.com/software/scallion"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-amber-400 transition-colors py-1 px-2 rounded-md hover:bg-amber-400/5"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <ExternalLink className="w-3.5 h-3.5" />
+                                        <span>Devpost</span>
+                                    </a>
+                                    <a
+                                        href="https://github.com/Odey340/Scallion"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 hover:text-amber-400 transition-colors py-1 px-2 rounded-md hover:bg-amber-400/5"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Github className="w-3.5 h-3.5" />
+                                        <span>Source</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
 
                 {/* ClashWinner */}

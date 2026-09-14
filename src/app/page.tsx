@@ -44,7 +44,7 @@ const PROJECTS: Project[] = [
         stat: { label: "2025 return", value: "+38.07%" },
         stack: ["C++20", "HFT", "stats"],
         href: "/projects/lumina",
-        source: "https://financiallumina.vercel.app/",
+        source: "https://github.com/Odey340/Lumina",
         glow: "52 211 153",
         index: "01",
     },
@@ -61,6 +61,25 @@ const PROJECTS: Project[] = [
         index: "02",
     },
     {
+        name: "Scallion",
+        kind: "Hackathon winner",
+        blurb:
+            "Uncovers your biological age from blood-panel PDFs, webcam pulse capture, and encrypted lifestyle signals — unified into one healthspan score with a single actionable step, modeled with MATLAB/SimBiology.",
+        stat: { label: "HackRice 16", value: "2x Track Winner" },
+        stack: ["MATLAB", "Backboard"],
+        href: "https://scallion.us/",
+        external: true,
+        source: "https://github.com/Odey340/Scallion",
+        devpost: "https://devpost.com/software/scallion",
+        badges: [
+            { src: "/badges/rice.png", alt: "Rice University" },
+            { src: "/badges/mathworks.png", alt: "MathWorks" },
+        ],
+        award: "HackRice 16 — MathWorks & Backboard Track Winner",
+        glow: "245 158 11",
+        index: "03",
+    },
+    {
         name: "Portfolio Tracker",
         kind: "Web app",
         blurb:
@@ -69,7 +88,7 @@ const PROJECTS: Project[] = [
         stack: ["Next.js", "TS", "Recharts"],
         href: "/portfolio",
         glow: "34 211 238",
-        index: "03",
+        index: "04",
     },
 ]
 
@@ -371,7 +390,7 @@ function Skills() {
 
 function Work() {
     return (
-        <Section id="work" tag="Selected work" title="Three things I've shipped.">
+        <Section id="work" tag="Selected work" title="Things I've shipped.">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {PROJECTS.map((p, i) => (
                     <Reveal key={p.name} delay={i}>
