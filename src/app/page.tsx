@@ -18,78 +18,22 @@ import { Magnetic } from "@/components/landing/Magnetic"
 import { CountUp } from "@/components/landing/CountUp"
 import { OrderBook } from "@/components/landing/OrderBook"
 import { SkillMatrix } from "@/components/landing/SkillMatrix"
-import { ProjectCard, type Project } from "@/components/landing/ProjectCard"
-import { LivePortfolio } from "@/components/landing/LivePortfolio"
+import { ProjectCard } from "@/components/landing/ProjectCard"
 import { ScrollProgress } from "@/components/landing/ScrollProgress"
+import { EDUCATION, EXPERIENCE, FEATURED } from "@/content/projects"
 
 const MARQUEE = [
-    "low-latency C++",
-    "lock-free queues",
-    "mean reversion",
-    "cache-aware layout",
-    "RDTSC profiling",
-    "event-driven backtests",
-    "SIMD",
-    "kernel-bypass I/O",
-    "time-series research",
+    "C++17",
+    "prediction-market arbitrage",
+    "lock-free ring buffers",
+    "probability & statistics",
+    "tick-level backtests",
+    "EWMA z-scores",
+    "memory-mapped I/O",
+    "Monte Carlo simulation",
+    "fee-aware sizing",
+    "GoogleTest",
     "GeoGuessr",
-]
-
-const PROJECTS: Project[] = [
-    {
-        name: "Lumina",
-        kind: "Quant fund",
-        blurb:
-            "Proprietary engine trading a mean-reversion signal timed to earnings-call volatility, built for risk-adjusted return rather than raw exposure.",
-        stat: { label: "2025 return", value: "+38.07%" },
-        stack: ["C++20", "HFT", "stats"],
-        href: "/projects/lumina",
-        source: "https://github.com/Odey340/Lumina",
-        glow: "52 211 153",
-        index: "01",
-    },
-    {
-        name: "Artemis",
-        kind: "Engine",
-        blurb:
-            "A benchmarking harness that isolates OS jitter and hardware noise from real application latency using RDTSC and pinned cores.",
-        stat: { label: "Determinism", value: "99.999%" },
-        stack: ["Rust", "RDTSC", "Postgres"],
-        href: "/projects/artemis",
-        source: "https://github.com/Odey340",
-        glow: "59 130 246",
-        index: "02",
-    },
-    {
-        name: "Scallion",
-        kind: "Hackathon winner",
-        blurb:
-            "Uncovers your biological age from blood-panel PDFs, webcam pulse capture, and encrypted lifestyle signals — unified into one healthspan score with a single actionable step, modeled with MATLAB/SimBiology.",
-        stat: { label: "HackRice 16", value: "2x Track Winner" },
-        stack: ["MATLAB", "Backboard"],
-        href: "https://scallion.us/",
-        external: true,
-        source: "https://github.com/Odey340/Scallion",
-        devpost: "https://devpost.com/software/scallion",
-        badges: [
-            { src: "/badges/rice.png", alt: "Rice University" },
-            { src: "/badges/mathworks.png", alt: "MathWorks" },
-        ],
-        award: "HackRice 16 — MathWorks & Backboard Track Winner",
-        glow: "245 158 11",
-        index: "03",
-    },
-    {
-        name: "Portfolio Tracker",
-        kind: "Web app",
-        blurb:
-            "Real-time dashboard comparing a 23-asset book against SPY — route handlers, streaming charts, and a dark trading-desk UI.",
-        stat: { label: "Assets tracked", value: "23" },
-        stack: ["Next.js", "TS", "Recharts"],
-        href: "/portfolio",
-        glow: "34 211 238",
-        index: "04",
-    },
 ]
 
 export default function Home() {
@@ -98,10 +42,10 @@ export default function Home() {
             <ScrollProgress />
             <Hero />
             <Marquee />
+            <Work />
+            <Experience />
             <About />
             <Skills />
-            <Work />
-            <Numbers />
             <Contact />
             <MiniFooter />
         </main>
@@ -136,10 +80,10 @@ function Hero() {
                         className="fade-up mt-7 max-w-xl text-lg font-light leading-relaxed text-white/55 sm:text-xl md:text-2xl"
                         style={{ animationDelay: "160ms" }}
                     >
-                        A low-level <span className="text-white">C++ programmer</span> chasing{" "}
-                        <span className="text-white">high-frequency trading</span>, with a background in
-                        quantitative data analysis. Professional{" "}
-                        <span className="text-white">GeoGuessr</span> player on the side.
+                        I build <span className="text-white">C++ trading systems</span> and test them
+                        against real markets. My prediction-market arbitrage engine has made{" "}
+                        <span className="text-white">$13,000 trading real money</span>, and my futures backtester
+                        processes a tick in <span className="text-white">450 nanoseconds</span>.
                     </p>
 
                     <div
@@ -148,7 +92,7 @@ function Hero() {
                     >
                         <Magnetic>
                             <Link
-                                href="/portfolio"
+                                href="/#work"
                                 className="group inline-flex h-13 items-center gap-2 rounded-full bg-accent-cyan px-7 py-3.5 text-sm font-bold text-[#06202a] transition-shadow hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]"
                             >
                                 View the work
@@ -181,7 +125,6 @@ function Hero() {
 
 function StatusRow() {
     const [now, setNow] = useState<string>("")
-    const [lat, setLat] = useState(0.82)
 
     useEffect(() => {
         const t = setInterval(() => {
@@ -194,7 +137,6 @@ function StatusRow() {
                     hour12: false,
                 }).format(new Date()),
             )
-            setLat(+(0.6 + Math.random() * 0.5).toFixed(2))
         }, 1000)
         return () => clearInterval(t)
     }, [])
@@ -203,18 +145,18 @@ function StatusRow() {
         <div className="flex flex-wrap items-center gap-2.5 font-mono text-[10px] uppercase tracking-widest text-white/45">
             <span className="flex items-center gap-2 rounded-full border border-hairline bg-white/[0.02] px-3 py-1.5">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-bid" />
-                runtime_ok
+                open to 2027 roles
             </span>
             <span className="flex items-center gap-2 rounded-full border border-hairline bg-white/[0.02] px-3 py-1.5">
                 <MapPin className="h-3 w-3 text-accent-blue" />
-                Austin, TX
+                Dallas, TX
             </span>
             <span className="hidden items-center gap-2 rounded-full border border-hairline bg-white/[0.02] px-3 py-1.5 sm:flex">
                 <Terminal className="h-3 w-3 text-accent-cyan" />
                 {now || "--:--:--"} CT
             </span>
             <span className="hidden items-center gap-2 rounded-full border border-hairline bg-white/[0.02] px-3 py-1.5 normal-case md:flex">
-                p50 {lat.toFixed(2)}µs
+                B.S. CS · UT Tyler · May 2027
             </span>
         </div>
     )
@@ -305,7 +247,7 @@ function Section({
 
 function About() {
     return (
-        <Section id="about" tag="Profile" title="Close to the metal, curious about the map.">
+        <Section id="about" tag="Profile" title="Find the edge, then prove it holds.">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
                 <Reveal className="lg:col-span-5">
                     <div className="group relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-hairline">
@@ -320,7 +262,7 @@ function About() {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#08090c] via-transparent to-transparent" />
                         <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-xl border border-hairline bg-black/40 px-4 py-3 backdrop-blur-md">
                             <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent-cyan">
-                                HFT &amp; Quant // Austin, TX
+                                Quant dev · trading · research
                             </span>
                             <span className="h-2 w-2 animate-pulse rounded-full bg-accent-cyan" />
                         </div>
@@ -330,31 +272,35 @@ function About() {
                 <div className="space-y-8 lg:col-span-7">
                     <Reveal delay={1}>
                         <p className="text-lg leading-relaxed text-white/60 md:text-xl">
-                            I work where the cost of an instruction actually matters — writing C++ that respects the
-                            cache hierarchy, the branch predictor, and the wire. The goal is always the same: shave
-                            the tail latency without giving up correctness.
+                            I like problems where a claim has to survive the market. Artemis began as a question:
+                            do two venues ever price the same event far enough apart to lock in a profit after fees?
+                            It became a C++ engine, and then a strategy I traded with my own money.
                         </p>
                     </Reveal>
                     <Reveal delay={2}>
                         <p className="leading-relaxed text-white/45">
-                            Before the systems work I spent my time in quantitative data analysis — building
-                            event-driven backtests, researching mean-reversion signals, and learning the hard way
-                            that a strategy is only as good as its assumptions about slippage. Away from the desk I
-                            play GeoGuessr competitively, which is really just pattern recognition under a clock.
+                            The rest of my work follows the same habit: measure it, reproduce it, then trust it. My
+                            backtester gives bit-identical results across GCC and Clang, and its estimators are
+                            checked against Pandas. At DFW Airport I replaced manual spot-checks with a regression
+                            suite for the data behind demand forecasts. I&apos;m a computer science student at UT
+                            Tyler graduating in May 2027, and I play GeoGuessr competitively, which is pattern
+                            recognition under a clock.
                         </p>
                     </Reveal>
 
                     <div className="grid grid-cols-3 gap-4 border-t border-hairline pt-8">
                         {[
-                            { v: 4, s: "", l: "core languages" },
-                            { v: 23, s: "", l: "assets modeled" },
-                            { v: 2026, s: "", l: "tracking since" },
+                            { v: 13000, p: "$", s: "", d: 0, l: "realized arbitrage profit" },
+                            { v: 450, p: "", s: " ns", d: 0, l: "per tick, backtester" },
+                            { v: 0.9997, p: "", s: "", d: 4, l: "R², out-of-sample model" },
                         ].map((stat, i) => (
                             <Reveal key={stat.l} delay={i + 3}>
                                 <div>
                                     <CountUp
                                         value={stat.v}
+                                        prefix={stat.p}
                                         suffix={stat.s}
+                                        decimals={stat.d}
                                         className="text-3xl font-semibold tracking-tight text-white tabular-nums md:text-4xl"
                                     />
                                     <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-white/35">
@@ -390,9 +336,9 @@ function Skills() {
 
 function Work() {
     return (
-        <Section id="work" tag="Selected work" title="Things I've shipped.">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {PROJECTS.map((p, i) => (
+        <Section id="work" tag="Selected work" title="Built, measured, and traded.">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {FEATURED.map((p, i) => (
                     <Reveal key={p.name} delay={i}>
                         <ProjectCard project={p} />
                     </Reveal>
@@ -403,14 +349,54 @@ function Work() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Numbers                                                           */
+/*  Experience                                                        */
 /* ------------------------------------------------------------------ */
 
-function Numbers() {
+function Experience() {
     return (
-        <Section id="live" tag="Live" title="Numbers that update without me.">
+        <Section id="experience" tag="Experience" title="Where I've done the work.">
+            <ol className="divide-y divide-hairline border-y border-hairline">
+                {EXPERIENCE.map((role, i) => (
+                    <li key={role.title + role.org}>
+                        <Reveal delay={i}>
+                            <div className="grid grid-cols-1 gap-3 py-7 md:grid-cols-12 md:gap-8">
+                                <div className="font-mono text-[11px] uppercase tracking-widest text-white/40 md:col-span-3 md:pt-1.5">
+                                    <div className="text-accent-cyan/80">{role.when}</div>
+                                    <div className="mt-1">{role.where}</div>
+                                </div>
+                                <div className="md:col-span-9">
+                                    <h3 className="text-xl font-semibold tracking-tight text-white">{role.title}</h3>
+                                    <p className="mt-0.5 text-white/55">{role.org}</p>
+                                    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white/50">
+                                        {role.points.map((pt) => (
+                                            <li key={pt} className="flex gap-3">
+                                                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-cyan/60" />
+                                                <span>{pt}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </Reveal>
+                    </li>
+                ))}
+            </ol>
+
             <Reveal>
-                <LivePortfolio />
+                <div className="mt-8 grid grid-cols-1 gap-3 rounded-2xl border border-hairline bg-white/[0.02] p-6 md:grid-cols-12 md:gap-8">
+                    <div className="font-mono text-[11px] uppercase tracking-widest text-white/40 md:col-span-3 md:pt-1.5">
+                        <div className="text-accent-cyan/80">Education</div>
+                        <div className="mt-1">{EDUCATION.when}</div>
+                    </div>
+                    <div className="md:col-span-9">
+                        <h3 className="text-xl font-semibold tracking-tight text-white">{EDUCATION.school}</h3>
+                        <p className="mt-0.5 text-white/55">{EDUCATION.degree}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-white/50">
+                            Coursework: {EDUCATION.coursework.join(", ")}.
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-white/50">{EDUCATION.honors}.</p>
+                    </div>
+                </div>
             </Reveal>
         </Section>
     )
@@ -429,11 +415,11 @@ function Contact() {
             <Reveal>
                 <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-accent-cyan/70">Open to work</p>
                 <h2 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                    Let&apos;s build something that runs in <span className="text-gradient">microseconds</span>.
+                    Let&apos;s talk about <span className="text-gradient">edge</span>, and how to measure it.
                 </h2>
                 <p className="mt-6 max-w-lg text-white/50">
-                    Roles in HFT, low-latency infrastructure, or quant research — or just a good conversation about
-                    the order book. My inbox is open.
+                    I graduate in May 2027 and I&apos;m looking for quant developer, trading, and research roles.
+                    Based in Dallas and open to relocation.
                 </p>
             </Reveal>
 
@@ -477,7 +463,7 @@ function MiniFooter() {
     return (
         <footer className="border-t border-hairline px-5 py-10 sm:px-8 lg:px-14">
             <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 font-mono text-[11px] uppercase tracking-widest text-white/30 sm:flex-row">
-                <span>Odey Jeffs — Austin, TX</span>
+                <span>Odey Jeffs · Dallas, TX</span>
                 <span>Built with Next.js · deployed on Vercel</span>
             </div>
         </footer>

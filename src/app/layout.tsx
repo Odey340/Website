@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Odey Jeffs | HFT & Quant",
-  description: "Low-level C++ programmer interested in HFT, with a background in quantitative data analysis.",
+  title: "Odey Jeffs | Quant Developer, Trading & Research",
+  description: "C++ and Python engineer building trading systems: a prediction-market arbitrage engine with $13,000 in realized profit and a 450 ns/tick futures backtester. UT Tyler CS, graduating May 2027.",
 };
 
 export default function RootLayout({

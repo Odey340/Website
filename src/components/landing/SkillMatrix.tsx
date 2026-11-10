@@ -3,33 +3,37 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 
-type Group = "Languages" | "Low-latency" | "Quant" | "Web"
+type Group = "Languages" | "Systems" | "Quant" | "Data & tools"
 
 type Skill = { name: string; group: Group; note: string }
 
 const SKILLS: Skill[] = [
-    { name: "C++20", group: "Languages", note: "RAII, templates, move semantics, constexpr" },
-    { name: "Rust", group: "Languages", note: "ownership, zero-cost abstractions, no_std" },
-    { name: "Python", group: "Languages", note: "research tooling, data pipelines" },
-    { name: "TypeScript", group: "Languages", note: "strict types, this site" },
-    { name: "Lock-free queues", group: "Low-latency", note: "SPSC / MPSC ring buffers, memory ordering" },
-    { name: "SIMD / vectorization", group: "Low-latency", note: "AVX2 intrinsics, data-oriented layout" },
-    { name: "Cache-aware design", group: "Low-latency", note: "false-sharing avoidance, hot/cold splits" },
-    { name: "Branch-free hot paths", group: "Low-latency", note: "predication, table lookups" },
-    { name: "RDTSC profiling", group: "Low-latency", note: "cycle-accurate microbenchmarks" },
-    { name: "Kernel-bypass I/O", group: "Low-latency", note: "busy-poll, pinned threads" },
-    { name: "Mean reversion", group: "Quant", note: "z-score entries, half-life sizing" },
-    { name: "Event-driven backtests", group: "Quant", note: "no look-ahead, slippage models" },
-    { name: "Time-series analysis", group: "Quant", note: "stationarity, rolling stats" },
-    { name: "NumPy / pandas", group: "Quant", note: "vectorized research notebooks" },
-    { name: "Signal research", group: "Quant", note: "feature decay, hit-rate vs payoff" },
-    { name: "Next.js", group: "Web", note: "App Router, RSC, route handlers" },
-    { name: "React", group: "Web", note: "hooks, refs, render discipline" },
-    { name: "Canvas / rAF", group: "Web", note: "60fps loops, DPR-aware drawing" },
-    { name: "Tailwind", group: "Web", note: "design tokens, v4 theme layer" },
+    { name: "C++17", group: "Languages", note: "trading engine, backtester, lock-free queues" },
+    { name: "Python", group: "Languages", note: "Pandas, NumPy, research and validation" },
+    { name: "SQL", group: "Languages", note: "PostgreSQL, query tuning" },
+    { name: "R", group: "Languages", note: "statistical analysis pipelines" },
+    { name: "MATLAB", group: "Languages", note: "simulation and surrogate modeling" },
+    { name: "Lock-free data structures", group: "Systems", note: "CAS ring buffers, cache-line-aligned atomics" },
+    { name: "Multithreading", group: "Systems", note: "feed and strategy threads, no locks on the hot path" },
+    { name: "Memory-mapped I/O", group: "Systems", note: "streaming ticks straight from disk" },
+    { name: "Latency benchmarking", group: "Systems", note: "per-tick timing, p99, throughput" },
+    { name: "Event-driven design", group: "Systems", note: "one code path for backtest, paper and live" },
+    { name: "Linux", group: "Systems", note: "GCC, Clang, CMake, Bash" },
+    { name: "Probability & statistics", group: "Quant", note: "confidence intervals, error propagation" },
+    { name: "Arbitrage pricing", group: "Quant", note: "fee-aware net edge, depth-walk sizing" },
+    { name: "Backtesting", group: "Quant", note: "slippage, commissions, reproducible P&L" },
+    { name: "Time-series analysis", group: "Quant", note: "EWMA mean and variance, z-scores" },
+    { name: "Monte Carlo simulation", group: "Quant", note: "simulation-based estimates" },
+    { name: "Model validation", group: "Quant", note: "k-fold cross-validation, out-of-sample tests" },
+    { name: "PostgreSQL", group: "Data & tools", note: "ingestion and storage, 38 ms p99 queries" },
+    { name: "GoogleTest", group: "Data & tools", note: "C++ estimators verified against Pandas" },
+    { name: "Git", group: "Data & tools", note: "version control" },
+    { name: "AWS", group: "Data & tools", note: "cloud deployment" },
+    { name: "React", group: "Data & tools", note: "monitoring dashboards, this site" },
+    { name: "MongoDB", group: "Data & tools", note: "document storage" },
 ]
 
-const TABS: ("All" | Group)[] = ["All", "Languages", "Low-latency", "Quant", "Web"]
+const TABS: ("All" | Group)[] = ["All", "Languages", "Systems", "Quant", "Data & tools"]
 
 export function SkillMatrix() {
     const [tab, setTab] = useState<(typeof TABS)[number]>("All")

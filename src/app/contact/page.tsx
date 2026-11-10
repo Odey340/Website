@@ -5,7 +5,7 @@ import { Linkedin, Github, Send, Terminal, MessageSquare, ExternalLink, ArrowRig
 
 export const metadata = {
     title: 'Contact | Odey Jeffs',
-    description: 'Get in touch for engineering or quantitative research opportunities.',
+    description: 'Get in touch about quant developer, trading, and research roles.',
 }
 
 export default function ContactPage() {
@@ -21,11 +21,11 @@ export default function ContactPage() {
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 text-primary font-mono text-sm tracking-widest uppercase mb-2">
                             <Terminal className="w-4 h-4" />
-                            <span>Establish_link // Secure</span>
+                            <span>Dallas, TX // open to relocation</span>
                         </div>
                         <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic">Contact</h1>
                         <p className="text-2xl text-zinc-400 font-light leading-relaxed max-w-sm pt-4">
-                            Available for high-stakes <span className="text-white font-medium">systems engineering</span> or <span className="text-white font-medium">quant research</span> consultations.
+                            Open to <span className="text-white font-medium">quant developer</span>, <span className="text-white font-medium">trading</span>, and <span className="text-white font-medium">research</span> roles starting in 2027.
                         </p>
                     </div>
 
@@ -34,13 +34,13 @@ export default function ContactPage() {
                             <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]">Direct Communication</h3>
                             <div className="space-y-6">
                                 <a href="mailto:odeyjeffs7@gmail.com" className="group block space-y-1">
-                                    <p className="text-xs font-mono text-primary uppercase">Email_Primary</p>
+                                    <p className="text-xs font-mono text-primary uppercase">Email</p>
                                     <div className="flex items-center gap-3 text-xl font-bold group-hover:text-primary transition-colors">
                                         odeyjeffs7@gmail.com <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                                     </div>
                                 </a>
                                 <a href="tel:903-556-8277" className="group block space-y-1">
-                                    <p className="text-xs font-mono text-blue-400 uppercase">Secure_Line</p>
+                                    <p className="text-xs font-mono text-blue-400 uppercase">Phone</p>
                                     <div className="flex items-center gap-3 text-xl font-bold group-hover:text-blue-400 transition-colors">
                                         +1 903 556 8277 <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
                                     </div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]">Social Nodes</h3>
+                            <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]">Profiles</h3>
                             <div className="flex gap-4">
                                 <a href="https://www.linkedin.com/in/odeydj/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center border border-zinc-800 hover:border-primary transition-all group">
                                     <Linkedin className="w-5 h-5 text-zinc-400 group-hover:text-primary" />
@@ -67,23 +67,23 @@ export default function ContactPage() {
                     <Card className="bg-zinc-950/50 border-zinc-800 overflow-hidden backdrop-blur-xl relative group">
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
                         <CardHeader className="p-12 pb-6">
-                            <CardTitle className="text-4xl font-bold tracking-tight mb-2">Initialize Contact</CardTitle>
+                            <CardTitle className="text-4xl font-bold tracking-tight mb-2">Get in touch</CardTitle>
                             <p className="text-zinc-500">I respond quickly</p>
                         </CardHeader>
                         <CardContent className="p-12 pt-6 flex flex-col gap-10">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-4 p-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all duration-500">
                                     <MessageSquare className="w-8 h-8 text-primary" />
-                                    <h3 className="font-bold text-xl">General Inquiry</h3>
-                                    <p className="text-sm text-zinc-500 leading-relaxed">Hire me!!</p>
+                                    <h3 className="font-bold text-xl">Email</h3>
+                                    <p className="text-sm text-zinc-500 leading-relaxed">Roles, questions about my projects, or a market you think is mispriced.</p>
                                     <a href="mailto:odeyjeffs7@gmail.com">
                                         <Button variant="link" className="px-0 h-auto text-primary font-bold">SEND EMAIL &rarr;</Button>
                                     </a>
                                 </div>
                                 <div className="space-y-4 p-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all duration-500">
                                     <ExternalLink className="w-8 h-8 text-blue-400" />
-                                    <h3 className="font-bold text-xl">Professional</h3>
-                                    <p className="text-sm text-zinc-500 leading-relaxed">For recruitment, collaborations, or deep technical consultations via LinkedIn.</p>
+                                    <h3 className="font-bold text-xl">LinkedIn</h3>
+                                    <p className="text-sm text-zinc-500 leading-relaxed">For recruiting and introductions, find me on LinkedIn.</p>
                                     <a href="https://www.linkedin.com/in/odeydj/" target="_blank" rel="noopener noreferrer">
                                         <Button variant="link" className="px-0 h-auto text-blue-400 font-bold">PROFILE &rarr;</Button>
                                     </a>
