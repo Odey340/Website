@@ -150,7 +150,15 @@ export default function AboutPage() {
                             </div>
                             <div className="md:col-span-9">
                                 <h3 className="text-xl font-bold text-white">{role.title}</h3>
-                                <p className="text-zinc-400">{role.org}</p>
+                                <p className="text-zinc-400">
+                                    {role.href ? (
+                                        <a href={role.href} target="_blank" rel="noopener noreferrer" className="underline decoration-zinc-700 underline-offset-4 hover:text-white">
+                                            {role.org}
+                                        </a>
+                                    ) : (
+                                        role.org
+                                    )}
+                                </p>
                                 <ul className="mt-3 space-y-2 text-sm text-zinc-400 leading-relaxed list-disc pl-5 marker:text-zinc-700">
                                     {role.points.map((pt) => (
                                         <li key={pt}>{pt}</li>

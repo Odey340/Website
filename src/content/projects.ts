@@ -5,6 +5,22 @@ import type { Project } from "@/components/landing/ProjectCard"
 
 export const FEATURED: Project[] = [
     {
+        name: "Plumb",
+        kind: "Startup · Founder",
+        blurb:
+            "A startup we've been building. Plumb does move-in and move-out property inspections over a live FaceTime call: Mechus, the voice assistant, walks the tenant through the unit, compares what it sees against the move-in footage, and only calls out damage that looks new. Landlords and tenants get the report over iMessage.",
+        stat: { label: "Live, give it a try", value: "mechus.casa" },
+        stack: ["Python", "MongoDB Atlas", "LiveKit", "ElevenLabs", "Gemini"],
+        href: "https://mechus.casa/",
+        external: true,
+        source: "https://github.com/Odey340/Mechus",
+        badges: [{ src: "/badges/plumb.svg", alt: "Plumb" }],
+        award: "HackUTA: Best Use of Chert",
+        glow: "200 240 60",
+        index: "01",
+        wide: true,
+    },
+    {
         name: "Artemis",
         kind: "Trading system",
         blurb:
@@ -14,7 +30,7 @@ export const FEATURED: Project[] = [
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
         glow: "79 209 130",
-        index: "01",
+        index: "02",
     },
     {
         name: "Tick-Level Futures Backtester",
@@ -26,7 +42,7 @@ export const FEATURED: Project[] = [
         href: "https://github.com/Odey340/Artemist",
         external: true,
         glow: "111 179 154",
-        index: "02",
+        index: "03",
     },
     {
         name: "Scallion",
@@ -45,7 +61,7 @@ export const FEATURED: Project[] = [
         ],
         award: "HackRice 16: 2 prizes out of 121 teams",
         glow: "169 196 108",
-        index: "03",
+        index: "04",
     },
     {
         name: "TideTracker",
@@ -57,7 +73,7 @@ export const FEATURED: Project[] = [
         href: "https://github.com/Odey340/TideAPI",
         external: true,
         glow: "127 224 166",
-        index: "04",
+        index: "05",
     },
 ]
 
@@ -73,7 +89,7 @@ export const MORE: Project[] = [
         href: "/projects/lumina",
         source: "https://github.com/Odey340/Lumina",
         glow: "143 165 154",
-        index: "05",
+        index: "06",
     },
     {
         name: "ClashWinner",
@@ -84,7 +100,7 @@ export const MORE: Project[] = [
         href: "https://github.com/Odey340/Carn",
         external: true,
         glow: "143 165 154",
-        index: "06",
+        index: "07",
     },
 ]
 
@@ -94,9 +110,22 @@ export type Role = {
     when: string
     where: string
     points: string[]
+    /** Optional link for the org name, e.g. a company website. */
+    href?: string
 }
 
 export const EXPERIENCE: Role[] = [
+    {
+        title: "Founder",
+        org: "Plumb",
+        href: "https://mechus.casa/",
+        when: "2026 – Present",
+        where: "mechus.casa",
+        points: [
+            "Building Plumb with my team: AI property inspections over a live FaceTime call, where Mechus, our voice assistant, guides the tenant and tries to flag only the damage that's new since move-in.",
+            "The backend leans on MongoDB Atlas for the boring-but-important parts, like retry-safe onboarding, conflict-checked report updates, and exactly-once iMessage delivery.",
+        ],
+    },
     {
         title: "Full-Stack Intern",
         org: "DFW International Airport",

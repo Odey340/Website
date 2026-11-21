@@ -23,6 +23,8 @@ export type Project = {
     award?: string
     glow: string
     index: string
+    /** Span both columns in the project grid (used for the featured startup). */
+    wide?: boolean
 }
 
 /** Featured-work card: cursor spotlight + hover lift, links through to the case page (or out to a live site). */

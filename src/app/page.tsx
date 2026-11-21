@@ -75,8 +75,11 @@ function Hero() {
                     >
                         Usually in C++ or Python. I built a little prediction-market arbitrage bot that ended up
                         making <span className="font-semibold text-chalk">around $13k</span> with my own money (still
-                        kind of surprised), and right now I&apos;m helping out with forecasting data at DFW. Also a CS
-                        student at UT Tyler.
+                        kind of surprised). Right now I&apos;m helping out with forecasting data at DFW and building{" "}
+                        <a href="https://mechus.casa/" target="_blank" rel="noopener noreferrer" className="font-semibold text-chalk underline decoration-leaf/50 underline-offset-4 hover:text-leaf">
+                            Plumb
+                        </a>
+                        , a little startup for property inspections, with my team. Also a CS student at UT Tyler.
                     </p>
 
                     <div className="fade-up mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "260ms" }}>
@@ -170,6 +173,15 @@ function StatusRow() {
                 <span className="h-2 w-2 animate-pulse rounded-full bg-mint" />
                 kinda looking for 2027 stuff
             </span>
+            <a
+                href="https://mechus.casa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 transition-colors hover:border-leaf/40 hover:text-chalk"
+            >
+                founder @ plumb
+                <ArrowUpRight className="h-3 w-3" />
+            </a>
             <span className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5">
                 <MapPin className="h-3.5 w-3.5 text-leaf" />
                 Dallas, TX{now && <span className="text-chalk/40"> · {now} here</span>}
@@ -263,7 +275,7 @@ function Work() {
         >
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {FEATURED.map((p, i) => (
-                    <Reveal key={p.name} delay={i}>
+                    <Reveal key={p.name} delay={i} className={p.wide ? "md:col-span-2" : undefined}>
                         <ProjectCard project={p} />
                     </Reveal>
                 ))}
@@ -303,7 +315,14 @@ function Experience() {
                                     <span className="text-sm text-chalk/45">{role.when}</span>
                                 </div>
                                 <p className="mt-0.5 text-chalk/60">
-                                    {role.org} <span className="text-chalk/30">· {role.where}</span>
+                                    {role.href ? (
+                                        <a href={role.href} target="_blank" rel="noopener noreferrer" className="underline decoration-leaf/40 underline-offset-4 hover:text-leaf">
+                                            {role.org}
+                                        </a>
+                                    ) : (
+                                        role.org
+                                    )}{" "}
+                                    <span className="text-chalk/30">· {role.where}</span>
                                 </p>
                                 <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-chalk/60">
                                     {role.points.map((pt) => (
