@@ -8,8 +8,8 @@ export const FEATURED: Project[] = [
         name: "Artemis",
         kind: "Trading system",
         blurb:
-            "C++ arbitrage engine for prediction markets. It matches equivalent event contracts on Kalshi and Polymarket and flags trades where YES on one venue plus NO on the other costs less than the $1 the pair must pay out. Traded with real money.",
-        stat: { label: "Realized profit", value: "$13,000" },
+            "A C++ arbitrage bot for prediction markets. It tries to match the same event on Kalshi and Polymarket and flags spots where YES on one plus NO on the other costs less than the $1 payout. I ended up trading it with real money.",
+        stat: { label: "Profit, roughly", value: "$13,000" },
         stack: ["C++17", "Kalshi", "Polymarket"],
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
@@ -20,8 +20,8 @@ export const FEATURED: Project[] = [
         name: "Tick-Level Futures Backtester",
         kind: "Backtester",
         blurb:
-            "Low-latency backtester for E-mini S&P 500 ticks. Memory-mapped input, O(1) incremental EWMA statistics, a lock-free multi-producer ring buffer, and simulated fills with slippage and commissions. Bit-identical across GCC and Clang.",
-        stat: { label: "Per tick, 2.2M ticks/s", value: "450 ns" },
+            "A pretty fast backtester for E-mini S&P 500 tick data. It uses memory-mapped input, incremental EWMA stats, a lock-free ring buffer, and simulated fills with slippage and commissions. Gives the same output on GCC and Clang, which was a nice surprise.",
+        stat: { label: "Per tick, give or take", value: "450 ns" },
         stack: ["C++17", "Python", "GoogleTest"],
         href: "https://github.com/Odey340/Artemist",
         external: true,
@@ -32,7 +32,7 @@ export const FEATURED: Project[] = [
         name: "Scallion",
         kind: "Statistical modeling",
         blurb:
-            "Fit a statistical surrogate model to 432 simulations and validated it out of sample with 5-fold cross-validation, then deployed it in an app that estimates biological age.",
+            "A hackathon project. We fit a statistical surrogate model to 432 simulations, checked it with 5-fold cross-validation, and put it in an app that estimates biological age.",
         stat: { label: "Surrogate fit, R²", value: "0.9997" },
         stack: ["Python", "MATLAB"],
         href: "https://scallion.us/",
@@ -51,8 +51,8 @@ export const FEATURED: Project[] = [
         name: "TideTracker",
         kind: "Data pipeline",
         blurb:
-            "Real-time ingestion and query pipeline for continuous sensor feeds: schema validation, PostgreSQL storage, and a live React monitoring dashboard.",
-        stat: { label: "p99 dashboard query", value: "38 ms" },
+            "A real-time pipeline for sensor feeds: some schema validation, PostgreSQL storage, and a live React dashboard to keep an eye on it all.",
+        stat: { label: "p99 dashboard query, ish", value: "38 ms" },
         stack: ["C++", "Python", "PostgreSQL", "React"],
         href: "https://github.com/Odey340/TideAPI",
         external: true,
@@ -67,7 +67,7 @@ export const MORE: Project[] = [
         name: "Lumina",
         kind: "Personal strategy",
         blurb:
-            "Mean-reversion strategy timed to earnings-call volatility, with a z-score entry and volatility-scaled thresholds.",
+            "A mean-reversion idea around earnings-call volatility, with z-score entries and volatility-scaled thresholds. Still kind of a work in progress.",
         stat: { label: "Signal", value: "Z-score" },
         stack: ["C++", "Statistics"],
         href: "/projects/lumina",
@@ -78,7 +78,7 @@ export const MORE: Project[] = [
     {
         name: "ClashWinner",
         kind: "Simulation",
-        blurb: "Overlay that simulates Clash Royale positions and suggests the move with the best expected outcome.",
+        blurb: "An overlay that simulates Clash Royale positions and suggests what might be the best move. Mostly for fun.",
         stat: { label: "Approach", value: "Simulation" },
         stack: ["Python"],
         href: "https://github.com/Odey340/Carn",
@@ -103,8 +103,8 @@ export const EXPERIENCE: Role[] = [
         when: "May 2026 – Present",
         where: "DFW Airport, TX",
         points: [
-            "Swapped an error-prone manual spot-check process for an automated validation and regression test suite. Results now reproduce run to run, and upstream schema drift gets caught before it reaches the forecasts.",
-            "Build and validate the operational data behind demand forecasting models used for time-critical scheduling decisions.",
+            "Helped swap a manual spot-check process for automated validation and regression tests, so results reproduce run to run and schema changes upstream get caught before they hit the forecasts.",
+            "Working on the operational data behind demand forecasting models that feed into scheduling.",
         ],
     },
     {
@@ -113,8 +113,8 @@ export const EXPERIENCE: Role[] = [
         when: "Apr 2026 – Present",
         where: "Tyler, TX",
         points: [
-            "Wrote custom firmware to automate data collection on embedded hardware, producing the experimental datasets.",
-            "Apply AI methods to analyze Bluetooth and ultra-wideband (UWB) channel sounding measurements from embedded devices.",
+            "Wrote some custom firmware to automate data collection on embedded hardware for the lab's experiments.",
+            "Trying out AI methods on Bluetooth and ultra-wideband (UWB) channel sounding measurements.",
         ],
     },
     {
@@ -123,8 +123,8 @@ export const EXPERIENCE: Role[] = [
         when: "Summer 2026",
         where: "Remote",
         points: [
-            "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing system from the group's research, and wrote C++ code for it.",
-            "Worked with the group to bring large language models into the fuzzing workflow and test whether they improve its results.",
+            "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing tool from the group, and wrote some C++ for it.",
+            "Helped test whether bringing LLMs into the fuzzing workflow actually makes it better.",
         ],
     },
     {
@@ -133,8 +133,8 @@ export const EXPERIENCE: Role[] = [
         when: "Sep 2025 – May 2026",
         where: "Remote",
         points: [
-            "Shipped production features end to end, from design through testing and release, for financial data workflows where every record had to be exactly right.",
-            "Wrote unit and integration tests that caught regressions before release, and supported my features after launch.",
+            "Shipped features end to end, from design to release, for financial data workflows where the numbers really needed to be right.",
+            "Wrote unit and integration tests to catch bugs before release, and stuck around to support things after launch.",
         ],
     },
     {
@@ -143,7 +143,7 @@ export const EXPERIENCE: Role[] = [
         when: "May 2024 – Aug 2024",
         where: "Texarkana, TX",
         points: [
-            "Built reproducible Python and R data pipelines that turned high-volume traffic sensor feeds into engineering analyses.",
+            "Built some Python and R data pipelines that turned traffic sensor data into stuff engineers could use.",
         ],
     },
 ]

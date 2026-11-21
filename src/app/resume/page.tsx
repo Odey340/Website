@@ -16,10 +16,11 @@ export default function ResumePage() {
 
             <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
                 <div>
-                    <p className="font-hand text-2xl text-tangerine">the one-pager</p>
+                    <p className="font-hand text-2xl text-tangerine">the boring-but-useful part</p>
                     <h1 className="font-display mt-1 text-5xl font-medium text-cream md:text-6xl">My resume</h1>
                     <p className="mt-3 max-w-md text-cream/60">
-                        Everything on one page, last updated {RESUME_UPDATED}. Grab the PDF or skim it right here.
+                        Pretty much everything on one page, last touched around {RESUME_UPDATED}. Download it or
+                        just skim it here, whatever&apos;s easier.
                     </p>
                 </div>
                 <div className="flex flex-wrap gap-3">
@@ -55,13 +56,13 @@ export default function ResumePage() {
                     >
                         {/* Shown on browsers that can't embed PDFs (most phones). */}
                         <div className="flex h-full min-h-[300px] flex-col items-center justify-center gap-4 p-8 text-center text-[#1f120a]">
-                            <p className="font-display text-2xl">Your browser can&apos;t preview PDFs here.</p>
+                            <p className="font-display text-2xl">Hmm, looks like your browser won&apos;t preview it.</p>
                             <a
                                 href={RESUME_URL}
                                 download={RESUME_FILENAME}
                                 className="inline-flex items-center gap-2 rounded-full bg-[#1f120a] px-6 py-3 text-sm font-bold text-cream"
                             >
-                                <Download className="h-4 w-4" /> Download it instead
+                                <Download className="h-4 w-4" /> Just download it
                             </a>
                         </div>
                     </object>
@@ -69,12 +70,12 @@ export default function ResumePage() {
             </div>
 
             <div className="mt-12 flex flex-col items-center gap-3 text-center">
-                <p className="text-cream/60">Like what you see?</p>
+                <p className="text-cream/60">Questions about any of it?</p>
                 <a
                     href="mailto:odeyjeffs7@gmail.com"
                     className="inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-bold text-[#1f120a] transition-transform hover:-rotate-1 hover:scale-[1.03]"
                 >
-                    <Mail className="h-4 w-4" /> Email me
+                    <Mail className="h-4 w-4" /> Shoot me an email
                 </a>
             </div>
         </main>

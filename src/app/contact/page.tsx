@@ -11,7 +11,7 @@ const CHANNELS = [
         icon: Mail,
         label: "Email",
         value: "odeyjeffs7@gmail.com",
-        note: "Best for roles, project questions, or a market you think is mispriced.",
+        note: "Probably the best way. Roles, project questions, or a market you think is off.",
         href: "mailto:odeyjeffs7@gmail.com",
         color: "bg-tangerine text-[#1f120a]",
         tilt: "-rotate-1",
@@ -20,7 +20,7 @@ const CHANNELS = [
         icon: Linkedin,
         label: "LinkedIn",
         value: "in/odeydj",
-        note: "For recruiting and introductions.",
+        note: "Works too, if that's more your thing.",
         href: "https://www.linkedin.com/in/odeydj/",
         color: "bg-sky text-[#10233a]",
         tilt: "rotate-1",
@@ -30,7 +30,7 @@ const CHANNELS = [
         icon: Github,
         label: "GitHub",
         value: "Odey340",
-        note: "Where all the code lives.",
+        note: "Where most of the code ends up.",
         href: "https://github.com/Odey340",
         color: "bg-sage text-[#13261a]",
         tilt: "rotate-[0.5deg]",
@@ -40,7 +40,7 @@ const CHANNELS = [
         icon: Phone,
         label: "Phone",
         value: "+1 903 556 8277",
-        note: "Call or text.",
+        note: "Texting is probably easier.",
         href: "tel:903-556-8277",
         color: "bg-butter text-[#2a1d0c]",
         tilt: "-rotate-[0.5deg]",
@@ -51,13 +51,13 @@ export default function ContactPage() {
     return (
         <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 md:py-20">
             <div className="max-w-2xl">
-                <p className="font-hand text-3xl text-tangerine">say hi!</p>
+                <p className="font-hand text-3xl text-tangerine">hey there</p>
                 <h1 className="font-display mt-1 text-5xl font-medium leading-[1.05] text-cream md:text-7xl">
-                    Let&apos;s <span className="italic text-gradient">talk</span>.
+                    Say <span className="italic text-gradient">hi</span>, maybe?
                 </h1>
                 <p className="mt-5 text-lg leading-relaxed text-cream/60">
-                    I&apos;m looking for software engineering, trading, and research roles starting in 2027. I&apos;m in
-                    Dallas and open to relocating. I reply quickly.
+                    I&apos;m sort of keeping an eye out for software, trading, or research roles around 2027. I&apos;m
+                    in Dallas, but I could probably move. I try to reply pretty fast.
                 </p>
             </div>
 
@@ -82,8 +82,8 @@ export default function ContactPage() {
 
             <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl border border-dashed border-cream/20 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
                 <div>
-                    <p className="font-display text-2xl text-cream">Need my resume for the hiring committee?</p>
-                    <p className="text-cream/55">One page, PDF, ready to forward.</p>
+                    <p className="font-display text-2xl text-cream">Need my resume for something?</p>
+                    <p className="text-cream/55">It&apos;s one page. Should be easy to pass along.</p>
                 </div>
                 <a
                     href={RESUME_URL}

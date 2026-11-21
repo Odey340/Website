@@ -21,7 +21,7 @@ const CURRENTLY_INTO = [
     "fuzzing + LLMs",
     "probability puzzles",
     "Bluetooth channel sounding",
-    "backtests that don't lie",
+    "backtests (that hopefully don't lie)",
     "travel",
 ]
 
@@ -65,17 +65,18 @@ function Hero() {
                         className="fade-up font-display mt-2 text-5xl font-medium leading-[1.02] text-cream sm:text-6xl md:text-7xl"
                         style={{ animationDelay: "100ms" }}
                     >
-                        I build <span className="italic text-gradient">trading systems</span> and data apps that
-                        hold up in the <span className="scribble">real world</span>.
+                        I mostly build <span className="italic text-gradient">trading stuff</span> and data apps,
+                        and try to make them <span className="scribble">actually work</span>.
                     </h1>
 
                     <p
                         className="fade-up mt-7 max-w-xl text-lg leading-relaxed text-cream/65 sm:text-xl"
                         style={{ animationDelay: "180ms" }}
                     >
-                        Mostly C++ and Python. My prediction-market arbitrage engine made{" "}
-                        <span className="font-semibold text-cream">$13k trading my own money</span>, and I&apos;m
-                        currently making airport forecasts more reliable at DFW. CS student at UT Tyler.
+                        Usually in C++ or Python. I built a little prediction-market arbitrage bot that ended up
+                        making <span className="font-semibold text-cream">around $13k</span> with my own money (still
+                        kind of surprised), and right now I&apos;m helping out with forecasting data at DFW. Also a CS
+                        student at UT Tyler.
                     </p>
 
                     <div className="fade-up mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "260ms" }}>
@@ -84,7 +85,7 @@ function Hero() {
                                 href="/#work"
                                 className="group inline-flex items-center gap-2 rounded-full bg-tangerine px-7 py-3.5 text-sm font-bold text-[#1f120a] shadow-[0_6px_0_#b5532a] transition-all hover:translate-y-0.5 hover:shadow-[0_3px_0_#b5532a]"
                             >
-                                See what I&apos;ve built
+                                Poke around my stuff
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </Magnetic>
@@ -94,7 +95,7 @@ function Hero() {
                             className="group inline-flex items-center gap-2 rounded-full border border-cream/20 px-7 py-3.5 text-sm font-semibold text-cream/85 transition-colors hover:border-cream/50 hover:bg-cream/5 hover:text-cream"
                         >
                             <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
-                            Grab my resume
+                            Resume, if you want it
                         </a>
                     </div>
                 </div>
@@ -125,7 +126,7 @@ function Polaroid() {
                     />
                 </div>
                 <p className="absolute inset-x-0 bottom-3 text-center font-hand text-2xl text-[#3b2f25]">
-                    me, out exploring
+                    me, wandering around somewhere
                 </p>
             </div>
 
@@ -135,7 +136,7 @@ function Polaroid() {
                 style={{ "--r": "-6deg" } as React.CSSProperties}
             >
                 <div className="font-display text-2xl font-semibold leading-none">$13k</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight">made by my
+                <div className="mt-1 text-[11px] font-medium leading-tight">ish, from my
                     <br />arbitrage bot</div>
             </div>
             <div
@@ -143,8 +144,8 @@ function Polaroid() {
                 style={{ "--r": "5deg", animationDelay: "1.5s" } as React.CSSProperties}
             >
                 <div className="font-display text-2xl font-semibold leading-none">450ns</div>
-                <div className="mt-1 text-[11px] font-medium leading-tight">per tick in my
-                    <br />backtester</div>
+                <div className="mt-1 text-[11px] font-medium leading-tight">per tick, give
+                    <br />or take</div>
             </div>
         </div>
     )
@@ -172,7 +173,7 @@ function StatusRow() {
         <div className="flex flex-wrap items-center gap-2 text-xs text-cream/60">
             <span className="flex items-center gap-2 rounded-full bg-sage/10 px-3 py-1.5 text-sage">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-sage" />
-                open to 2027 roles
+                kinda looking for 2027 stuff
             </span>
             <span className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5">
                 <MapPin className="h-3.5 w-3.5 text-tangerine" />
@@ -210,7 +211,7 @@ function Marquee() {
                     {[...CURRENTLY_INTO, ...CURRENTLY_INTO].map((w, i) => (
                         <span key={i} className="flex items-center gap-6 whitespace-nowrap">
                             {i % CURRENTLY_INTO.length === 0 && (
-                                <span className="font-hand text-2xl font-bold">currently into →</span>
+                                <span className="font-hand text-2xl font-bold">stuff I&apos;m into lately →</span>
                             )}
                             {w}
                             <span className="opacity-40">✦</span>
@@ -258,10 +259,10 @@ function Work() {
     return (
         <Section
             id="work"
-            note="things I've made"
+            note="some things I've made"
             title={
                 <>
-                    Built, tested, and a few of them <span className="italic text-gradient">traded</span>.
+                    A few projects, and one I <span className="italic text-gradient">actually traded</span> with.
                 </>
             }
         >
@@ -277,7 +278,7 @@ function Work() {
                     href="/portfolio"
                     className="group mt-8 inline-flex items-center gap-2 text-cream/70 transition-colors hover:text-cream"
                 >
-                    More side projects
+                    A couple more side projects
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
             </Reveal>
@@ -293,7 +294,7 @@ const DOT_COLORS = ["bg-tangerine", "bg-butter", "bg-sage", "bg-sky", "bg-rose"]
 
 function Experience() {
     return (
-        <Section id="experience" note="where I've been" title="Work, research, and the stuff in between.">
+        <Section id="experience" note="where I've been hanging out" title="Jobs, research, and some stuff in between.">
             <ol className="relative ml-2 border-l border-dashed border-cream/15">
                 {EXPERIENCE.map((role, i) => (
                     <li key={role.title + role.org} className="relative pb-10 pl-8 last:pb-0 md:pl-12">
@@ -326,10 +327,10 @@ function Experience() {
             <Reveal>
                 <div className="mt-10 flex flex-col gap-4 rounded-3xl bg-surface-2 p-6 md:flex-row md:items-center md:justify-between md:p-8">
                     <div>
-                        <p className="font-hand text-xl text-butter">school</p>
+                        <p className="font-hand text-xl text-butter">school (still going)</p>
                         <h3 className="font-display text-2xl font-medium text-cream">{EDUCATION.school}</h3>
                         <p className="text-cream/60">
-                            {EDUCATION.degree} · graduating {EDUCATION.grad}
+                            {EDUCATION.degree} · probably done around {EDUCATION.grad}
                         </p>
                     </div>
                     <p className="max-w-md text-sm leading-relaxed text-cream/55">
@@ -346,38 +347,38 @@ function Experience() {
 /* ------------------------------------------------------------------ */
 
 const OFF_THE_CLOCK = [
-    { emoji: "🌍", title: "Competitive GeoGuessr", body: "Pattern recognition on a timer. Ask me about bollards." },
-    { emoji: "📚", title: "Minor in English", body: "Clear writing matters as much as clean code." },
-    { emoji: "🃏", title: "Games as math problems", body: "I once built a Clash Royale move simulator, for science." },
-    { emoji: "✈️", title: "Traveling", body: "New cities, long walks, and too many photos of buildings." },
+    { emoji: "🌍", title: "Competitive GeoGuessr", body: "Basically pattern recognition on a timer. I'm okay at it." },
+    { emoji: "📚", title: "Minor in English", body: "I like writing things, not just code." },
+    { emoji: "🃏", title: "Games as math problems", body: "I built a Clash Royale move simulator once. For science, mostly." },
+    { emoji: "✈️", title: "Traveling", body: "Whenever I get the chance." },
 ]
 
 function About() {
     return (
-        <Section id="about" note="a bit more about me" title="I like problems where you find out if you were right.">
+        <Section id="about" note="a bit more about me" title="I like problems where you sort of find out if you were right.">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
                 <div className="space-y-6 lg:col-span-7">
                     <Reveal>
                         <p className="text-lg leading-relaxed text-cream/70 md:text-xl">
-                            Artemis started as a simple question: do Kalshi and Polymarket ever price the same event
-                            far enough apart to lock in a profit after fees? Turns out yes. It became a C++ engine,
-                            and then something I traded with my own money.
+                            Artemis kind of started as a random question: do Kalshi and Polymarket ever price the
+                            same thing far enough apart to make money after fees? Sometimes, it turns out. It slowly
+                            turned into a C++ project, and then something I tried with my own money.
                         </p>
                     </Reveal>
                     <Reveal delay={1}>
                         <p className="leading-relaxed text-cream/55">
-                            Most of what I build follows the same habit: measure it, reproduce it, then trust it. My
-                            backtester gives bit-identical results across compilers, and at DFW I replaced
-                            spot-checks with a real test suite. On the side I&apos;m doing research on fuzzing and
-                            wireless signals, and losing sleep to GeoGuessr.
+                            I try to test things before I trust them, which is maybe the closest thing I have to a
+                            philosophy. At DFW that meant swapping some manual spot-checks for actual tests. On the
+                            side I&apos;ve been helping with research on fuzzing and wireless signals, and losing a
+                            bit too much sleep to GeoGuessr.
                         </p>
                     </Reveal>
 
                     <div className="grid grid-cols-3 gap-4 pt-4">
                         {[
-                            { v: 13000, p: "$", s: "", d: 0, l: "arbitrage profit", c: "text-sage" },
-                            { v: 450, p: "", s: "ns", d: 0, l: "per tick", c: "text-sky" },
-                            { v: 3, p: "", s: "", d: 0, l: "hackathon prizes", c: "text-butter" },
+                            { v: 13000, p: "$", s: "", d: 0, l: "ish, arbitrage profit", c: "text-sage" },
+                            { v: 450, p: "", s: "ns", d: 0, l: "per tick, roughly", c: "text-sky" },
+                            { v: 3, p: "", s: "", d: 0, l: "hackathon prizes (lucky)", c: "text-butter" },
                         ].map((stat, i) => (
                             <Reveal key={stat.l} delay={i + 2}>
                                 <div className="rounded-2xl border border-hairline p-4">
@@ -397,7 +398,7 @@ function About() {
 
                 <div className="lg:col-span-5">
                     <Reveal delay={1}>
-                        <p className="mb-4 font-hand text-2xl text-butter">off the clock</p>
+                        <p className="mb-4 font-hand text-2xl text-butter">when I&apos;m not coding</p>
                         <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
                             {OFF_THE_CLOCK.map((f, i) => (
                                 <li
@@ -426,7 +427,7 @@ function About() {
 
 function Skills() {
     return (
-        <Section id="stack" note="my toolbox" title="What I reach for.">
+        <Section id="stack" note="my toolbox, sort of" title="Stuff I tend to reach for.">
             <Reveal>
                 <SkillMatrix />
             </Reveal>
@@ -446,13 +447,13 @@ function ResumeBand() {
                     <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-butter/50 blur-3xl" />
                     <div className="relative grid grid-cols-1 items-center gap-10 md:grid-cols-12">
                         <div className="md:col-span-7">
-                            <p className="font-hand text-2xl">the one-pager</p>
+                            <p className="font-hand text-2xl">the boring-but-useful part</p>
                             <h2 className="font-display mt-1 text-4xl font-medium leading-tight sm:text-5xl">
-                                Want the short version? Here&apos;s my resume.
+                                If you want the short version, here&apos;s my resume.
                             </h2>
                             <p className="mt-4 max-w-md text-[#1f120a]/75">
-                                Everything above on a single page. It&apos;s a PDF, and I updated it in{" "}
-                                {RESUME_UPDATED}.
+                                Pretty much everything above, squished onto one page. Last touched in{" "}
+                                {RESUME_UPDATED}, give or take.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <a
@@ -468,7 +469,7 @@ function ResumeBand() {
                                     className="inline-flex items-center gap-2 rounded-full border-2 border-[#1f120a]/80 px-7 py-3 text-sm font-bold transition-colors hover:bg-[#1f120a]/10"
                                 >
                                     <Eye className="h-4 w-4" />
-                                    Preview it first
+                                    Peek at it first
                                 </Link>
                             </div>
                         </div>
@@ -511,11 +512,11 @@ function Contact() {
             <Reveal>
                 <p className="font-hand text-3xl text-tangerine">say hi!</p>
                 <h2 className="font-display mx-auto mt-2 max-w-3xl text-5xl font-medium leading-[1.05] text-cream sm:text-6xl md:text-7xl">
-                    My inbox is open. <span className="italic text-gradient">Let&apos;s talk.</span>
+                    Feel free to <span className="italic text-gradient">reach out</span>.
                 </h2>
                 <p className="mx-auto mt-6 max-w-lg text-cream/60">
-                    I&apos;m looking for software engineering, trading, and research roles for 2027. Based in Dallas
-                    and happy to relocate. Also happy to just talk about markets.
+                    I&apos;m kind of keeping an eye out for software, trading, or research roles around 2027. I&apos;m
+                    in Dallas but could probably move. Or just say hi, I&apos;m always down to talk about markets.
                 </p>
             </Reveal>
 
@@ -559,7 +560,7 @@ function Footer() {
     return (
         <footer className="border-t border-hairline px-5 py-8 sm:px-8 lg:px-14">
             <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-sm text-cream/40 sm:flex-row">
-                <span>© {new Date().getFullYear()} Odey Jeffs · made in Dallas</span>
+                <span>© {new Date().getFullYear()} Odey Jeffs · made in Dallas, mostly late at night</span>
                 <a
                     href="https://github.com/Odey340/Website"
                     target="_blank"

@@ -86,7 +86,7 @@ export function Navbar() {
                         className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-cream px-4 py-3 font-semibold text-[#1f120a]"
                     >
                         <Download className="h-4 w-4" />
-                        Download resume
+                        Grab my resume
                     </a>
                 </div>
             )}

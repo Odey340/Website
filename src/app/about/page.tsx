@@ -16,22 +16,22 @@ const PRINCIPLES = [
         icon: Scale,
         color: "text-primary",
         hover: "hover:border-primary/50",
-        title: "Edge after costs",
-        body: "A price gap is not a trade until it survives fees, depth, and the chance that one leg fills and the other does not. Artemis sizes every trade against the real order book and counts fees rounded up.",
+        title: "Fees are sneaky",
+        body: "A price gap doesn't mean much until you count fees, depth, and the chance only one side fills. Artemis tries to size trades off the real order book and rounds fees up, just in case.",
     },
     {
         icon: Repeat,
         color: "text-blue-400",
         hover: "hover:border-blue-500/50",
-        title: "Reproducibility",
-        body: "If a result changes between runs, I don't have a result yet. My backtester produces identical P&L on every run and bit-identical output across GCC and Clang.",
+        title: "Same answer twice",
+        body: "If a result changes between runs, I probably don't have a result yet. My backtester gives the same P&L every run, even across GCC and Clang.",
     },
     {
         icon: Ruler,
         color: "text-white",
         hover: "hover:border-white/50",
-        title: "Measured, not assumed",
-        body: "I report numbers with their conditions: 100,000 ticks in about 45 ms, 38 ms at p99, R² of 0.9997 under 5-fold cross-validation. Estimators are verified against an independent implementation.",
+        title: "Numbers, with context",
+        body: "I try to say how I got a number, not just the number: like 100,000 ticks in about 45 ms, or an R² of 0.9997 under 5-fold cross-validation. Usually I'll double check against a second implementation too.",
     },
 ]
 
@@ -42,11 +42,11 @@ export default function AboutPage() {
         <main className="container max-w-5xl py-12 md:py-24 space-y-20">
             {/* Header */}
             <div className="space-y-4">
-                <p className="font-hand text-2xl text-tangerine">the longer version</p>
+                <p className="font-hand text-2xl text-tangerine">the longer version, if you&apos;re curious</p>
                 <h1 className="font-display text-5xl md:text-7xl font-medium">About me</h1>
                 <p className="text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
-                    I build <span className="text-white font-medium">trading systems in C++</span> and check them the
-                    way a researcher would: with <span className="text-white font-medium">statistics, tests, and real money</span>.
+                    I mostly mess around with <span className="text-white font-medium">trading stuff in C++</span> and
+                    try to check it properly, with <span className="text-white font-medium">some stats, tests, and a bit of real money</span>.
                 </p>
             </div>
 
@@ -55,33 +55,33 @@ export default function AboutPage() {
                 <Card className="md:col-span-8 bg-zinc-950/50 border-zinc-900 backdrop-blur-sm p-4">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-white font-bold tracking-tight">
-                            <User className="w-5 h-5 text-primary" /> How I got here
+                            <User className="w-5 h-5 text-primary" /> How I ended up here
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                         <p>
-                            I&apos;m a computer science student at UT Tyler, graduating in December 2027. I got into markets
-                            by asking a narrow question: when Kalshi and Polymarket list the same event, do their
-                            prices ever disagree by more than the fees? I wrote{" "}
+                            I&apos;m a CS student at UT Tyler, probably wrapping up around December 2027. I kind of
+                            fell into markets with one question: when Kalshi and Polymarket list the same event, do
+                            their prices ever disagree by more than the fees? I wrote{" "}
                             <Link href="/projects/artemis" className="text-white font-semibold italic underline decoration-zinc-700 underline-offset-4 hover:decoration-primary">
                                 Artemis
                             </Link>{" "}
-                            in C++ to find out, traded it with my own money, and made{" "}
-                            <span className="text-white font-semibold">$13,000</span> on second-tier ice hockey and
-                            women&apos;s college basketball markets.
+                            in C++ to find out, tried it with my own money, and somehow ended up around{" "}
+                            <span className="text-white font-semibold">$13,000</span> up, mostly on second-tier ice
+                            hockey and women&apos;s college basketball markets.
                         </p>
                         <p>
-                            That project taught me that the hard part is rarely the idea. It is the fill you did not
-                            get, the fee you rounded the wrong way, and the backtest that flatters you. So I built a
-                            tick-level futures backtester that runs at about{" "}
-                            <span className="text-white font-semibold">450 nanoseconds per tick</span>, models
-                            slippage and commissions on every trade, and reproduces the same P&amp;L every run.
+                            That project kind of taught me the idea is usually the easy part. The hard part is the
+                            fill you didn&apos;t get, the fee you rounded wrong, and the backtest that&apos;s a little too
+                            nice to you. So I made a tick-level futures backtester that runs at roughly{" "}
+                            <span className="text-white font-semibold">450 nanoseconds per tick</span>, tries to
+                            account for slippage and commissions, and gives the same P&amp;L each run.
                         </p>
                         <p>
-                            My internships and research have been on the data side of the same problem: validating
-                            the inputs to demand forecasts at DFW Airport, shipping tested financial-data features at
-                            Jump Finance, bringing LLMs into a fuzzing workflow at UT Dallas, and analyzing wireless
-                            channel measurements on embedded hardware at UT Tyler.
+                            My internships and research have mostly been on the data side of things: checking the
+                            data behind demand forecasts at DFW Airport, shipping financial-data features at Jump
+                            Finance, trying LLMs in a fuzzing workflow at UT Dallas, and poking at wireless signal
+                            measurements on embedded hardware at UT Tyler.
                         </p>
                         <div className="flex flex-wrap gap-2 pt-4">
                             {["C++17", "Python", "SQL", "R", "MATLAB", "Linux"].map((t) => (
@@ -132,7 +132,7 @@ export default function AboutPage() {
                                 <p className="text-white font-bold">Dallas, TX</p>
                                 <Badge variant="outline" className="text-[10px] border-zinc-800">Central Time</Badge>
                             </div>
-                            <p className="text-xs text-zinc-500 italic">Open to relocation.</p>
+                            <p className="text-xs text-zinc-500 italic">Could probably move, depending.</p>
                         </CardContent>
                     </Card>
                 </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
 
             {/* Principles */}
             <div className="space-y-10">
-                <h2 className="font-display text-4xl font-medium">How I work</h2>
+                <h2 className="font-display text-4xl font-medium">Stuff I try to do</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {PRINCIPLES.map((p) => (
                         <div
@@ -185,13 +185,13 @@ export default function AboutPage() {
 
             {/* Footer */}
             <div className="pt-12 border-t border-zinc-900 text-center">
-                <p className="font-hand text-3xl text-butter mb-6">hiring for 2027?</p>
+                <p className="font-hand text-3xl text-butter mb-6">hiring for 2027, maybe?</p>
                 <div className="flex flex-wrap items-center justify-center gap-6">
                     <a href={RESUME_URL} download={RESUME_FILENAME} className="inline-flex items-center gap-2 rounded-full bg-tangerine px-6 py-3 text-sm font-bold text-[#1f120a] transition-transform hover:-rotate-1 hover:scale-[1.03]">
                         <Download className="h-4 w-4" /> Download my resume
                     </a>
                     <Link href="/contact" className="text-white hover:text-primary transition-colors font-semibold text-lg underline decoration-zinc-700 underline-offset-8">
-                        Get in touch &rarr;
+                        Say hi &rarr;
                     </Link>
                 </div>
             </div>
