@@ -160,9 +160,12 @@ function StatusRow() {
                 hour: "numeric",
                 minute: "2-digit",
             }).format(new Date())
-        setNow(fmt())
+        const first = setTimeout(() => setNow(fmt()), 0)
         const t = setInterval(() => setNow(fmt()), 30_000)
-        return () => clearInterval(t)
+        return () => {
+            clearTimeout(first)
+            clearInterval(t)
+        }
     }, [])
 
     return (
