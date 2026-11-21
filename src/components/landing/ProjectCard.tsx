@@ -32,7 +32,7 @@ export function ProjectCard({ project }: { project: Project }) {
     const cardInner = (
         <>
             <div className="flex items-start justify-between">
-                <span className="font-display text-sm italic text-cream/30">no. {project.index}</span>
+                <span className="font-mono text-xs text-chalk/30">no. {project.index}</span>
                 <span
                     className="rounded-full px-3 py-1 text-xs font-semibold"
                     style={{ backgroundColor: `rgb(${project.glow} / 0.15)`, color: `rgb(${project.glow})` }}
@@ -41,7 +41,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 </span>
             </div>
 
-            <h3 className="font-display mt-5 flex items-center gap-1.5 text-3xl font-medium text-cream">
+            <h3 className="font-display mt-5 flex items-center gap-1.5 text-3xl font-medium text-chalk">
                 {project.name}
                 <ArrowUpRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </h3>
@@ -66,19 +66,19 @@ export function ProjectCard({ project }: { project: Project }) {
                 </div>
             )}
 
-            <p className="mt-3 flex-1 text-[15px] leading-relaxed text-cream/60">{project.blurb}</p>
+            <p className="mt-3 flex-1 text-[15px] leading-relaxed text-chalk/60">{project.blurb}</p>
 
             <div className="mt-6 flex items-end justify-between border-t border-hairline pt-4">
                 <div>
                     <div className="font-display text-2xl font-semibold tabular-nums" style={{ color: `rgb(${project.glow})` }}>{project.stat.value}</div>
-                    <div className="text-xs text-cream/45">{project.stat.label}</div>
+                    <div className="text-xs text-chalk/45">{project.stat.label}</div>
                 </div>
                 <div
                     className="flex flex-wrap justify-end gap-1.5"
                     style={iconCount > 0 ? { paddingRight: iconCount * 28 } : undefined}
                 >
                     {project.stack.map((s) => (
-                        <span key={s} className="rounded-full bg-cream/[0.06] px-2.5 py-0.5 text-[11px] text-cream/55">
+                        <span key={s} className="rounded-full bg-chalk/[0.06] px-2.5 py-0.5 text-[11px] text-chalk/55">
                             {s}
                         </span>
                     ))}
@@ -90,7 +90,7 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
         <SpotlightCard
             glow={project.glow}
-            className="h-full transition-transform duration-300 hover:-translate-y-1 hover:-rotate-[0.4deg]"
+            className="h-full transition-transform duration-300 hover:-translate-y-1"
         >
             {project.external ? (
                 <a
@@ -114,7 +114,7 @@ export function ProjectCard({ project }: { project: Project }) {
                             href={project.devpost}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md p-1.5 text-cream/35 transition-colors hover:bg-cream/5 hover:text-cream"
+                            className="rounded-md p-1.5 text-chalk/35 transition-colors hover:bg-chalk/5 hover:text-chalk"
                             aria-label={`${project.name} on Devpost`}
                         >
                             <ExternalLink className="h-4 w-4" />
@@ -125,7 +125,7 @@ export function ProjectCard({ project }: { project: Project }) {
                             href={project.source}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md p-1.5 text-cream/35 transition-colors hover:bg-cream/5 hover:text-cream"
+                            className="rounded-md p-1.5 text-chalk/35 transition-colors hover:bg-chalk/5 hover:text-chalk"
                             aria-label={`${project.name} source`}
                         >
                             <Github className="h-4 w-4" />

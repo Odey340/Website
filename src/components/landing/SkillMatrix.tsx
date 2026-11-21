@@ -48,7 +48,7 @@ export function SkillMatrix() {
                         className={cn(
                             "shrink-0 rounded-full border px-4 py-1.5 text-sm transition-colors duration-200",
                             tab === t
-                                ? "border-transparent bg-accent-cyan text-[#1f120a]"
+                                ? "border-transparent bg-accent-cyan text-background"
                                 : "border-hairline text-white/50 hover:border-white/25 hover:text-white",
                         )}
                     >
@@ -64,7 +64,7 @@ export function SkillMatrix() {
                             <span className="h-1.5 w-1.5 rounded-full bg-accent-cyan/50 transition-colors group-hover:bg-accent-cyan" />
                             {s.name}
                         </span>
-                        <span className="pointer-events-none absolute left-1/2 top-full z-30 mt-2 w-max max-w-[220px] -translate-x-1/2 scale-95 rounded-lg border border-hairline bg-surface-2 px-3 py-2 text-center text-xs leading-snug text-cream/70 opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
+                        <span className="pointer-events-none absolute left-1/2 top-full z-30 mt-2 w-max max-w-[220px] -translate-x-1/2 scale-95 rounded-lg border border-hairline bg-surface-2 px-3 py-2 text-center text-xs leading-snug text-chalk/70 opacity-0 shadow-xl transition-all duration-200 group-hover:scale-100 group-hover:opacity-100">
                             {s.note}
                         </span>
                     </li>

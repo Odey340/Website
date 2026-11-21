@@ -8,51 +8,50 @@
   padding-inline: 1.5rem;
 }
 
+/* Dark green theme. One bright green accent, a few muted greens for support. */
 :root {
-  /* Warm, lived-in dark theme: espresso background, paper-cream text. */
-  --background: #14110e;
-  --surface: #1c1814;
-  --surface-2: #241f1a;
-  --foreground: #f3ebdd;
+  --background: #0b1410;
+  --surface: #111d17;
+  --surface-2: #16251d;
+  --foreground: #e3ece5;
 
   /* Accents */
-  --tangerine: #ff8a57;
-  --butter: #f2c96b;
-  --sage: #a3c9a0;
-  --sky: #93bde6;
-  --rose: #f29a9a;
+  --leaf: #4fd182;   /* main accent */
+  --mint: #7fe0a6;   /* lighter accent, hovers */
+  --moss: #a9c46c;   /* olive, secondary labels */
+  --fern: #6fb39a;   /* teal-green */
+  --stone: #8fa59a;  /* muted grey-green */
 
-  /* Legacy names used across older pages, remapped to the warm palette so
-     every page picks up the new look without a rewrite. */
-  --accent-cyan: var(--tangerine);
-  --accent-blue: var(--butter);
-  --accent-cyan-soft: rgba(255, 138, 87, 0.12);
-  --accent-blue-soft: rgba(242, 201, 107, 0.12);
-  --bid: #8fd19e;
-  --ask: #f2837a;
-  --grid-line: rgba(243, 235, 221, 0.04);
-  --hairline: rgba(243, 235, 221, 0.1);
+  /* Legacy names used across older pages, remapped so every page matches. */
+  --accent-cyan: var(--leaf);
+  --accent-blue: var(--fern);
+  --accent-cyan-soft: rgba(79, 209, 130, 0.12);
+  --accent-blue-soft: rgba(111, 179, 154, 0.12);
+  --bid: #4fd182;
+  --ask: #e2766b;
+  --grid-line: rgba(227, 236, 229, 0.04);
+  --hairline: rgba(227, 236, 229, 0.1);
 
-  --card: #1c1814;
-  --card-foreground: #f3ebdd;
-  --popover: #1c1814;
-  --popover-foreground: #f3ebdd;
+  --card: #111d17;
+  --card-foreground: #e3ece5;
+  --popover: #111d17;
+  --popover-foreground: #e3ece5;
 
-  --primary: #ff8a57;
-  --primary-foreground: #1f120a;
-  --secondary: #2a241e;
-  --secondary-foreground: #f3ebdd;
-  --muted: #2a241e;
-  --muted-foreground: #b4a896;
-  --accent: #2a241e;
-  --accent-foreground: #f3ebdd;
+  --primary: #4fd182;
+  --primary-foreground: #0b1410;
+  --secondary: #1b2b22;
+  --secondary-foreground: #e3ece5;
+  --muted: #1b2b22;
+  --muted-foreground: #9db0a4;
+  --accent: #1b2b22;
+  --accent-foreground: #e3ece5;
   --destructive: #7f1d1d;
   --destructive-foreground: #fafafa;
-  --border: #2e2822;
-  --input: #2e2822;
-  --ring: #ff8a57;
+  --border: #22352b;
+  --input: #22352b;
+  --ring: #4fd182;
 
-  --radius: 0.9rem;
+  --radius: 0.75rem;
 }
 
 @theme inline {
@@ -82,12 +81,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
 
-  --color-tangerine: var(--tangerine);
-  --color-butter: var(--butter);
-  --color-sage: var(--sage);
-  --color-sky: var(--sky);
-  --color-rose: var(--rose);
-  --color-cream: var(--foreground);
+  --color-leaf: var(--leaf);
+  --color-mint: var(--mint);
+  --color-moss: var(--moss);
+  --color-fern: var(--fern);
+  --color-stone: var(--stone);
+  --color-chalk: var(--foreground);
 
   --color-accent-cyan: var(--accent-cyan);
   --color-accent-blue: var(--accent-blue);
@@ -96,19 +95,18 @@
   --color-hairline: var(--hairline);
 
   /* Warm the zinc scale so older pages built on zinc-* match the new theme. */
-  --color-zinc-300: #d9cfc0;
-  --color-zinc-400: #b4a896;
-  --color-zinc-500: #8d8273;
-  --color-zinc-600: #6b6256;
-  --color-zinc-700: #4a433a;
-  --color-zinc-800: #2e2822;
-  --color-zinc-900: #221d18;
-  --color-zinc-950: #1a1612;
+  --color-zinc-300: #cfdcd3;
+  --color-zinc-400: #9db0a4;
+  --color-zinc-500: #7a8d81;
+  --color-zinc-600: #5b6b61;
+  --color-zinc-700: #3c4a42;
+  --color-zinc-800: #22352b;
+  --color-zinc-900: #18261e;
+  --color-zinc-950: #121e18;
 
   --font-sans: var(--font-body);
-  --font-display: var(--font-display-serif);
-  --font-hand: var(--font-hand-script);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-heading);
+  --font-mono: var(--font-code);
 }
 
 body {
@@ -118,23 +116,29 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display-serif), Georgia, serif;
-  font-variation-settings: "SOFT" 100, "WONK" 1;
-  letter-spacing: -0.02em;
+  font-family: var(--font-heading), system-ui, sans-serif;
+  letter-spacing: -0.03em;
 }
 
-.font-hand {
-  font-family: var(--font-hand-script), cursive;
+/* Small section label above headings */
+.eyebrow {
+  display: block;
+  font-family: var(--font-code), ui-monospace, monospace;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.5rem;
 }
 
 .font-mono-accent {
-  font-family: var(--font-mono);
+  font-family: var(--font-code), ui-monospace, monospace;
   letter-spacing: -0.025em;
 }
 
 ::selection {
-  background: var(--tangerine);
-  color: #1f120a;
+  background: var(--leaf);
+  color: #0b1410;
 }
 
 /* Custom scrollbar */
@@ -146,12 +150,12 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3a3229;
+  background: #23382c;
   border-radius: 999px;
   border: 2px solid var(--background);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #50463a;
+  background: #2f4a3a;
 }
 
 /* Ambient background layers */
@@ -163,7 +167,7 @@ body {
 }
 
 .bg-dots {
-  background-image: radial-gradient(rgba(243, 235, 221, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(227, 236, 229, 0.07) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
@@ -172,10 +176,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(110deg, var(--butter) 0%, var(--tangerine) 55%, var(--rose) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--leaf);
 }
 
 /* Hand-drawn style underline for a highlighted word */
@@ -186,12 +187,12 @@ body {
 .scribble::after {
   content: "";
   position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: -0.12em;
-  height: 0.35em;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 40 4, 80 18, 120 9 S 180 6, 198 12' fill='none' stroke='%23ff8a57' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: -0.04em;
+  height: 0.08em;
+  background: var(--leaf);
+  border-radius: 2px;
 }
 
 .mask-fade-x {

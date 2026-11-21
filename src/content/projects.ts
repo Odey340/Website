@@ -13,7 +13,7 @@ export const FEATURED: Project[] = [
         stack: ["C++17", "Kalshi", "Polymarket"],
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
-        glow: "163 201 160",
+        glow: "79 209 130",
         index: "01",
     },
     {
@@ -25,7 +25,7 @@ export const FEATURED: Project[] = [
         stack: ["C++17", "Python", "GoogleTest"],
         href: "https://github.com/Odey340/Artemist",
         external: true,
-        glow: "147 189 230",
+        glow: "111 179 154",
         index: "02",
     },
     {
@@ -44,7 +44,7 @@ export const FEATURED: Project[] = [
             { src: "/badges/mathworks.png", alt: "MathWorks" },
         ],
         award: "HackRice 16: 2 prizes out of 121 teams",
-        glow: "242 201 107",
+        glow: "169 196 108",
         index: "03",
     },
     {
@@ -56,7 +56,7 @@ export const FEATURED: Project[] = [
         stack: ["C++", "Python", "PostgreSQL", "React"],
         href: "https://github.com/Odey340/TideAPI",
         external: true,
-        glow: "255 138 87",
+        glow: "127 224 166",
         index: "04",
     },
 ]
@@ -72,7 +72,7 @@ export const MORE: Project[] = [
         stack: ["C++", "Statistics"],
         href: "/projects/lumina",
         source: "https://github.com/Odey340/Lumina",
-        glow: "242 154 154",
+        glow: "143 165 154",
         index: "05",
     },
     {
@@ -83,7 +83,7 @@ export const MORE: Project[] = [
         stack: ["Python"],
         href: "https://github.com/Odey340/Carn",
         external: true,
-        glow: "242 154 154",
+        glow: "143 165 154",
         index: "06",
     },
 ]

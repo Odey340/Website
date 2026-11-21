@@ -42,7 +42,7 @@ export default function AboutPage() {
         <main className="container max-w-5xl py-12 md:py-24 space-y-20">
             {/* Header */}
             <div className="space-y-4">
-                <p className="font-hand text-2xl text-tangerine">the longer version, if you&apos;re curious</p>
+                <p className="eyebrow text-leaf">the longer version, if you&apos;re curious</p>
                 <h1 className="font-display text-5xl md:text-7xl font-medium">About me</h1>
                 <p className="text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
                     I mostly mess around with <span className="text-white font-medium">trading stuff in C++</span> and
@@ -185,9 +185,9 @@ export default function AboutPage() {
 
             {/* Footer */}
             <div className="pt-12 border-t border-zinc-900 text-center">
-                <p className="font-hand text-3xl text-butter mb-6">hiring for 2027, maybe?</p>
+                <p className="eyebrow text-moss mb-6">hiring for 2027, maybe?</p>
                 <div className="flex flex-wrap items-center justify-center gap-6">
-                    <a href={RESUME_URL} download={RESUME_FILENAME} className="inline-flex items-center gap-2 rounded-full bg-tangerine px-6 py-3 text-sm font-bold text-[#1f120a] transition-transform hover:-rotate-1 hover:scale-[1.03]">
+                    <a href={RESUME_URL} download={RESUME_FILENAME} className="inline-flex items-center gap-2 rounded-full bg-leaf px-6 py-3 text-sm font-bold text-background transition-transform hover:scale-[1.03]">
                         <Download className="h-4 w-4" /> Download my resume
                     </a>
                     <Link href="/contact" className="text-white hover:text-primary transition-colors font-semibold text-lg underline decoration-zinc-700 underline-offset-8">

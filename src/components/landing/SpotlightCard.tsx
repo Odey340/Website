@@ -6,7 +6,7 @@ import { useRef, type ReactNode } from "react"
 type SpotlightCardProps = {
     children: ReactNode
     className?: string
-    /** Space-separated rgb triplet, e.g. "255 138 87" */
+    /** Space-separated rgb triplet, e.g. "79 209 130" */
     glow?: string
 }
 
@@ -14,7 +14,7 @@ type SpotlightCardProps = {
  * Card that tracks the cursor with a soft radial highlight and a matching
  * border sheen. Falls back gracefully to a static border when JS is idle.
  */
-export function SpotlightCard({ children, className, glow = "255 138 87" }: SpotlightCardProps) {
+export function SpotlightCard({ children, className, glow = "79 209 130" }: SpotlightCardProps) {
     const ref = useRef<HTMLDivElement>(null)
 
     function onMove(e: React.MouseEvent<HTMLDivElement>) {
@@ -32,7 +32,7 @@ export function SpotlightCard({ children, className, glow = "255 138 87" }: Spot
             style={{ "--glow": glow } as React.CSSProperties}
             className={cn(
                 "group relative overflow-hidden rounded-3xl border border-hairline bg-surface",
-                "transition-colors duration-300 hover:border-cream/25",
+                "transition-colors duration-300 hover:border-chalk/25",
                 className,
             )}
         >

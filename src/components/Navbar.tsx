@@ -22,8 +22,8 @@ export function Navbar() {
         <header className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-5">
             <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between rounded-full border border-hairline bg-surface/75 pl-5 pr-2 shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-md">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-                    <span className="grid h-8 w-8 place-items-center rounded-full bg-tangerine font-display text-base font-semibold italic text-[#1f120a]">
-                        o
+                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-leaf font-display text-sm font-bold text-background">
+                        OJ
                     </span>
                     <span className="font-display text-lg font-medium tracking-tight">odey jeffs</span>
                 </Link>
@@ -36,8 +36,8 @@ export function Navbar() {
                             className={cn(
                                 "rounded-full px-4 py-1.5 text-sm transition-colors",
                                 pathname === item.href
-                                    ? "bg-cream/10 text-cream"
-                                    : "text-cream/60 hover:bg-cream/5 hover:text-cream",
+                                    ? "bg-chalk/10 text-chalk"
+                                    : "text-chalk/60 hover:bg-chalk/5 hover:text-chalk",
                             )}
                         >
                             {item.name}
@@ -49,14 +49,14 @@ export function Navbar() {
                     <a
                         href={RESUME_URL}
                         download={RESUME_FILENAME}
-                        className="hidden items-center gap-2 rounded-full bg-cream px-4 py-2 text-sm font-semibold text-[#1f120a] transition-transform hover:-rotate-2 hover:scale-[1.03] sm:inline-flex"
+                        className="hidden items-center gap-2 rounded-full bg-chalk px-4 py-2 text-sm font-semibold text-background transition-transform hover:scale-[1.03] sm:inline-flex"
                     >
                         <Download className="h-4 w-4" />
                         Resume
                     </a>
                     <button
                         onClick={() => setOpen((o) => !o)}
-                        className="grid h-10 w-10 place-items-center rounded-full text-cream/70 hover:bg-cream/5 md:hidden"
+                        className="grid h-10 w-10 place-items-center rounded-full text-chalk/70 hover:bg-chalk/5 md:hidden"
                         aria-label={open ? "Close menu" : "Open menu"}
                         aria-expanded={open}
                     >
@@ -74,7 +74,7 @@ export function Navbar() {
                             onClick={() => setOpen(false)}
                             className={cn(
                                 "block rounded-2xl px-4 py-3 text-base",
-                                pathname === item.href ? "bg-cream/10 text-cream" : "text-cream/70",
+                                pathname === item.href ? "bg-chalk/10 text-chalk" : "text-chalk/70",
                             )}
                         >
                             {item.name}
@@ -83,7 +83,7 @@ export function Navbar() {
                     <a
                         href={RESUME_URL}
                         download={RESUME_FILENAME}
-                        className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-cream px-4 py-3 font-semibold text-[#1f120a]"
+                        className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-chalk px-4 py-3 font-semibold text-background"
                     >
                         <Download className="h-4 w-4" />
                         Grab my resume
