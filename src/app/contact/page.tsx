@@ -1,107 +1,98 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
-import { Button } from "@/components/ui/Button"
-import { Linkedin, Github, Send, Terminal, MessageSquare, ExternalLink, ArrowRight } from "lucide-react"
-
+import { ArrowUpRight, Download, Github, Linkedin, Mail, Phone } from "lucide-react"
+import { RESUME_FILENAME, RESUME_URL } from "@/content/resume"
 
 export const metadata = {
-    title: 'Contact | Odey Jeffs',
-    description: 'Get in touch about quant developer, trading, and research roles.',
+    title: "Contact | Odey Jeffs",
+    description: "Say hi about software engineering, trading, and research roles.",
 }
+
+const CHANNELS = [
+    {
+        icon: Mail,
+        label: "Email",
+        value: "odeyjeffs7@gmail.com",
+        note: "Best for roles, project questions, or a market you think is mispriced.",
+        href: "mailto:odeyjeffs7@gmail.com",
+        color: "bg-tangerine text-[#1f120a]",
+        tilt: "-rotate-1",
+    },
+    {
+        icon: Linkedin,
+        label: "LinkedIn",
+        value: "in/odeydj",
+        note: "For recruiting and introductions.",
+        href: "https://www.linkedin.com/in/odeydj/",
+        color: "bg-sky text-[#10233a]",
+        tilt: "rotate-1",
+        external: true,
+    },
+    {
+        icon: Github,
+        label: "GitHub",
+        value: "Odey340",
+        note: "Where all the code lives.",
+        href: "https://github.com/Odey340",
+        color: "bg-sage text-[#13261a]",
+        tilt: "rotate-[0.5deg]",
+        external: true,
+    },
+    {
+        icon: Phone,
+        label: "Phone",
+        value: "+1 903 556 8277",
+        note: "Call or text.",
+        href: "tel:903-556-8277",
+        color: "bg-butter text-[#2a1d0c]",
+        tilt: "-rotate-[0.5deg]",
+    },
+]
 
 export default function ContactPage() {
     return (
-        <main className="container max-w-6xl py-12 md:py-24 space-y-20 relative">
-            {/* Background Accent */}
-            <div className="absolute top-0 right-0 -mr-48 -mt-48 w-96 h-96 bg-primary/5 rounded-full blur-[128px] -z-10" />
+        <main className="mx-auto max-w-5xl px-5 py-12 sm:px-8 md:py-20">
+            <div className="max-w-2xl">
+                <p className="font-hand text-3xl text-tangerine">say hi!</p>
+                <h1 className="font-display mt-1 text-5xl font-medium leading-[1.05] text-cream md:text-7xl">
+                    Let&apos;s <span className="italic text-gradient">talk</span>.
+                </h1>
+                <p className="mt-5 text-lg leading-relaxed text-cream/60">
+                    I&apos;m looking for software engineering, trading, and research roles starting in 2027. I&apos;m in
+                    Dallas and open to relocating. I reply quickly.
+                </p>
+            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-
-                {/* Header & Copy */}
-                <div className="lg:col-span-5 space-y-8">
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-primary font-mono text-sm tracking-widest uppercase mb-2">
-                            <Terminal className="w-4 h-4" />
-                            <span>Dallas, TX // open to relocation</span>
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                {CHANNELS.map((c) => (
+                    <a
+                        key={c.label}
+                        href={c.href}
+                        {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className={`group relative rounded-3xl p-7 transition-transform duration-300 hover:rotate-0 hover:scale-[1.02] ${c.color} ${c.tilt}`}
+                    >
+                        <div className="flex items-start justify-between">
+                            <c.icon className="h-7 w-7" />
+                            <ArrowUpRight className="h-5 w-5 opacity-50 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
                         </div>
-                        <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-none italic">Contact</h1>
-                        <p className="text-2xl text-zinc-400 font-light leading-relaxed max-w-sm pt-4">
-                            Open to <span className="text-white font-medium">quant developer</span>, <span className="text-white font-medium">trading</span>, and <span className="text-white font-medium">research</span> roles starting in 2027.
-                        </p>
-                    </div>
+                        <p className="mt-6 text-sm font-semibold opacity-70">{c.label}</p>
+                        <p className="font-display text-2xl font-medium break-all">{c.value}</p>
+                        <p className="mt-2 text-sm opacity-75">{c.note}</p>
+                    </a>
+                ))}
+            </div>
 
-                    <div className="space-y-12 pt-8">
-                        <div className="space-y-4">
-                            <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]">Direct Communication</h3>
-                            <div className="space-y-6">
-                                <a href="mailto:odeyjeffs7@gmail.com" className="group block space-y-1">
-                                    <p className="text-xs font-mono text-primary uppercase">Email</p>
-                                    <div className="flex items-center gap-3 text-xl font-bold group-hover:text-primary transition-colors">
-                                        odeyjeffs7@gmail.com <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
-                                    </div>
-                                </a>
-                                <a href="tel:903-556-8277" className="group block space-y-1">
-                                    <p className="text-xs font-mono text-blue-400 uppercase">Phone</p>
-                                    <div className="flex items-center gap-3 text-xl font-bold group-hover:text-blue-400 transition-colors">
-                                        +1 903 556 8277 <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="space-y-4">
-                            <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]">Profiles</h3>
-                            <div className="flex gap-4">
-                                <a href="https://www.linkedin.com/in/odeydj/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center border border-zinc-800 hover:border-primary transition-all group">
-                                    <Linkedin className="w-5 h-5 text-zinc-400 group-hover:text-primary" />
-                                </a>
-                                <a href="https://github.com/Odey340" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center border border-zinc-800 hover:border-primary transition-all group">
-                                    <Github className="w-5 h-5 text-zinc-400 group-hover:text-primary" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div className="mt-14 flex flex-col items-center gap-4 rounded-3xl border border-dashed border-cream/20 p-8 text-center sm:flex-row sm:justify-between sm:text-left">
+                <div>
+                    <p className="font-display text-2xl text-cream">Need my resume for the hiring committee?</p>
+                    <p className="text-cream/55">One page, PDF, ready to forward.</p>
                 </div>
-
-                {/* Main Action Card */}
-                <div className="lg:col-span-7">
-                    <Card className="bg-zinc-950/50 border-zinc-800 overflow-hidden backdrop-blur-xl relative group">
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
-                        <CardHeader className="p-12 pb-6">
-                            <CardTitle className="text-4xl font-bold tracking-tight mb-2">Get in touch</CardTitle>
-                            <p className="text-zinc-500">I respond quickly</p>
-                        </CardHeader>
-                        <CardContent className="p-12 pt-6 flex flex-col gap-10">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="space-y-4 p-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all duration-500">
-                                    <MessageSquare className="w-8 h-8 text-primary" />
-                                    <h3 className="font-bold text-xl">Email</h3>
-                                    <p className="text-sm text-zinc-500 leading-relaxed">Roles, questions about my projects, or a market you think is mispriced.</p>
-                                    <a href="mailto:odeyjeffs7@gmail.com">
-                                        <Button variant="link" className="px-0 h-auto text-primary font-bold">SEND EMAIL &rarr;</Button>
-                                    </a>
-                                </div>
-                                <div className="space-y-4 p-8 rounded-3xl border border-zinc-800/50 bg-zinc-900/20 hover:bg-zinc-900/40 transition-all duration-500">
-                                    <ExternalLink className="w-8 h-8 text-blue-400" />
-                                    <h3 className="font-bold text-xl">LinkedIn</h3>
-                                    <p className="text-sm text-zinc-500 leading-relaxed">For recruiting and introductions, find me on LinkedIn.</p>
-                                    <a href="https://www.linkedin.com/in/odeydj/" target="_blank" rel="noopener noreferrer">
-                                        <Button variant="link" className="px-0 h-auto text-blue-400 font-bold">PROFILE &rarr;</Button>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <a href="mailto:odeyjeffs7@gmail.com" className="w-full">
-                                <Button className="w-full h-16 rounded-none bg-white text-black font-black hover:bg-zinc-200 transition-all">
-                                    SEND MAIL <Send className="ml-2 w-5 h-5 fill-current" />
-                                </Button>
-                            </a>
-                        </CardContent>
-                    </Card>
-                </div>
-
+                <a
+                    href={RESUME_URL}
+                    download={RESUME_FILENAME}
+                    className="inline-flex shrink-0 items-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-bold text-[#1f120a] transition-transform hover:-rotate-1 hover:scale-[1.03]"
+                >
+                    <Download className="h-4 w-4" /> Download resume
+                </a>
             </div>
         </main>
     )
 }
-
-

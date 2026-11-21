@@ -1,11 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, DM_Sans, Fraunces, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const body = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+});
+
+const display = Fraunces({
+  variable: "--font-display-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["SOFT", "WONK", "opsz"],
+});
+
+const hand = Caveat({
+  variable: "--font-hand-script",
+  subsets: ["latin"],
+  weight: ["500", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -14,8 +27,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Odey Jeffs | Quant Developer, Trading & Research",
-  description: "C++ and Python engineer building trading systems: a prediction-market arbitrage engine with $13,000 in realized profit and a 450 ns/tick futures backtester. UT Tyler CS, graduating May 2027.",
+  title: "Odey Jeffs | Software Engineer",
+  description:
+    "Hey, I'm Odey. I build trading systems and data apps in C++ and Python, including a prediction-market arbitrage engine that made $13,000 trading real money. CS at UT Tyler.",
 };
 
 export default function RootLayout({
@@ -26,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
+        className={`${body.variable} ${display.variable} ${hand.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         <Navbar />
         {children}

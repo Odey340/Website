@@ -13,7 +13,7 @@ export const FEATURED: Project[] = [
         stack: ["C++17", "Kalshi", "Polymarket"],
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
-        glow: "52 211 153",
+        glow: "163 201 160",
         index: "01",
     },
     {
@@ -25,7 +25,7 @@ export const FEATURED: Project[] = [
         stack: ["C++17", "Python", "GoogleTest"],
         href: "https://github.com/Odey340/Artemist",
         external: true,
-        glow: "59 130 246",
+        glow: "147 189 230",
         index: "02",
     },
     {
@@ -44,7 +44,7 @@ export const FEATURED: Project[] = [
             { src: "/badges/mathworks.png", alt: "MathWorks" },
         ],
         award: "HackRice 16: 2 prizes out of 121 teams",
-        glow: "245 158 11",
+        glow: "242 201 107",
         index: "03",
     },
     {
@@ -56,7 +56,7 @@ export const FEATURED: Project[] = [
         stack: ["C++", "Python", "PostgreSQL", "React"],
         href: "https://github.com/Odey340/TideAPI",
         external: true,
-        glow: "34 211 238",
+        glow: "255 138 87",
         index: "04",
     },
 ]
@@ -72,7 +72,7 @@ export const MORE: Project[] = [
         stack: ["C++", "Statistics"],
         href: "/projects/lumina",
         source: "https://github.com/Odey340/Lumina",
-        glow: "161 161 170",
+        glow: "242 154 154",
         index: "05",
     },
     {
@@ -83,7 +83,7 @@ export const MORE: Project[] = [
         stack: ["Python"],
         href: "https://github.com/Odey340/Carn",
         external: true,
-        glow: "161 161 170",
+        glow: "242 154 154",
         index: "06",
     },
 ]
@@ -98,12 +98,12 @@ export type Role = {
 
 export const EXPERIENCE: Role[] = [
     {
-        title: "Quantitative Data Analysis Intern",
+        title: "Full-Stack Intern",
         org: "DFW International Airport",
         when: "May 2026 – Present",
         where: "DFW Airport, TX",
         points: [
-            "Replaced manual spot-checking with an automated validation and regression test suite. Results now reproduce run to run, and upstream schema drift is caught before it reaches the forecasts.",
+            "Swapped an error-prone manual spot-check process for an automated validation and regression test suite. Results now reproduce run to run, and upstream schema drift gets caught before it reaches the forecasts.",
             "Build and validate the operational data behind demand forecasting models used for time-critical scheduling decisions.",
         ],
     },
@@ -113,8 +113,18 @@ export const EXPERIENCE: Role[] = [
         when: "Apr 2026 – Present",
         where: "Tyler, TX",
         points: [
-            "Quantified measurement uncertainty in noisy wireless signal data with error propagation and confidence intervals, and presented results to faculty in a form they could reproduce.",
             "Wrote custom firmware to automate data collection on embedded hardware, producing the experimental datasets.",
+            "Apply AI methods to analyze Bluetooth and ultra-wideband (UWB) channel sounding measurements from embedded devices.",
+        ],
+    },
+    {
+        title: "Undergraduate Research Assistant, Program Analysis",
+        org: "University of Texas at Dallas, advised by Dr. Shiyi Wei",
+        when: "Summer 2026",
+        where: "Remote",
+        points: [
+            "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing system from the group's research, and wrote C++ code for it.",
+            "Worked with the group to bring large language models into the fuzzing workflow and test whether they improve its results.",
         ],
     },
     {
@@ -123,7 +133,8 @@ export const EXPERIENCE: Role[] = [
         when: "Sep 2025 – May 2026",
         where: "Remote",
         points: [
-            "Shipped production features end to end for financial data workflows where every record had to be exactly right, backed by unit and integration tests that caught regressions before release.",
+            "Shipped production features end to end, from design through testing and release, for financial data workflows where every record had to be exactly right.",
+            "Wrote unit and integration tests that caught regressions before release, and supported my features after launch.",
         ],
     },
     {
@@ -140,7 +151,8 @@ export const EXPERIENCE: Role[] = [
 export const EDUCATION = {
     school: "University of Texas at Tyler",
     degree: "B.S. Computer Science, Minor in English",
-    when: "Aug 2023 – May 2027 (expected)",
+    when: "Aug 2023 – Dec 2027 (expected)",
+    grad: "Dec 2027",
     coursework: ["Data Structures & Algorithms", "Operating Systems", "Numerical Algorithms", "Probability & Statistics"],
-    honors: "HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
+    honors: "HackUTA: Best Use of Chert. HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
 }

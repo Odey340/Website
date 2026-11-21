@@ -32,16 +32,16 @@ export function ProjectCard({ project }: { project: Project }) {
     const cardInner = (
         <>
             <div className="flex items-start justify-between">
-                <span className="font-mono text-[11px] tracking-widest text-white/30">{project.index}</span>
+                <span className="font-display text-sm italic text-cream/30">no. {project.index}</span>
                 <span
-                    className="rounded-full border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest"
-                    style={{ borderColor: `rgb(${project.glow} / 0.35)`, color: `rgb(${project.glow})` }}
+                    className="rounded-full px-3 py-1 text-xs font-semibold"
+                    style={{ backgroundColor: `rgb(${project.glow} / 0.15)`, color: `rgb(${project.glow})` }}
                 >
                     {project.kind}
                 </span>
             </div>
 
-            <h3 className="mt-5 flex items-center gap-1.5 text-2xl font-semibold tracking-tight text-white">
+            <h3 className="font-display mt-5 flex items-center gap-1.5 text-3xl font-medium text-cream">
                 {project.name}
                 <ArrowUpRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </h3>
@@ -58,7 +58,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
             {project.award && (
                 <div
-                    className="mt-3 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest"
+                    className="mt-3 flex items-center gap-1.5 text-xs font-semibold"
                     style={{ color: `rgb(${project.glow})` }}
                 >
                     <Trophy className="h-3 w-3" />
@@ -66,19 +66,19 @@ export function ProjectCard({ project }: { project: Project }) {
                 </div>
             )}
 
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-white/50">{project.blurb}</p>
+            <p className="mt-3 flex-1 text-[15px] leading-relaxed text-cream/60">{project.blurb}</p>
 
             <div className="mt-6 flex items-end justify-between border-t border-hairline pt-4">
                 <div>
-                    <div className="font-mono text-lg font-semibold tabular-nums text-white">{project.stat.value}</div>
-                    <div className="font-mono text-[10px] uppercase tracking-widest text-white/35">{project.stat.label}</div>
+                    <div className="font-display text-2xl font-semibold tabular-nums" style={{ color: `rgb(${project.glow})` }}>{project.stat.value}</div>
+                    <div className="text-xs text-cream/45">{project.stat.label}</div>
                 </div>
                 <div
                     className="flex flex-wrap justify-end gap-1.5"
                     style={iconCount > 0 ? { paddingRight: iconCount * 28 } : undefined}
                 >
                     {project.stack.map((s) => (
-                        <span key={s} className="rounded bg-white/[0.04] px-2 py-0.5 font-mono text-[10px] text-white/45">
+                        <span key={s} className="rounded-full bg-cream/[0.06] px-2.5 py-0.5 text-[11px] text-cream/55">
                             {s}
                         </span>
                     ))}
@@ -90,7 +90,7 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
         <SpotlightCard
             glow={project.glow}
-            className="h-full transition-transform duration-300 hover:-translate-y-1"
+            className="h-full transition-transform duration-300 hover:-translate-y-1 hover:-rotate-[0.4deg]"
         >
             {project.external ? (
                 <a
@@ -114,7 +114,7 @@ export function ProjectCard({ project }: { project: Project }) {
                             href={project.devpost}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md p-1.5 text-white/30 transition-colors hover:bg-white/5 hover:text-white"
+                            className="rounded-md p-1.5 text-cream/35 transition-colors hover:bg-cream/5 hover:text-cream"
                             aria-label={`${project.name} on Devpost`}
                         >
                             <ExternalLink className="h-4 w-4" />
@@ -125,7 +125,7 @@ export function ProjectCard({ project }: { project: Project }) {
                             href={project.source}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-md p-1.5 text-white/30 transition-colors hover:bg-white/5 hover:text-white"
+                            className="rounded-md p-1.5 text-cream/35 transition-colors hover:bg-cream/5 hover:text-cream"
                             aria-label={`${project.name} source`}
                         >
                             <Github className="h-4 w-4" />

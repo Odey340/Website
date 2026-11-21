@@ -1,13 +1,14 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Badge } from "@/components/ui/Badge"
-import { MapPin, User, Briefcase, GraduationCap, Repeat, Ruler, Scale, Terminal } from "lucide-react"
+import { MapPin, User, Briefcase, GraduationCap, Repeat, Ruler, Scale, Download } from "lucide-react"
 import { EDUCATION, EXPERIENCE } from "@/content/projects"
+import { RESUME_FILENAME, RESUME_URL } from "@/content/resume"
 
 export const metadata = {
     title: "About | Odey Jeffs",
     description:
-        "C++ and Python engineer focused on trading systems, measurement, and reproducible research. UT Tyler CS, graduating May 2027.",
+        "C++ and Python engineer focused on trading systems, measurement, and reproducible research. UT Tyler CS, graduating Dec 2027.",
 }
 
 const PRINCIPLES = [
@@ -41,11 +42,8 @@ export default function AboutPage() {
         <main className="container max-w-5xl py-12 md:py-24 space-y-20">
             {/* Header */}
             <div className="space-y-4">
-                <div className="flex items-center gap-2 text-primary font-mono text-sm tracking-[.3em] uppercase">
-                    <Terminal className="w-4 h-4" />
-                    <span>Background</span>
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter italic">About Me</h1>
+                <p className="font-hand text-2xl text-tangerine">the longer version</p>
+                <h1 className="font-display text-5xl md:text-7xl font-medium">About me</h1>
                 <p className="text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
                     I build <span className="text-white font-medium">trading systems in C++</span> and check them the
                     way a researcher would: with <span className="text-white font-medium">statistics, tests, and real money</span>.
@@ -62,7 +60,7 @@ export default function AboutPage() {
                     </CardHeader>
                     <CardContent className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                         <p>
-                            I&apos;m a computer science student at UT Tyler, graduating in May 2027. I got into markets
+                            I&apos;m a computer science student at UT Tyler, graduating in December 2027. I got into markets
                             by asking a narrow question: when Kalshi and Polymarket list the same event, do their
                             prices ever disagree by more than the fees? I wrote{" "}
                             <Link href="/projects/artemis" className="text-white font-semibold italic underline decoration-zinc-700 underline-offset-4 hover:decoration-primary">
@@ -80,9 +78,10 @@ export default function AboutPage() {
                             slippage and commissions on every trade, and reproduces the same P&amp;L every run.
                         </p>
                         <p>
-                            My internships have been on the data side of the same problem: validating the inputs to
-                            demand forecasts at DFW Airport, quantifying measurement uncertainty in wireless signal
-                            data as a research assistant, and shipping tested financial-data features at Jump Finance.
+                            My internships and research have been on the data side of the same problem: validating
+                            the inputs to demand forecasts at DFW Airport, shipping tested financial-data features at
+                            Jump Finance, bringing LLMs into a fuzzing workflow at UT Dallas, and analyzing wireless
+                            channel measurements on embedded hardware at UT Tyler.
                         </p>
                         <div className="flex flex-wrap gap-2 pt-4">
                             {["C++17", "Python", "SQL", "R", "MATLAB", "Linux"].map((t) => (
@@ -118,7 +117,7 @@ export default function AboutPage() {
                         <CardContent>
                             <p className="font-bold text-white text-lg">B.S. Computer Science</p>
                             <p className="text-sm text-zinc-400">UT Tyler · Minor in English</p>
-                            <p className="text-[10px] font-mono text-primary mt-2 uppercase tracking-tighter">Graduating May 2027</p>
+                            <p className="text-[10px] font-mono text-primary mt-2 uppercase tracking-tighter">Graduating Dec 2027</p>
                         </CardContent>
                     </Card>
 
@@ -141,7 +140,7 @@ export default function AboutPage() {
 
             {/* Experience */}
             <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight">Experience</h2>
+                <h2 className="font-display text-4xl font-medium">Experience</h2>
                 <div className="divide-y divide-zinc-900 border-y border-zinc-900">
                     {EXPERIENCE.map((role) => (
                         <div key={role.title + role.org} className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-7">
@@ -169,7 +168,7 @@ export default function AboutPage() {
 
             {/* Principles */}
             <div className="space-y-10">
-                <h2 className="text-3xl font-bold tracking-tight">How I work</h2>
+                <h2 className="font-display text-4xl font-medium">How I work</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {PRINCIPLES.map((p) => (
                         <div
@@ -186,9 +185,12 @@ export default function AboutPage() {
 
             {/* Footer */}
             <div className="pt-12 border-t border-zinc-900 text-center">
-                <p className="text-zinc-500 text-sm mb-6 uppercase tracking-widest font-mono">Hiring for 2027?</p>
-                <div className="flex justify-center gap-4">
-                    <Link href="/contact" className="text-white hover:text-primary transition-colors font-bold text-lg underline decoration-zinc-800 underline-offset-8">
+                <p className="font-hand text-3xl text-butter mb-6">hiring for 2027?</p>
+                <div className="flex flex-wrap items-center justify-center gap-6">
+                    <a href={RESUME_URL} download={RESUME_FILENAME} className="inline-flex items-center gap-2 rounded-full bg-tangerine px-6 py-3 text-sm font-bold text-[#1f120a] transition-transform hover:-rotate-1 hover:scale-[1.03]">
+                        <Download className="h-4 w-4" /> Download my resume
+                    </a>
+                    <Link href="/contact" className="text-white hover:text-primary transition-colors font-semibold text-lg underline decoration-zinc-700 underline-offset-8">
                         Get in touch &rarr;
                     </Link>
                 </div>
