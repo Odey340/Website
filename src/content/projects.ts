@@ -124,7 +124,6 @@ export type Role = {
     title: string
     org: string
     when: string
-    where: string
     points: string[]
     /** Optional link for the org name, e.g. a company website. */
     href?: string
@@ -136,7 +135,6 @@ export const EXPERIENCE: Role[] = [
         org: "Tally",
         href: "https://mechus.casa/",
         when: "2026 – Present",
-        where: "mechus.casa",
         points: [
             "Started Tally at HackUTA and kept building it with my team afterward: AI property inspections over a live FaceTime call, where Mechus, our voice assistant, guides the tenant and flags only the damage that's new since move-in.",
             "The backend leans on MongoDB Atlas for the boring-but-important parts, like retry-safe onboarding, conflict-checked report updates, and exactly-once iMessage delivery.",
@@ -146,7 +144,6 @@ export const EXPERIENCE: Role[] = [
         title: "Full-Stack Intern",
         org: "DFW International Airport",
         when: "May 2026 – Present",
-        where: "DFW Airport, TX",
         points: [
             "Helped swap a manual spot-check process for automated validation and regression tests, so results reproduce run to run and schema changes upstream get caught before they hit the forecasts.",
             "Working on the operational data behind demand forecasting models that feed into scheduling.",
@@ -156,7 +153,6 @@ export const EXPERIENCE: Role[] = [
         title: "Undergraduate Research Assistant, Embedded Systems",
         org: "University of Texas at Tyler",
         when: "Apr 2026 – Present",
-        where: "Tyler, TX",
         points: [
             "Wrote some custom firmware to automate data collection on embedded hardware for the lab's experiments.",
             "Trying out AI methods on Bluetooth and ultra-wideband (UWB) channel sounding measurements.",
@@ -166,7 +162,6 @@ export const EXPERIENCE: Role[] = [
         title: "Undergraduate Research Assistant, Program Analysis",
         org: "University of Texas at Dallas, advised by Dr. Shiyi Wei",
         when: "Summer 2026",
-        where: "Remote",
         points: [
             "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing tool from the group, and wrote some C++ for it.",
             "Helped test whether bringing LLMs into the fuzzing workflow actually makes it better.",
@@ -176,7 +171,6 @@ export const EXPERIENCE: Role[] = [
         title: "Software Engineer Intern, Full-Stack",
         org: "Jump Finance",
         when: "Sep 2025 – May 2026",
-        where: "Remote",
         points: [
             "Shipped features end to end, from design to release, for financial data workflows where the numbers really needed to be right.",
             "Wrote unit and integration tests to catch bugs before release, and stuck around to support things after launch.",
@@ -186,7 +180,6 @@ export const EXPERIENCE: Role[] = [
         title: "Technical Intern, Data Analysis",
         org: "Texas Department of Transportation",
         when: "May 2024 – Aug 2024",
-        where: "Texarkana, TX",
         points: [
             "Built some Python and R data pipelines that turned traffic sensor data into stuff engineers could use.",
         ],

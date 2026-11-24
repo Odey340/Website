@@ -317,8 +317,7 @@ function Experience() {
                                         </a>
                                     ) : (
                                         role.org
-                                    )}{" "}
-                                    <span className="text-chalk/35">, {role.where}</span>
+                                    )}
                                 </p>
                                 <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-chalk/60">
                                     {role.points.map((pt) => (

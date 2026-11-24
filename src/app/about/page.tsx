@@ -146,7 +146,6 @@ export default function AboutPage() {
                         <div key={role.title + role.org} className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-7">
                             <div className="md:col-span-3 font-mono text-xs uppercase tracking-widest text-zinc-500 md:pt-1.5">
                                 <div className="text-primary">{role.when}</div>
-                                <div className="mt-1">{role.where}</div>
                             </div>
                             <div className="md:col-span-9">
                                 <h3 className="text-xl font-bold text-white">{role.title}</h3>
