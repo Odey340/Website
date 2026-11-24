@@ -48,7 +48,7 @@ export default function ContactPage() {
                     Say <span className="text-gradient">hi</span>, maybe?
                 </h1>
                 <p className="mt-5 text-lg leading-relaxed text-chalk/60">
-                    I&apos;m sort of keeping an eye out for software, trading, or research roles around 2027. I&apos;m
+                    I&apos;m looking for software, trading, or research roles for 2027. I&apos;m
                     in Dallas, but I could probably move. I try to reply pretty fast.
                 </p>
             </div>

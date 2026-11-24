@@ -5,16 +5,16 @@ import type { Project } from "@/components/landing/ProjectCard"
 
 export const FEATURED: Project[] = [
     {
-        name: "Plumb",
+        name: "Tally",
         kind: "Startup · Founder",
         blurb:
-            "A startup we've been building. Plumb does move-in and move-out property inspections over a live FaceTime call: Mechus, the voice assistant, walks the tenant through the unit, compares what it sees against the move-in footage, and only calls out damage that looks new. Landlords and tenants get the report over iMessage.",
+            "Started as a HackUTA hackathon project and turned into a startup we're building. Tally does move-in and move-out property inspections over a live FaceTime call: Mechus, the voice assistant, walks the tenant through the unit, compares what it sees against the move-in footage, and only calls out damage that looks new. Landlords and tenants get the report over iMessage.",
         stat: { label: "Live, give it a try", value: "mechus.casa" },
         stack: ["Python", "MongoDB Atlas", "LiveKit", "ElevenLabs", "Gemini"],
         href: "https://mechus.casa/",
         external: true,
         source: "https://github.com/Odey340/Mechus",
-        badges: [{ src: "/badges/plumb.svg", alt: "Plumb" }],
+        badges: [{ src: "/badges/tally.svg", alt: "Tally" }],
         award: "HackUTA: Best Use of Chert",
         glow: "200 240 60",
         index: "01",
@@ -25,7 +25,7 @@ export const FEATURED: Project[] = [
         kind: "Trading system",
         blurb:
             "A C++ arbitrage bot for prediction markets. It tries to match the same event on Kalshi and Polymarket and flags spots where YES on one plus NO on the other costs less than the $1 payout. I ended up trading it with real money.",
-        stat: { label: "Profit, roughly", value: "$13,000" },
+        stat: { label: "Profit", value: "$13,000" },
         stack: ["C++17", "Kalshi", "Polymarket"],
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
@@ -36,8 +36,8 @@ export const FEATURED: Project[] = [
         name: "Tick-Level Futures Backtester",
         kind: "Backtester",
         blurb:
-            "A pretty fast backtester for E-mini S&P 500 tick data. It uses memory-mapped input, incremental EWMA stats, a lock-free ring buffer, and simulated fills with slippage and commissions. Gives the same output on GCC and Clang, which was a nice surprise.",
-        stat: { label: "Per tick, give or take", value: "450 ns" },
+            "A pretty fast backtester for E-mini S&P 500 tick data. It uses memory-mapped input, incremental EWMA stats, a lock-free ring buffer, and simulated fills with slippage and commissions. Gives the same output on GCC and Clang.",
+        stat: { label: "Per tick", value: "450 ns" },
         stack: ["C++17", "Python", "GoogleTest"],
         href: "https://github.com/Odey340/Artemist",
         external: true,
@@ -68,7 +68,7 @@ export const FEATURED: Project[] = [
         kind: "Data pipeline",
         blurb:
             "A real-time pipeline for sensor feeds: some schema validation, PostgreSQL storage, and a live React dashboard to keep an eye on it all.",
-        stat: { label: "p99 dashboard query, ish", value: "38 ms" },
+        stat: { label: "p99 dashboard query", value: "38 ms" },
         stack: ["C++", "Python", "PostgreSQL", "React"],
         href: "https://github.com/Odey340/TideAPI",
         external: true,
@@ -117,12 +117,12 @@ export type Role = {
 export const EXPERIENCE: Role[] = [
     {
         title: "Founder",
-        org: "Plumb",
+        org: "Tally",
         href: "https://mechus.casa/",
         when: "2026 – Present",
         where: "mechus.casa",
         points: [
-            "Building Plumb with my team: AI property inspections over a live FaceTime call, where Mechus, our voice assistant, guides the tenant and tries to flag only the damage that's new since move-in.",
+            "Started Tally at HackUTA and kept building it with my team afterward: AI property inspections over a live FaceTime call, where Mechus, our voice assistant, guides the tenant and flags only the damage that's new since move-in.",
             "The backend leans on MongoDB Atlas for the boring-but-important parts, like retry-safe onboarding, conflict-checked report updates, and exactly-once iMessage delivery.",
         ],
     },

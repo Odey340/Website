@@ -62,7 +62,7 @@ export function EquityCurve() {
             >
                 <span className="block h-2.5 w-2.5 rounded-full bg-leaf shadow-[0_0_0_4px_rgba(79,209,130,0.18)]" />
                 <span className="absolute bottom-full right-0 mb-3 whitespace-nowrap rounded-md border border-leaf/30 bg-background px-2.5 py-1 text-xs font-semibold text-leaf">
-                    +$13k, give or take
+                    +$13k
                 </span>
             </div>
         </div>
@@ -74,7 +74,7 @@ const PLACES = ["DFW Airport", "Jump Finance", "UT Dallas", "UT Tyler", "HackRic
 export function PlacesStrip() {
     return (
         <div className="flex flex-col gap-4 border-t border-hairline pt-6 md:flex-row md:items-center md:gap-10">
-            <p className="shrink-0 text-sm text-chalk/45">Where I&apos;ve worked, studied, or gotten lucky</p>
+            <p className="shrink-0 text-sm text-chalk/45">Where I&apos;ve worked, studied, and competed</p>
             <ul className="flex flex-wrap items-center gap-x-8 gap-y-3">
                 {PLACES.map((p) => (
                     <li key={p} className="font-display text-lg font-semibold tracking-tight text-chalk/35">

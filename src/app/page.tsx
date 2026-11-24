@@ -83,10 +83,9 @@ function Hero() {
                         style={{ animationDelay: "180ms" }}
                     >
                         Usually in C++ or Python. I built a little prediction-market arbitrage bot that ended up
-                        making <span className="font-semibold text-chalk">around $13k</span> with my own money (still
-                        kind of surprised). Right now I&apos;m helping out with forecasting data at DFW and building{" "}
+                        making <span className="font-semibold text-chalk">around $13k</span> with my own money. Right now I&apos;m helping out with forecasting data at DFW and building{" "}
                         <a href="https://mechus.casa/" target="_blank" rel="noopener noreferrer" className="font-semibold text-chalk underline decoration-leaf/50 underline-offset-4 hover:text-leaf">
-                            Plumb
+                            Tally
                         </a>
                         , a little startup for property inspections, with my team. Also a CS student at UT Tyler.
                     </p>
@@ -164,7 +163,7 @@ function StatusRow() {
         <div className="flex flex-wrap items-center gap-2 text-xs text-chalk/60">
             <span className="flex items-center gap-2 rounded-full bg-mint/10 px-3 py-1.5 text-mint">
                 <span className="h-2 w-2 animate-pulse rounded-full bg-mint" />
-                kinda looking for 2027 stuff
+                looking for 2027 opportunities
             </span>
             <a
                 href="https://mechus.casa/"
@@ -172,12 +171,18 @@ function StatusRow() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5 transition-colors hover:border-leaf/40 hover:text-chalk"
             >
-                founder @ plumb
+                founder @ tally
                 <ArrowUpRight className="h-3 w-3" />
             </a>
             <span className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5">
                 <MapPin className="h-3.5 w-3.5 text-leaf" />
-                Dallas, TX{now && <span className="text-chalk/40">, {now} here</span>}
+                {now ? (
+                    <span>
+                        Dallas, TX<span className="text-chalk/40">, {now} here</span>
+                    </span>
+                ) : (
+                    "Dallas, TX"
+                )}
             </span>
         </div>
     )
@@ -352,15 +357,15 @@ function Experience() {
 /* ------------------------------------------------------------------ */
 
 const OFF_THE_CLOCK = [
-    { icon: Globe2, title: "Competitive GeoGuessr", body: "Basically pattern recognition on a timer. I'm okay at it." },
+    { icon: Globe2, title: "Competitive GeoGuessr", body: "Basically pattern recognition on a timer." },
     { icon: BookOpen, title: "Minor in English", body: "I like writing things, not just code." },
-    { icon: Gamepad2, title: "Games as math problems", body: "I built a Clash Royale move simulator once. For science, mostly." },
+    { icon: Gamepad2, title: "Games as math problems", body: "I built a Clash Royale move simulator once." },
     { icon: Plane, title: "Traveling", body: "Whenever I get the chance." },
 ]
 
 function About() {
     return (
-        <Section id="about" note="a bit more about me" title="I like problems where you sort of find out if you were right.">
+        <Section id="about" note="a bit more about me" title="I like problems where you find out if you were right.">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
                 <div className="space-y-6 lg:col-span-7">
                     <Reveal>
@@ -381,9 +386,9 @@ function About() {
 
                     <div className="grid grid-cols-3 gap-4 pt-4">
                         {[
-                            { v: 13000, p: "$", s: "", d: 0, l: "ish, arbitrage profit", c: "text-mint" },
-                            { v: 450, p: "", s: "ns", d: 0, l: "per tick, roughly", c: "text-fern" },
-                            { v: 3, p: "", s: "", d: 0, l: "hackathon prizes (lucky)", c: "text-moss" },
+                            { v: 13000, p: "$", s: "", d: 0, l: "arbitrage profit", c: "text-mint" },
+                            { v: 450, p: "", s: "ns", d: 0, l: "per tick", c: "text-fern" },
+                            { v: 3, p: "", s: "", d: 0, l: "hackathon prizes", c: "text-moss" },
                         ].map((stat, i) => (
                             <Reveal key={stat.l} delay={i + 2}>
                                 <div className="rounded-2xl border border-hairline p-4">
@@ -431,7 +436,7 @@ function About() {
 
 function Skills() {
     return (
-        <Section id="stack" note="my toolbox, sort of" title="Stuff I tend to reach for.">
+        <Section id="stack" note="my toolbox" title="Stuff I tend to reach for.">
             <Reveal>
                 <SkillMatrix />
             </Reveal>
@@ -457,7 +462,7 @@ function ResumeBand() {
                             </h2>
                             <p className="mt-4 max-w-md text-chalk/65">
                                 Pretty much everything above, squished onto one page. Last touched in{" "}
-                                {RESUME_UPDATED}, give or take.
+                                {RESUME_UPDATED}.
                             </p>
                             <div className="mt-8 flex flex-wrap gap-3">
                                 <a
@@ -519,7 +524,7 @@ function Contact() {
                     Feel free to <span className="text-gradient">reach out</span>.
                 </h2>
                 <p className="mx-auto mt-6 max-w-lg text-chalk/60">
-                    I&apos;m kind of keeping an eye out for software, trading, or research roles around 2027. I&apos;m
+                    I&apos;m looking for software, trading, or research roles for 2027. I&apos;m
                     in Dallas but could probably move. Or just say hi, I&apos;m always down to talk about markets.
                 </p>
             </Reveal>
@@ -570,7 +575,7 @@ function Footer() {
     return (
         <footer className="relative overflow-hidden border-t border-hairline px-5 pt-12 sm:px-8 lg:px-14">
             <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-chalk/45 sm:flex-row sm:items-center sm:justify-between">
-                <span>© {new Date().getFullYear()} Odey Jeffs, made in Dallas, mostly late at night</span>
+                <span>© {new Date().getFullYear()} Odey Jeffs</span>
                 <ul className="flex flex-wrap gap-x-6 gap-y-2">
                     {links.map((l) => (
                         <li key={l.label}>

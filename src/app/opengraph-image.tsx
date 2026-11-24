@@ -113,7 +113,7 @@ export default async function OpengraphImage() {
                         fontWeight: 500,
                     }}
                 >
-                    +$13k, give or take
+                    +$13k
                 </div>
             </div>
         ),
