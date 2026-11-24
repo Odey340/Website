@@ -116,7 +116,7 @@ export default function AboutPage() {
                         </CardHeader>
                         <CardContent>
                             <p className="font-bold text-white text-lg">B.S. Computer Science</p>
-                            <p className="text-sm text-zinc-400">UT Tyler · Minor in English</p>
+                            <p className="text-sm text-zinc-400">UT Tyler, minor in English</p>
                             <p className="text-[10px] font-mono text-primary mt-2 uppercase tracking-tighter">Graduating Dec 2027</p>
                         </CardContent>
                     </Card>

@@ -33,8 +33,18 @@ export function ProjectCard({ project }: { project: Project }) {
 
     const cardInner = (
         <>
-            <div className="flex items-start justify-between">
-                <span className="font-mono text-xs text-chalk/30">no. {project.index}</span>
+            <div className="flex items-start justify-between gap-4">
+                {project.badges && project.badges.length > 0 ? (
+                    <div className="flex items-center gap-3">
+                        {project.badges.map((b) => (
+                            <div key={b.src} className={project.wide ? "relative h-11 w-11" : "relative h-6 w-14 opacity-80"}>
+                                <Image src={b.src} alt={b.alt} fill className="object-contain object-left" />
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <span />
+                )}
                 <span
                     className="rounded-full px-3 py-1 text-xs font-semibold"
                     style={{ backgroundColor: `rgb(${project.glow} / 0.15)`, color: `rgb(${project.glow})` }}
@@ -43,20 +53,10 @@ export function ProjectCard({ project }: { project: Project }) {
                 </span>
             </div>
 
-            <h3 className="font-display mt-5 flex items-center gap-1.5 text-3xl font-medium text-chalk">
+            <h3 className={`font-display mt-6 flex items-center gap-1.5 font-semibold tracking-[-0.03em] text-chalk ${project.wide ? "text-4xl md:text-5xl" : "text-3xl"}`}>
                 {project.name}
                 <ArrowUpRight className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
             </h3>
-
-            {project.badges && project.badges.length > 0 && (
-                <div className="mt-3 flex items-center gap-3">
-                    {project.badges.map((b) => (
-                        <div key={b.src} className="relative h-6 w-14 opacity-80">
-                            <Image src={b.src} alt={b.alt} fill className="object-contain object-left" />
-                        </div>
-                    ))}
-                </div>
-            )}
 
             {project.award && (
                 <div
@@ -68,7 +68,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 </div>
             )}
 
-            <p className="mt-3 flex-1 text-[15px] leading-relaxed text-chalk/60">{project.blurb}</p>
+            <p className={`mt-3 flex-1 text-[15px] leading-relaxed text-chalk/60 ${project.wide ? "max-w-2xl" : ""}`}>{project.blurb}</p>
 
             <div className="mt-6 flex items-end justify-between border-t border-hairline pt-4">
                 <div>
@@ -92,7 +92,7 @@ export function ProjectCard({ project }: { project: Project }) {
     return (
         <SpotlightCard
             glow={project.glow}
-            className="h-full transition-transform duration-300 hover:-translate-y-1"
+            className="h-full"
         >
             {project.external ? (
                 <a

@@ -19,10 +19,27 @@ const code = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
+const DESCRIPTION =
+  "Hey, I'm Odey. I mostly build trading stuff and data apps in C++ and Python. CS student at UT Tyler.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Odey Jeffs | Software Engineer",
-  description:
-    "Hey, I'm Odey. I mostly build trading stuff and data apps in C++ and Python. CS student at UT Tyler.",
+  description: DESCRIPTION,
+  openGraph: {
+    title: "Odey Jeffs",
+    description: DESCRIPTION,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Odey Jeffs",
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

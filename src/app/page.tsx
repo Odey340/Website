@@ -10,6 +10,7 @@ import { CountUp } from "@/components/landing/CountUp"
 import { SkillMatrix } from "@/components/landing/SkillMatrix"
 import { ProjectCard } from "@/components/landing/ProjectCard"
 import { ScrollProgress } from "@/components/landing/ScrollProgress"
+import { EquityCurve, PlacesStrip } from "@/components/landing/EquityCurve"
 import { EDUCATION, EXPERIENCE, FEATURED } from "@/content/projects"
 import { RESUME_FILENAME, RESUME_UPDATED, RESUME_URL } from "@/content/resume"
 
@@ -48,29 +49,37 @@ export default function Home() {
 
 function Hero() {
     return (
-        <section className="relative flex min-h-[calc(100vh-5rem)] items-center px-5 pb-20 pt-12 sm:px-8 md:pt-16 lg:px-14">
+        <section className="relative px-5 pb-10 pt-10 sm:px-8 md:pt-16 lg:px-14">
             <AmbientBackground />
 
-            <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-10">
-                <div className="lg:col-span-7">
-                    <div className="fade-up">
-                        <StatusRow />
+            <div className="mx-auto w-full max-w-6xl">
+                <div className="grid grid-cols-1 items-end gap-12 lg:grid-cols-12 lg:gap-10">
+                    <div className="lg:col-span-8">
+                        <div className="fade-up">
+                            <StatusRow />
+                        </div>
+
+                        <p className="fade-up mt-10 text-base font-medium text-moss" style={{ animationDelay: "40ms" }}>
+                            hey, I&apos;m Odey
+                        </p>
+
+                        <h1
+                            className="fade-up font-display mt-3 text-[2.9rem] font-semibold leading-[0.98] tracking-[-0.045em] text-chalk sm:text-7xl lg:text-[5.6rem]"
+                            style={{ animationDelay: "100ms" }}
+                        >
+                            I mostly build <span className="text-leaf">trading stuff</span> and data apps, and try to
+                            make them actually work.
+                        </h1>
                     </div>
 
-                    <p className="fade-up mt-8 eyebrow text-moss" style={{ animationDelay: "40ms" }}>
-                        hey, I&apos;m Odey
-                    </p>
+                    <div className="fade-up hidden justify-end lg:col-span-4 lg:flex" style={{ animationDelay: "220ms" }}>
+                        <Portrait />
+                    </div>
+                </div>
 
-                    <h1
-                        className="fade-up font-display mt-2 text-5xl font-medium leading-[1.02] text-chalk sm:text-6xl md:text-7xl"
-                        style={{ animationDelay: "100ms" }}
-                    >
-                        I mostly build <span className="text-gradient">trading stuff</span> and data apps,
-                        and try to make them <span className="scribble">actually work</span>.
-                    </h1>
-
+                <div className="mt-10 grid grid-cols-1 items-end gap-8 lg:grid-cols-12 lg:gap-10">
                     <p
-                        className="fade-up mt-7 max-w-xl text-lg leading-relaxed text-chalk/65 sm:text-xl"
+                        className="fade-up max-w-xl text-lg leading-relaxed text-chalk/65 lg:col-span-7"
                         style={{ animationDelay: "180ms" }}
                     >
                         Usually in C++ or Python. I built a little prediction-market arbitrage bot that ended up
@@ -82,14 +91,13 @@ function Hero() {
                         , a little startup for property inspections, with my team. Also a CS student at UT Tyler.
                     </p>
 
-                    <div className="fade-up mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "260ms" }}>
+                    <div className="fade-up flex flex-wrap items-center gap-3 lg:col-span-5 lg:justify-end" style={{ animationDelay: "260ms" }}>
                         <Magnetic>
                             <Link
                                 href="/#work"
-                                className="group inline-flex items-center gap-2 rounded-full bg-leaf px-7 py-3.5 text-sm font-bold text-background transition-colors hover:bg-mint"
+                                className="inline-flex items-center gap-2 rounded-full bg-leaf px-7 py-3.5 text-sm font-bold text-background transition-colors hover:bg-mint"
                             >
                                 Poke around my stuff
-                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                         </Magnetic>
                         <a
@@ -103,49 +111,34 @@ function Hero() {
                     </div>
                 </div>
 
-                <div className="fade-up flex justify-center lg:col-span-5 lg:justify-end" style={{ animationDelay: "320ms" }}>
-                    <Polaroid />
+                {/* the one big moment: a P&L line that draws itself once */}
+                <div className="mt-6 lg:mt-2">
+                    <EquityCurve />
+                </div>
+
+                <div className="fade-up" style={{ animationDelay: "1600ms" }}>
+                    <PlacesStrip />
                 </div>
             </div>
         </section>
     )
 }
 
-function Polaroid() {
+function Portrait() {
     return (
-        <div className="relative w-[280px] sm:w-[320px]">
-            <div className="relative rounded-2xl border border-hairline bg-surface p-2.5 pb-12 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
-                    <Image
-                        src="/me.jpg"
-                        alt="Odey Jeffs"
-                        fill
-                        priority
-                        sizes="320px"
-                        className="object-cover object-[60%_center]"
-                    />
-                </div>
-                <p className="absolute inset-x-0 bottom-3.5 text-center font-mono text-xs text-chalk/50">
-                    me, wandering around somewhere
-                </p>
+        <figure className="w-[260px] xl:w-[280px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-hairline">
+                <Image
+                    src="/me.jpg"
+                    alt="Odey Jeffs"
+                    fill
+                    priority
+                    sizes="280px"
+                    className="object-cover object-[60%_center]"
+                />
             </div>
-
-            {/* stickers */}
-            <div
-                className="absolute -left-10 top-10 z-30 rounded-xl border border-leaf/30 bg-background/90 px-4 py-3 text-chalk shadow-lg backdrop-blur sm:-left-16"
-            >
-                <div className="font-display text-2xl font-bold leading-none text-leaf">$13k</div>
-                <div className="mt-1 text-[11px] leading-tight text-chalk/60">ish, from my
-                    <br />arbitrage bot</div>
-            </div>
-            <div
-                className="absolute -right-4 bottom-24 z-30 rounded-xl border border-leaf/30 bg-background/90 px-4 py-3 text-chalk shadow-lg backdrop-blur sm:-right-10"
-            >
-                <div className="font-display text-2xl font-bold leading-none text-leaf">450ns</div>
-                <div className="mt-1 text-[11px] leading-tight text-chalk/60">per tick, give
-                    <br />or take</div>
-            </div>
-        </div>
+            <figcaption className="mt-3 text-sm text-chalk/45">me, wandering around somewhere</figcaption>
+        </figure>
     )
 }
 
@@ -184,7 +177,7 @@ function StatusRow() {
             </a>
             <span className="flex items-center gap-1.5 rounded-full border border-hairline px-3 py-1.5">
                 <MapPin className="h-3.5 w-3.5 text-leaf" />
-                Dallas, TX{now && <span className="text-chalk/40"> · {now} here</span>}
+                Dallas, TX{now && <span className="text-chalk/40">, {now} here</span>}
             </span>
         </div>
     )
@@ -193,15 +186,13 @@ function StatusRow() {
 function AmbientBackground() {
     return (
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-            <div className="absolute inset-0 bg-dots [mask-image:radial-gradient(ellipse_at_center,#000_15%,transparent_70%)]" />
             <div
                 className="absolute inset-0"
                 style={{
                     background:
-                        "radial-gradient(55vw 55vh at 8% -5%, rgba(79,209,130,0.12), transparent 60%), radial-gradient(40vw 45vh at 95% 20%, rgba(111,179,154,0.08), transparent 55%)",
+                        "radial-gradient(60vw 50vh at 0% 0%, rgba(79,209,130,0.09), transparent 60%)",
                 }}
             />
-            <div className="absolute inset-0 bg-noise opacity-[0.10] mix-blend-overlay" />
         </div>
     )
 }
@@ -212,16 +203,16 @@ function AmbientBackground() {
 
 function Marquee() {
     return (
-        <div className="border-y border-hairline bg-surface py-3.5 text-chalk/70">
+        <div className="border-b border-hairline py-5 text-chalk/55">
             <div className="pause-on-hover mask-fade-x flex overflow-hidden">
                 <div className="animate-marquee flex shrink-0 items-center gap-6 pr-6 text-sm font-medium">
                     {[...CURRENTLY_INTO, ...CURRENTLY_INTO].map((w, i) => (
                         <span key={i} className="flex items-center gap-6 whitespace-nowrap">
                             {i % CURRENTLY_INTO.length === 0 && (
-                                <span className="font-mono text-xs uppercase tracking-widest text-leaf">stuff I&apos;m into lately →</span>
+                                <span className="text-leaf">stuff I&apos;m into lately</span>
                             )}
                             {w}
-                            <span className="text-leaf/50">/</span>
+                            <span className="h-1 w-1 rounded-full bg-chalk/25" />
                         </span>
                     ))}
                 </div>
@@ -246,10 +237,10 @@ function Section({
     children: React.ReactNode
 }) {
     return (
-        <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:px-8 md:py-24 lg:px-14">
+        <section id={id} className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 md:py-32 lg:px-14">
             <Reveal>
-                <p className="eyebrow text-leaf">{note}</p>
-                <h2 className="font-display mt-1 max-w-3xl text-4xl font-medium leading-tight text-chalk sm:text-5xl">
+                <p className="text-base font-medium text-leaf">{note}</p>
+                <h2 className="font-display mt-2 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-chalk sm:text-[3.5rem]">
                     {title}
                 </h2>
             </Reveal>
@@ -322,7 +313,7 @@ function Experience() {
                                     ) : (
                                         role.org
                                     )}{" "}
-                                    <span className="text-chalk/30">· {role.where}</span>
+                                    <span className="text-chalk/35">, {role.where}</span>
                                 </p>
                                 <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-chalk/60">
                                     {role.points.map((pt) => (
@@ -344,7 +335,7 @@ function Experience() {
                         <p className="eyebrow text-moss">school (still going)</p>
                         <h3 className="font-display text-2xl font-medium text-chalk">{EDUCATION.school}</h3>
                         <p className="text-chalk/60">
-                            {EDUCATION.degree} · probably done around {EDUCATION.grad}
+                            {EDUCATION.degree}, probably done around {EDUCATION.grad}
                         </p>
                     </div>
                     <p className="max-w-md text-sm leading-relaxed text-chalk/55">
@@ -570,19 +561,41 @@ function Contact() {
 }
 
 function Footer() {
+    const links = [
+        { label: "Email", href: "mailto:odeyjeffs7@gmail.com" },
+        { label: "GitHub", href: "https://github.com/Odey340" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/odeydj/" },
+        { label: "Resume", href: RESUME_URL },
+    ]
     return (
-        <footer className="border-t border-hairline px-5 py-8 sm:px-8 lg:px-14">
-            <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 text-sm text-chalk/40 sm:flex-row">
-                <span>© {new Date().getFullYear()} Odey Jeffs · made in Dallas, mostly late at night</span>
-                <a
-                    href="https://github.com/Odey340/Website"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 hover:text-chalk"
-                >
-                    view the source <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
+        <footer className="relative overflow-hidden border-t border-hairline px-5 pt-12 sm:px-8 lg:px-14">
+            <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-chalk/45 sm:flex-row sm:items-center sm:justify-between">
+                <span>© {new Date().getFullYear()} Odey Jeffs, made in Dallas, mostly late at night</span>
+                <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                    {links.map((l) => (
+                        <li key={l.label}>
+                            <a
+                                href={l.href}
+                                {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                className="transition-colors hover:text-chalk"
+                            >
+                                {l.label}
+                            </a>
+                        </li>
+                    ))}
+                    <li>
+                        <a href="https://github.com/Odey340/Website" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-chalk">
+                            Source
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <p
+                aria-hidden
+                className="font-display mx-auto mt-10 max-w-6xl select-none whitespace-nowrap text-[19vw] font-bold leading-[0.78] tracking-[-0.06em] text-chalk/[0.06] lg:text-[13.5rem]"
+            >
+                odey jeffs
+            </p>
         </footer>
     )
 }
