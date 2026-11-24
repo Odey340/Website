@@ -11,6 +11,7 @@ const SKILLS: Skill[] = [
     { name: "C++17", group: "Languages", note: "trading engine, backtester, lock-free queues" },
     { name: "Python", group: "Languages", note: "Pandas, NumPy, research and validation" },
     { name: "SQL", group: "Languages", note: "PostgreSQL, query tuning" },
+    { name: "TypeScript", group: "Languages", note: "Next.js apps: TideTracker, Elixir Tracker, Pfeilstorch" },
     { name: "R", group: "Languages", note: "statistical analysis pipelines" },
     { name: "MATLAB", group: "Languages", note: "simulation and surrogate modeling" },
     { name: "Lock-free data structures", group: "Systems", note: "CAS ring buffers, cache-line-aligned atomics" },
@@ -25,11 +26,11 @@ const SKILLS: Skill[] = [
     { name: "Time-series analysis", group: "Quant", note: "EWMA mean and variance, z-scores" },
     { name: "Monte Carlo simulation", group: "Quant", note: "simulation-based estimates" },
     { name: "Model validation", group: "Quant", note: "k-fold cross-validation, out-of-sample tests" },
-    { name: "PostgreSQL", group: "Data & tools", note: "ingestion and storage, 38 ms p99 queries" },
+    { name: "PostgreSQL", group: "Data & tools", note: "Supabase with row-level security (Pfeilstorch)" },
     { name: "GoogleTest", group: "Data & tools", note: "C++ estimators verified against Pandas" },
     { name: "Git", group: "Data & tools", note: "version control" },
     { name: "AWS", group: "Data & tools", note: "cloud deployment" },
-    { name: "React", group: "Data & tools", note: "monitoring dashboards, this site" },
+    { name: "React", group: "Data & tools", note: "this site, TideTracker, Elixir Tracker" },
     { name: "MongoDB", group: "Data & tools", note: "document storage" },
 ]
 

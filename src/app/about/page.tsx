@@ -24,7 +24,7 @@ const PRINCIPLES = [
         color: "text-blue-400",
         hover: "hover:border-blue-500/50",
         title: "Same answer twice",
-        body: "If a result changes between runs, I probably don't have a result yet. My backtester gives the same P&L every run, even across GCC and Clang.",
+        body: "If a result changes between runs, I probably don't have a result yet. My backtester gives the same P&L every run, even across GCC, Clang, and MSVC.",
     },
     {
         icon: Ruler,
@@ -73,9 +73,9 @@ export default function AboutPage() {
                         <p>
                             That project kind of taught me the idea is usually the easy part. The hard part is the
                             fill you didn&apos;t get, the fee you rounded wrong, and the backtest that&apos;s a little too
-                            nice to you. So I made a tick-level futures backtester that runs at roughly{" "}
-                            <span className="text-white font-semibold">450 nanoseconds per tick</span>, tries to
-                            account for slippage and commissions, and gives the same P&amp;L each run.
+                            nice to you. So I made Olly, a tick-level futures backtester that runs at roughly{" "}
+                            <span className="text-white font-semibold">50 nanoseconds per tick</span>, fills orders
+                            at the bid or ask with slippage and commissions, and gives the same P&amp;L each run.
                         </p>
                         <p>
                             My internships and research have mostly been on the data side of things: checking the

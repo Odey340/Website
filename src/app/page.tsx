@@ -359,7 +359,7 @@ function Experience() {
 const OFF_THE_CLOCK = [
     { icon: Globe2, title: "Competitive GeoGuessr", body: "Basically pattern recognition on a timer." },
     { icon: BookOpen, title: "Minor in English", body: "I like writing things, not just code." },
-    { icon: Gamepad2, title: "Games as math problems", body: "I built a Clash Royale move simulator once." },
+    { icon: Gamepad2, title: "Games as math problems", body: "I built an elixir tracker for Clash Royale." },
     { icon: Plane, title: "Traveling", body: "Whenever I get the chance." },
 ]
 
@@ -387,7 +387,7 @@ function About() {
                     <div className="grid grid-cols-3 gap-4 pt-4">
                         {[
                             { v: 13000, p: "$", s: "", d: 0, l: "arbitrage profit", c: "text-mint" },
-                            { v: 450, p: "", s: "ns", d: 0, l: "per tick", c: "text-fern" },
+                            { v: 50, p: "~", s: "ns", d: 0, l: "per tick", c: "text-fern" },
                             { v: 3, p: "", s: "", d: 0, l: "hackathon prizes", c: "text-moss" },
                         ].map((stat, i) => (
                             <Reveal key={stat.l} delay={i + 2}>
