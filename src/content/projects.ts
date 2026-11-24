@@ -21,6 +21,20 @@ export const FEATURED: Project[] = [
         wide: true,
     },
     {
+        name: "Pfeilstorch",
+        kind: "Literary journal · Founder",
+        blurb:
+            "A literary journal I started, edit, and built end to end. Pfeilstorch Fiction publishes micro-fiction and poetry under 900 words and answers every submission within 48 hours. The other half, Pfeilstorch Labs, is the product page for Proof, a tool to help journals and contests filter AI-generated work out of their submissions. It runs on Storch-1, a detection model trained only on creative writing that's still in training.",
+        stat: { label: "Visitors a month", value: "~3,000" },
+        stack: ["Next.js", "Supabase", "PostgreSQL", "Vercel"],
+        href: "https://pfielstorch.vercel.app/",
+        external: true,
+        source: "https://github.com/Odey340/pfielstorch",
+        glow: "214 70 70",
+        index: "02",
+        wide: true,
+    },
+    {
         name: "Artemis",
         kind: "Trading system",
         blurb:
@@ -30,7 +44,7 @@ export const FEATURED: Project[] = [
         href: "/projects/artemis",
         source: "https://github.com/Odey340/Artemis",
         glow: "79 209 130",
-        index: "02",
+        index: "03",
     },
     {
         name: "Tick-Level Futures Backtester",
@@ -42,7 +56,7 @@ export const FEATURED: Project[] = [
         href: "https://github.com/Odey340/Artemist",
         external: true,
         glow: "111 179 154",
-        index: "03",
+        index: "04",
     },
     {
         name: "Scallion",
@@ -61,7 +75,7 @@ export const FEATURED: Project[] = [
         ],
         award: "HackRice 16: 2 prizes out of 121 teams",
         glow: "169 196 108",
-        index: "04",
+        index: "05",
     },
     {
         name: "TideTracker",
@@ -73,7 +87,7 @@ export const FEATURED: Project[] = [
         href: "https://github.com/Odey340/TideAPI",
         external: true,
         glow: "127 224 166",
-        index: "05",
+        index: "06",
     },
 ]
 
@@ -89,7 +103,7 @@ export const MORE: Project[] = [
         href: "/projects/lumina",
         source: "https://github.com/Odey340/Lumina",
         glow: "143 165 154",
-        index: "06",
+        index: "07",
     },
     {
         name: "ClashWinner",
@@ -100,7 +114,7 @@ export const MORE: Project[] = [
         href: "https://github.com/Odey340/Carn",
         external: true,
         glow: "143 165 154",
-        index: "07",
+        index: "08",
     },
 ]
 
