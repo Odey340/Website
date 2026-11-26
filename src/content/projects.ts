@@ -143,10 +143,10 @@ export const EXPERIENCE: Role[] = [
     {
         title: "Full-Stack Intern",
         org: "DFW International Airport",
-        when: "May 2026 – Present",
+        when: "May 2026 – Aug 2026",
         points: [
             "Helped swap a manual spot-check process for automated validation and regression tests, so results reproduce run to run and schema changes upstream get caught before they hit the forecasts.",
-            "Working on the operational data behind demand forecasting models that feed into scheduling.",
+            "Worked on the operational data behind demand forecasting models that feed into scheduling.",
         ],
     },
     {
@@ -159,21 +159,21 @@ export const EXPERIENCE: Role[] = [
         ],
     },
     {
-        title: "Undergraduate Research Assistant, Program Analysis",
-        org: "University of Texas at Dallas, advised by Dr. Shiyi Wei",
-        when: "Summer 2026",
-        points: [
-            "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing tool from the group, and wrote some C++ for it.",
-            "Helped test whether bringing LLMs into the fuzzing workflow actually makes it better.",
-        ],
-    },
-    {
-        title: "Software Engineer Intern, Full-Stack",
+        title: "Software Engineer, Full-Stack",
         org: "Jump Finance",
-        when: "Sep 2025 – May 2026",
+        when: "Sep 2025 – Present",
         points: [
             "Shipped features end to end, from design to release, for financial data workflows where the numbers really needed to be right.",
             "Wrote unit and integration tests to catch bugs before release, and stuck around to support things after launch.",
+        ],
+    },
+    {
+        title: "Undergraduate Research Assistant, Program Analysis",
+        org: "University of Texas at Dallas, advised by Dr. Shiyi Wei",
+        when: "May 2025 – Aug 2025",
+        points: [
+            "Reproduced VAFuzz (Variability-Aware Fuzzing), a security-testing tool from the group, and wrote some C++ for it.",
+            "Helped test whether bringing LLMs into the fuzzing workflow actually makes it better.",
         ],
     },
     {
@@ -189,8 +189,8 @@ export const EXPERIENCE: Role[] = [
 export const EDUCATION = {
     school: "University of Texas at Tyler",
     degree: "B.S. Computer Science, Minor in English",
-    when: "Aug 2023 – Dec 2027 (expected)",
-    grad: "Dec 2027",
+    when: "Aug 2023 – May 2027 (expected)",
+    grad: "May 2027",
     coursework: ["Data Structures & Algorithms", "Operating Systems", "Numerical Algorithms", "Probability & Statistics"],
     honors: "HackUTA: Best Use of Chert. HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
 }

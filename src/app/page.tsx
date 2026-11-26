@@ -83,7 +83,7 @@ function Hero() {
                         style={{ animationDelay: "180ms" }}
                     >
                         Usually in C++ or Python. I built a little prediction-market arbitrage bot that ended up
-                        making <span className="font-semibold text-chalk">around $13k</span> with my own money. Right now I&apos;m helping out with forecasting data at DFW and building{" "}
+                        making <span className="font-semibold text-chalk">around $13k</span> with my own money. Right now I&apos;m a software engineer at Jump Finance and building{" "}
                         <a href="https://mechus.casa/" target="_blank" rel="noopener noreferrer" className="font-semibold text-chalk underline decoration-leaf/50 underline-offset-4 hover:text-leaf">
                             Tally
                         </a>
