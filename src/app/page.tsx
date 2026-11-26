@@ -87,7 +87,7 @@ function Hero() {
                         <a href="https://mechus.casa/" target="_blank" rel="noopener noreferrer" className="font-semibold text-chalk underline decoration-leaf/50 underline-offset-4 hover:text-leaf">
                             Tally
                         </a>
-                        , a little startup for property inspections, with my team. Also a CS student at UT Tyler.
+                        , a little startup for property inspections, with my team as a Chert Fellow. Also a CS student at UT Tyler.
                     </p>
 
                     <div className="fade-up flex flex-wrap items-center gap-3 lg:col-span-5 lg:justify-end" style={{ animationDelay: "260ms" }}>

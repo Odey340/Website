@@ -8,14 +8,14 @@ export const FEATURED: Project[] = [
         name: "Tally",
         kind: "Startup · Founder",
         blurb:
-            "Started as a HackUTA hackathon project and turned into a startup we're building. Tally does move-in and move-out property inspections over a live FaceTime call: Mechus, the voice assistant, walks the tenant through the unit, compares what it sees against the move-in footage, and only calls out damage that looks new. Landlords and tenants get the report over iMessage.",
+            "Started as a HackUTA hackathon project and turned into a startup we're building, now funded through the Chert Fellowship. Tally does move-in and move-out property inspections over a live FaceTime call: Mechus, the voice assistant, walks the tenant through the unit, compares what it sees against the move-in footage, and only calls out damage that looks new. Landlords and tenants get the report over iMessage.",
         stat: { label: "Live, give it a try", value: "mechus.casa" },
         stack: ["Python", "MongoDB Atlas", "LiveKit", "ElevenLabs", "Gemini"],
         href: "https://mechus.casa/",
         external: true,
         source: "https://github.com/Odey340/Mechus",
         badges: [{ src: "/badges/tally.svg", alt: "Tally" }],
-        award: "HackUTA: Best Use of Chert",
+        award: "HackUTA: 3rd Place, Chert Track",
         glow: "200 240 60",
         index: "01",
         wide: true,
@@ -131,12 +131,11 @@ export type Role = {
 
 export const EXPERIENCE: Role[] = [
     {
-        title: "Founder",
-        org: "Tally",
-        href: "https://mechus.casa/",
-        when: "2026 – Present",
+        title: "Chert Fellow, Co-Founder of Tally",
+        org: "Chert (YC-backed)",
+        when: "Nov 2026 – Present",
         points: [
-            "Started Tally at HackUTA and kept building it with my team afterward: AI property inspections over a live FaceTime call, where Mechus, our voice assistant, guides the tenant and flags only the damage that's new since move-in.",
+            "Chert is funding me to build Tally, which started as our HackUTA project: an AI agent that inspects short-term rentals over a live FaceTime call at each turnover, compares what it sees against the move-in footage, and reports only the damage that's new.",
             "The backend leans on MongoDB Atlas for the boring-but-important parts, like retry-safe onboarding, conflict-checked report updates, and exactly-once iMessage delivery.",
         ],
     },
@@ -192,5 +191,5 @@ export const EDUCATION = {
     when: "Aug 2023 – May 2027 (expected)",
     grad: "May 2027",
     coursework: ["Data Structures & Algorithms", "Operating Systems", "Numerical Algorithms", "Probability & Statistics"],
-    honors: "HackUTA: Best Use of Chert. HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
+    honors: "HackUTA: 3rd Place, Chert Track, which led to the Chert Fellowship. HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
 }
