@@ -8,7 +8,7 @@ import { RESUME_FILENAME, RESUME_URL } from "@/content/resume"
 export const metadata = {
     title: "About | Odey Jeffs",
     description:
-        "C++ and Python engineer focused on trading systems, measurement, and reproducible research. UT Tyler CS, graduating May 2027.",
+        "C++ and Python engineer focused on trading systems, measurement, and reproducible research. CS student at UT Tyler.",
 }
 
 const PRINCIPLES = [
@@ -60,7 +60,7 @@ export default function AboutPage() {
                     </CardHeader>
                     <CardContent className="space-y-6 text-zinc-400 leading-relaxed text-lg">
                         <p>
-                            I&apos;m a CS student at UT Tyler, wrapping up in May 2027. I kind of
+                            I&apos;m a CS student at UT Tyler. I kind of
                             fell into markets with one question: when Kalshi and Polymarket list the same event, do
                             their prices ever disagree by more than the fees? I wrote{" "}
                             <Link href="/projects/artemis" className="text-white font-semibold italic underline decoration-zinc-700 underline-offset-4 hover:decoration-primary">
@@ -116,7 +116,6 @@ export default function AboutPage() {
                         <CardContent>
                             <p className="font-bold text-white text-lg">B.S. Computer Science</p>
                             <p className="text-sm text-zinc-400">UT Tyler, minor in English</p>
-                            <p className="text-[10px] font-mono text-primary mt-2 uppercase tracking-tighter">Graduating May 2027</p>
                         </CardContent>
                     </Card>
 

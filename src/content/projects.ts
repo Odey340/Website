@@ -188,8 +188,6 @@ export const EXPERIENCE: Role[] = [
 export const EDUCATION = {
     school: "University of Texas at Tyler",
     degree: "B.S. Computer Science, Minor in English",
-    when: "Aug 2023 – May 2027 (expected)",
-    grad: "May 2027",
     coursework: ["Data Structures & Algorithms", "Operating Systems", "Numerical Algorithms", "Probability & Statistics"],
     honors: "HackUTA: 3rd Place, Chert Track, which led to the Chert Fellowship. HackRice 16: Best Use of MathWorks and Best Use of Backboard.io, out of 121 teams",
 }

@@ -339,7 +339,7 @@ function Experience() {
                         <p className="eyebrow text-moss">school (still going)</p>
                         <h3 className="font-display text-2xl font-medium text-chalk">{EDUCATION.school}</h3>
                         <p className="text-chalk/60">
-                            {EDUCATION.degree}, probably done around {EDUCATION.grad}
+                            {EDUCATION.degree}
                         </p>
                     </div>
                     <p className="max-w-md text-sm leading-relaxed text-chalk/55">
